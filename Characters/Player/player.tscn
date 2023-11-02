@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck72nsqkldkgo"]
+[gd_scene load_steps=5 format=3 uid="uid://ck72nsqkldkgo"]
 
 [ext_resource type="Texture2D" uid="uid://cwx1ujfgsspr1" path="res://icon.svg" id="1_55vta"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_folvt"]
+[ext_resource type="Resource" uid="uid://bfbduxgf7o3my" path="res://Resource/DefaultPlayerMovement.tres" id="2_s45l2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5ixb"]
 size = Vector2(124, 124)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_folvt")
+MovementData = ExtResource("2_s45l2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_55vta")
