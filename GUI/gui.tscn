@@ -1,29 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsj0iwhew8d0p"]
+[gd_scene load_steps=6 format=3 uid="uid://bsj0iwhew8d0p"]
 
 [ext_resource type="Texture2D" uid="uid://c0ws7orrttowm" path="res://GUI/Images/HealthBar Background.png" id="1_kthr5"]
+[ext_resource type="Script" path="res://GUI/gui.gd" id="1_o5dg7"]
 [ext_resource type="Texture2D" uid="uid://d0x51sovxntid" path="res://GUI/Images/HealthBar Foreground.png" id="2_rpuxn"]
 [ext_resource type="Texture2D" uid="uid://cccvm46luyq5e" path="res://GUI/Images/FlameBar Fill.png" id="3_1pf12"]
 [ext_resource type="Texture2D" uid="uid://c6i61mse0mds8" path="res://GUI/Images/HealthBarFill.png" id="4_6kk85"]
 
 [node name="GUI" type="CanvasLayer"]
 
-[node name="HealthBar" type="TextureProgressBar" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_o5dg7")
+
+[node name="HealthBar" type="TextureProgressBar" parent="Control"]
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 176.0
 offset_bottom = 32.0
-value = 75.0
+value = 100.0
 nine_patch_stretch = true
 texture_under = ExtResource("1_kthr5")
 texture_over = ExtResource("2_rpuxn")
 texture_progress = ExtResource("3_1pf12")
 
-[node name="HealthBar2" type="TextureProgressBar" parent="."]
+[node name="ManaBar" type="TextureProgressBar" parent="Control"]
 offset_left = 40.0
 offset_top = 40.0
 offset_right = 216.0
 offset_bottom = 64.0
-value = 75.0
 nine_patch_stretch = true
 texture_under = ExtResource("1_kthr5")
 texture_over = ExtResource("2_rpuxn")
