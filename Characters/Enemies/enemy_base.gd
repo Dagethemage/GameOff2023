@@ -1,12 +1,9 @@
 extends CharacterBody2D
 
-@export var ACCELERATION = 300
-@export var MAX_SPEED = 50
-@export var FRICTION = 200
-@export var WANDER_TARGET_RANGE = 4
+@export var enemy_movement_data : Resource
 
 @onready var wander_controller = $WanderController
-@onready var sprite = $Sprite2D
+@onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var player_detction_zone = $PlayerDetctionZone
 
 var state = IDLE
@@ -23,7 +20,7 @@ func _ready() -> void:
 func _physics_process(delta):
 	match state:
 		IDLE:
-			velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+			velocity = velocity.move_toward(Vector2.ZERO, enemy_movement_data.FRICTION * delta)
 			seek_player()
 			
 			if wander_controller.get_time_left() == 0:
@@ -35,7 +32,7 @@ func _physics_process(delta):
 			
 			accelerate_towards_point(wander_controller.target_position, delta)
 			
-			if global_position.distance_to(wander_controller.target_position) <= WANDER_TARGET_RANGE:
+			if global_position.distance_to(wander_controller.target_position) <= enemy_movement_data.WANDER_TARGET_RANGE:
 				update_wander()
 			
 		CHASE:
@@ -48,8 +45,8 @@ func _physics_process(delta):
 
 func accelerate_towards_point(point, _delta):
 	var direction = global_position.direction_to(point)
-	velocity = velocity.move_toward(direction * MAX_SPEED, ACCELERATION * _delta)
-	sprite.flip_h = velocity.x < 0
+	velocity = velocity.move_toward(direction * enemy_movement_data.MAX_SPEED, enemy_movement_data.ACCELERATION * _delta)
+	animated_sprite_2d.flip_h = velocity.x < 0
 
 func seek_player():
 	if player_detction_zone.can_see_player():

@@ -1,29 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://ro21hi7hpxlh"]
+[gd_scene load_steps=5 format=3 uid="uid://ro21hi7hpxlh"]
 
-[ext_resource type="Texture2D" uid="uid://cwx1ujfgsspr1" path="res://icon.svg" id="1_hss8q"]
 [ext_resource type="Script" path="res://Characters/Enemies/enemy_base.gd" id="1_pfp6a"]
+[ext_resource type="Resource" uid="uid://y0kkbthcsjvn" path="res://Resource/DefaultEnemyMovementData.tres" id="2_5ylqf"]
 [ext_resource type="PackedScene" uid="uid://cb3qvatrr6l51" path="res://Overlap/wander_controller.tscn" id="3_obi8j"]
 [ext_resource type="PackedScene" uid="uid://cnuprtqtin6dt" path="res://Characters/Enemies/EnemyObjects/player_detction_zone.tscn" id="4_a4upu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbh0f"]
-size = Vector2(130, 126)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_4rg6u"]
-radius = 108.019
-
 [node name="EnemyBase" type="CharacterBody2D"]
 script = ExtResource("1_pfp6a")
+enemy_movement_data = ExtResource("2_5ylqf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.803922, 0.294118, 0.878431, 1)
-texture = ExtResource("1_hss8q")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bbh0f")
 
 [node name="WanderController" parent="." instance=ExtResource("3_obi8j")]
 
 [node name="PlayerDetctionZone" parent="." instance=ExtResource("4_a4upu")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetctionZone"]
-shape = SubResource("CircleShape2D_4rg6u")
