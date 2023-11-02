@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://ck72nsqkldkgo"]
+[gd_scene load_steps=7 format=3 uid="uid://ck72nsqkldkgo"]
 
 [ext_resource type="Texture2D" uid="uid://cwx1ujfgsspr1" path="res://icon.svg" id="1_55vta"]
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_folvt"]
+[ext_resource type="Resource" uid="uid://d0jxueil5yt1f" path="res://Resource/PlayerStats.tres" id="2_ibd6g"]
 [ext_resource type="Resource" uid="uid://bfbduxgf7o3my" path="res://Resource/DefaultPlayerMovement.tres" id="2_s45l2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c5ixb"]
 size = Vector2(124, 124)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rpyc2"]
+radius = 98.0051
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_folvt")
+stats = ExtResource("2_ibd6g")
 MovementData = ExtResource("2_s45l2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,3 +23,10 @@ texture = ExtResource("1_55vta")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_c5ixb")
+
+[node name="InteractZone" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone"]
+shape = SubResource("CircleShape2D_rpyc2")
