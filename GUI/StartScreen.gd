@@ -5,6 +5,7 @@ extends CenterContainer
 @onready var quit = $MarginContainer/VBoxContainer/Quit
 
 
+
 func _ready() -> void:
 	start.grab_focus()
 	start.pressed.connect(start_pressed)
