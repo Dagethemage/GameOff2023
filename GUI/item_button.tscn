@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://py55gukb4td1"]
+
+[ext_resource type="Theme" uid="uid://daemuuguf1eqs" path="res://GUI/Themes/ButtonTheme_BattleMenu.tres" id="1_1uwro"]
+[ext_resource type="Script" path="res://GUI/Item_button.gd" id="2_lb5h6"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_1uwro")
+script = ExtResource("2_lb5h6")

@@ -1,5 +1,10 @@
 extends Control
 
+
+#@onready var inv: Inventory = preload("res://Resource/Player_item_inventory.tres")
+#@onready var slots: Array = $ItemsMenu.get_children()
+
+
 @onready var attack = $BattleMenu/Attack
 @onready var skills = $BattleMenu/Skills
 @onready var magic = $BattleMenu/Magic
@@ -12,11 +17,17 @@ extends Control
 
 
 func _ready() -> void:
+#	update_slots()
 	attack.grab_focus()
 	attack.pressed.connect(attack_button_pressed)
 	skills.pressed.connect(skills_button_pressed)
 	magic.pressed.connect(magic_button_pressed)
 	items.pressed.connect(items_button_pressed)
+#	print(inv.items)
+
+#func update_slots():
+#	for i in range(min(inv.items.size(), slots.size())):
+#		slots[i].update(inv.items[1])
 
 func attack_button_pressed():
 	pass
