@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://p3tp8x7cpghf"]
+
+[ext_resource type="FontFile" uid="uid://b2np0hpau6njv" path="res://GUI/Fonts/Decomart FF 4F.ttf" id="1_r6nd3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igkc5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgarh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5u5n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt6vf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ocqc6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.526854, 0.135959, 0.620416, 1)
+Button/colors/font_hover_color = Color(0.52549, 0.137255, 0.619608, 1)
+Button/colors/font_hover_pressed_color = Color(0.526854, 0.135959, 0.620416, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(0.746953, 0.313916, 0.857888, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_r6nd3")
+Button/styles/disabled = SubResource("StyleBoxFlat_igkc5")
+Button/styles/focus = SubResource("StyleBoxFlat_fgarh")
+Button/styles/hover = SubResource("StyleBoxFlat_r5u5n")
+Button/styles/normal = SubResource("StyleBoxFlat_bt6vf")
+Button/styles/pressed = SubResource("StyleBoxFlat_ocqc6")

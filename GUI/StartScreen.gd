@@ -1,9 +1,8 @@
 extends CenterContainer
 
-@onready var start = $MarginContainer/VBoxContainer/Start
-@onready var options = $MarginContainer/VBoxContainer/Options
-@onready var quit = $MarginContainer/VBoxContainer/Quit
-
+@onready var start = $VBoxContainer/Start
+@onready var options = $VBoxContainer/Options
+@onready var quit = $VBoxContainer/Quit
 
 
 func _ready() -> void:

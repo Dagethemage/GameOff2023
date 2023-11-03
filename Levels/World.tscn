@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Levels/World.gd" id="1_8pyt6"]
 [ext_resource type="PackedScene" uid="uid://ck72nsqkldkgo" path="res://Characters/Player/player.tscn" id="1_krq42"]
 [ext_resource type="PackedScene" uid="uid://ro21hi7hpxlh" path="res://Characters/Enemies/enemy_base.tscn" id="2_ebg2a"]
-[ext_resource type="PackedScene" uid="uid://bsj0iwhew8d0p" path="res://GUI/gui.tscn" id="2_wa8o8"]
+[ext_resource type="PackedScene" uid="uid://qeyk1hye3q8y" path="res://GUI/gui.tscn" id="2_wa8o8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pib7l"]
 radius = 55.0818

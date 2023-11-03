@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct0wa37i2j82m"]
+[gd_scene load_steps=3 format=3 uid="uid://ct0wa37i2j82m"]
 
 [ext_resource type="Script" path="res://GUI/StartScreen.gd" id="1_7u8xr"]
-[ext_resource type="Texture2D" uid="uid://dju68airlm6g0" path="res://GUI/Images/Button.png" id="2_n14qy"]
-[ext_resource type="Texture2D" uid="uid://7xvj8626hqbp" path="res://GUI/Images/Button_pressed.png" id="3_sqnmk"]
-[ext_resource type="Texture2D" uid="uid://dhe4x6syqtro" path="res://GUI/Images/Button_hover.png" id="4_mmh0w"]
+[ext_resource type="Theme" uid="uid://daemuuguf1eqs" path="res://GUI/Themes/ButtonTheme_BattleMenu.tres" id="2_mvr4u"]
 
 [node name="StartScreen" type="CenterContainer"]
 anchors_preset = 15
@@ -13,90 +11,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7u8xr")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-custom_minimum_size = Vector2(200, 200)
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Start" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/separation = 28
-
-[node name="Start" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture_normal = ExtResource("2_n14qy")
-texture_pressed = ExtResource("3_sqnmk")
-texture_hover = ExtResource("4_mmh0w")
-texture_focused = ExtResource("4_mmh0w")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Start"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+focus_neighbor_top = NodePath("../Quit")
+theme = ExtResource("2_mvr4u")
 text = "Start"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Options" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+[node name="Options" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-texture_normal = ExtResource("2_n14qy")
-texture_pressed = ExtResource("3_sqnmk")
-texture_hover = ExtResource("4_mmh0w")
-texture_focused = ExtResource("4_mmh0w")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Options"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+theme = ExtResource("2_mvr4u")
 text = "Options"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+[node name="Quit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-texture_normal = ExtResource("2_n14qy")
-texture_pressed = ExtResource("3_sqnmk")
-texture_hover = ExtResource("4_mmh0w")
-texture_focused = ExtResource("4_mmh0w")
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Quit"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Quit"
-horizontal_alignment = 1
-vertical_alignment = 1
+focus_neighbor_bottom = NodePath("../Start")
+theme = ExtResource("2_mvr4u")
+text = "Quit
+"

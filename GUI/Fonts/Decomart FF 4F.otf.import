@@ -1,0 +1,38 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://cdkb4n613auho"
+path="res://.godot/imported/Decomart FF 4F.otf-d2b57f00854b046b5baf44e60886b51e.fontdata"
+
+[deps]
+
+source_file="res://GUI/Fonts/Decomart FF 4F.otf"
+dest_files=["res://.godot/imported/Decomart FF 4F.otf-d2b57f00854b046b5baf44e60886b51e.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}
