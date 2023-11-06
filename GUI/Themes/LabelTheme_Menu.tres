@@ -1,6 +1,0 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c7vd0gvkjsgvn"]
-
-[ext_resource type="FontFile" uid="uid://cdkb4n613auho" path="res://GUI/Fonts/Decomart FF 4F.otf" id="1_ci85n"]
-
-[resource]
-Label/fonts/font = ExtResource("1_ci85n")

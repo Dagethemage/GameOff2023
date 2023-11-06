@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://efyc82qd7125"]
+
+[ext_resource type="Script" path="res://Characters/Enemies/walking_enemy_base.gd" id="1_yck08"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghynh"]
+
+[node name="WalkingEnemyBase" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_yck08")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ghynh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="LedgeCheck" type="RayCast2D" parent="."]
+target_position = Vector2(0, 15)

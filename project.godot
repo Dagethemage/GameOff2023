@@ -11,8 +11,16 @@ config_version=5
 [application]
 
 config/name="GameOff2023"
+run/main_scene="res://Trash/Test.tscn"
+config/custom_user_dir_name="SaveSystemData"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+LevelTranstition="*res://GUI/Transitions/level_transtition.tscn"
+ReferenceStash="*res://Resource/ReferenceStash.gd"
+SaveManager="*res://Singletons/SaveManager.gd"
 
 [display]
 
