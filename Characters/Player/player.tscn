@@ -1,23 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://fmrvjudmkmxa"]
+[gd_scene load_steps=5 format=3 uid="uid://fmrvjudmkmxa"]
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_folvt"]
+[ext_resource type="Script" path="res://Characters/Player/PlayerMovementData.gd" id="2_jrmri"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_abuk6"]
+[sub_resource type="Resource" id="Resource_1v1pr"]
+script = ExtResource("2_jrmri")
+normal_speed = 100.0
+dash_speed = 800.0
+dash_length = 0.12
+acceleraton = 800.0
+friction = 1000.0
+jump_velocity = -300.0
+gravity_scale = 1.0
+air_resistance = 200.0
+air_acceleration = 400.0
+inventory = []
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7jl4"]
+size = Vector2(6, 9)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 5
+collision_mask = 17
 floor_constant_speed = true
 floor_snap_length = 3.0
 safe_margin = 0.1
 script = ExtResource("1_folvt")
+MovementData = SubResource("Resource_1v1pr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -10)
-sprite_frames = SubResource("SpriteFrames_abuk6")
+position = Vector2(0, -8)
+animation = &"Run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7.5)
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_k7jl4")
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.15

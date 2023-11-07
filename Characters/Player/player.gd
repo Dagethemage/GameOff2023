@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var MovementData : Resource
+@export var MovementData : PlayerMovementData
 
 var air_jump = false
 var just_wall_jumped = false
