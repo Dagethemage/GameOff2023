@@ -25,6 +25,7 @@ aseprite_executable_path="F:/GameDevelopment/Aseprite/Aseprite.exe"
 LevelTranstition="*res://GUI/Transitions/level_transtition.tscn"
 ReferenceStash="*res://Resource/ReferenceStash.gd"
 Test="*res://Resource/SaveManager.gd"
+Global="*res://Singletons/Global.gd"
 
 [debug]
 

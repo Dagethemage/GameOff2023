@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="CharacterStats" load_steps=2 format=3 uid="uid://dj2mv8o18nx5k"]
+
+[ext_resource type="Script" path="res://Resource/CharacterStats.gd" id="1_i2jok"]
+
+[resource]
+script = ExtResource("1_i2jok")
+health = 5

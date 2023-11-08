@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
+#Exported Resources
 @export var MovementData : PlayerMovementData
+@export var stats : Resource
 
 var air_jump = false
 var just_wall_jumped = false
@@ -102,4 +104,9 @@ func update_animations(input_axis):
 #		animated_sprite_2d.play("Jump")
 
 func hazard_detector_entered(area) -> void:
+	stats.health -= 1
+	if stats.health <= 0:
+		queue_free()
+	print(stats.health)
+	stats.health_changed.emit(stats.health)
 	global_position = starting_position

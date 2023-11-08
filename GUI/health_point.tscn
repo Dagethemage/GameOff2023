@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://crvx53cyoa3qa"]
+
+[ext_resource type="Script" path="res://GUI/HealthPoint.gd" id="1_ui0fq"]
+[ext_resource type="Texture2D" uid="uid://b8r6w4e4jq7iu" path="res://Sprites/HealthPoint.png" id="2_n1h64"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ixksw"]
+
+[node name="HealthPoint" type="Panel"]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ixksw")
+script = ExtResource("1_ui0fq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n1h64")
+centered = false

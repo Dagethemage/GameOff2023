@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://djtbb53ilxalk"]
+
+[ext_resource type="PackedScene" uid="uid://btnluppyote4q" path="res://Objects/Hazard.tscn" id="1_bytah"]
+[ext_resource type="Texture2D" uid="uid://dhycwl4d226nd" path="res://Sprites/TileSets/Tileset.png" id="2_f1xim"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xv7x"]
+size = Vector2(16, 8)
+
+[node name="Spikes" instance=ExtResource("1_bytah")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_f1xim")
+region_rect = Rect2(128, 48, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_6xv7x")
