@@ -10,3 +10,4 @@ func _ready() -> void:
 
 func area_entered(area) -> void:
 	Global.level_completed.emit()
+	print("level completed")

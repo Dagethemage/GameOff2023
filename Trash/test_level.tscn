@@ -1,14 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwab0cyhguagj"]
+[gd_scene load_steps=8 format=3 uid="uid://bwab0cyhguagj"]
 
 [ext_resource type="Script" path="res://Trash/test_level.gd" id="1_5hawf"]
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="1_euie1"]
 [ext_resource type="PackedScene" uid="uid://d1brr5shwacw5" path="res://Levels/LevelOneTileSet.tscn" id="2_jypo3"]
 [ext_resource type="PackedScene" uid="uid://c8qlbby2jvlf3" path="res://ui.tscn" id="4_2wxd5"]
+[ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://Objects/level_goal.tscn" id="4_l1htp"]
 [ext_resource type="PackedScene" uid="uid://cbm0kp37eyl1p" path="res://Objects/coin.tscn" id="5_de53n"]
 [ext_resource type="PackedScene" uid="uid://djtbb53ilxalk" path="res://Objects/spikes.tscn" id="7_0fhvc"]
 
 [node name="TestLevel" type="Node2D"]
 script = ExtResource("1_5hawf")
+
+[node name="LevelGoal" parent="." instance=ExtResource("4_l1htp")]
+position = Vector2(312, 355)
 
 [node name="Player" parent="." instance=ExtResource("1_euie1")]
 position = Vector2(22, 257)
