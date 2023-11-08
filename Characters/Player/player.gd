@@ -93,12 +93,13 @@ func handle_air_acceleration(input_axis, delta):
 func update_animations(input_axis):
 	if input_axis != 0:
 		animated_sprite_2d.flip_h = (input_axis < 0)
-		animated_sprite_2d.play("Run")
+#		animated_sprite_2d.play("Run")
 	else:
 		animated_sprite_2d.play("Idle")
 
 	if not is_on_floor():
-		animated_sprite_2d.play("Jump")
+		pass
+#		animated_sprite_2d.play("Jump")
 
 func hazard_detector_entered(area) -> void:
 	global_position = starting_position

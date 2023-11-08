@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://btnluppyote4q"]
+
+[ext_resource type="Texture2D" uid="uid://dhycwl4d226nd" path="res://Sprites/TileSets/Tileset.png" id="1_cpwth"]
+
+[node name="Hazard" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cpwth")
+centered = false
+region_enabled = true
+region_rect = Rect2(128, 48, 16, 16)
