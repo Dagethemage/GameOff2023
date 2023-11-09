@@ -12,6 +12,7 @@ signal level_started
 signal level_completed
 signal level_ended
 signal show_score
+signal paused
 
 func set_score(new_score):
 	score = new_score

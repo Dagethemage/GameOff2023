@@ -4,7 +4,6 @@ extends ColorRect
 @onready var menu_button = $CenterContainer/MarginContainer/VBoxContainer/VBoxContainer/MenuButton
 @onready var quit_button = $CenterContainer/MarginContainer/VBoxContainer/VBoxContainer/QuitButton
 
-signal unpaused
 
 func _ready():
 	resume_button.grab_focus()
@@ -14,7 +13,8 @@ func _ready():
 
 func resume_pressed():
 	get_tree().paused = false
-	unpaused.emit()
+	hide()
+
 
 func menu_pressed():
 	get_tree().change_scene_to_file("res://GUI/start_screen.tscn")
