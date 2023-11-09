@@ -8,7 +8,10 @@ signal score_changed
 signal coins_changed
 signal retry_changed
 
+signal level_started
 signal level_completed
+signal level_ended
+signal show_score
 
 func set_score(new_score):
 	score = new_score

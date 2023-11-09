@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ciwy5gdwm6l8s"]
+[gd_scene load_steps=3 format=3 uid="uid://ciwy5gdwm6l8s"]
 
 [ext_resource type="Script" path="res://GUI/coin_container.gd" id="1_v1txa"]
+[ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="2_ctxj6"]
 
 [node name="CoinContainer" type="HBoxContainer"]
 offset_right = 40.0
@@ -10,6 +11,7 @@ script = ExtResource("1_v1txa")
 
 [node name="CoinNameLabel" type="Label" parent="."]
 layout_mode = 2
+theme = ExtResource("2_ctxj6")
 text = "Coins"
 
 [node name="CoinLabel" type="Label" parent="."]

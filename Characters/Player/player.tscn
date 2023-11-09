@@ -74,8 +74,8 @@ size = Vector2(6, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hddal"]
 size = Vector2(6, 28)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_d2yb8"]
-radius = 14.0357
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpla7"]
+size = Vector2(8, 28)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -94,6 +94,7 @@ sprite_frames = SubResource("SpriteFrames_s72ah")
 animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -13.5)
 shape = SubResource("RectangleShape2D_vd7u3")
 
@@ -117,6 +118,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector"]
+visible = false
 position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_hddal")
 
@@ -125,5 +127,6 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionZone"]
+visible = false
 position = Vector2(0, -14)
-shape = SubResource("CircleShape2D_d2yb8")
+shape = SubResource("RectangleShape2D_bpla7")
