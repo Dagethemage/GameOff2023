@@ -3,11 +3,17 @@ extends CanvasLayer
 @onready var level_completed = $LevelCompleted
 @onready var score_board = $ScoreBoard
 @onready var score_board_bg = $ScoreBoardBg
+@onready var pause_screen = $PauseScreen
 
 
 func _ready() -> void:
 	Global.level_completed.connect(on_level_completed)
 	Global.show_score.connect(show_score)
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().paused = true
+		pause_screen.show()
 
 func on_level_completed():
 	level_completed.show()
