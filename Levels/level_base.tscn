@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dk6pdsf5oi3sy"]
 
 [ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_0le7q"]
-[ext_resource type="PackedScene" uid="uid://c8qlbby2jvlf3" path="res://GUI/ui.tscn" id="2_ghqqs"]
+[ext_resource type="PackedScene" uid="uid://7w0k5n6dtf1" path="res://GUI/ui.tscn" id="2_ghqqs"]
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="3_d4vs7"]
 [ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://Objects/level_goal.tscn" id="4_87lhm"]
 

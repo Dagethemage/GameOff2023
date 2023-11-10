@@ -1,26 +1,19 @@
-extends ColorRect
+extends Control
 
-@onready var resume_button = $CenterContainer/MarginContainer/VBoxContainer/VBoxContainer/ResumeButton
-@onready var menu_button = $CenterContainer/MarginContainer/VBoxContainer/VBoxContainer/MenuButton
-@onready var quit_button = $CenterContainer/MarginContainer/VBoxContainer/VBoxContainer/QuitButton
+@onready var pause_screen = $PauseScreen
 
+var paused = false
 
-func _ready():
-	resume_button.grab_focus()
-	resume_button.pressed.connect(resume_pressed)
-	menu_button.pressed.connect(menu_pressed)
-	quit_button.pressed.connect(quit_pressed)
+func _process(delta):
+	if Input.is_action_just_pressed("start"):
+		pause_menu()
 
-func resume_pressed():
-	get_tree().paused = false
-	hide()
-
-
-func menu_pressed():
-	get_tree().change_scene_to_file("res://GUI/start_screen.tscn")
-
-func quit_pressed():
-	get_tree().quit()
-
-
-
+func pause_menu():
+	if paused:
+		pause_screen.hide()
+		Engine.time_scale = 1
+	else:
+		pause_screen.show()
+		Engine.time_scale = 0
+	
+	paused = !paused

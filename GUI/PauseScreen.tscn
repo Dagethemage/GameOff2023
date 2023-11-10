@@ -3,19 +3,27 @@
 [ext_resource type="Script" path="res://GUI/PauseScreen.gd" id="1_1d74i"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="1_8hpkf"]
 
-[node name="PauseScreen" type="ColorRect"]
-process_mode = 2
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 640.0
-offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1d74i")
+
+[node name="PauseScreen" type="ColorRect" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.270588)
-script = ExtResource("1_1d74i")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="PauseScreen"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,39 +31,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PauseScreen/CenterContainer"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen/CenterContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PauseScreen/CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_8hpkf")
 text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="PauseScreen/CenterContainer/MarginContainer/VBoxContainer"]
 modulate = Color(0.564706, 0.486275, 0.407843, 1)
 layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 19
-
-[node name="ResumeButton" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_8hpkf")
-text = "Resume"
-
-[node name="MenuButton" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_8hpkf")
-text = "Main Menu"
-
-[node name="QuitButton" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_8hpkf")
-text = "Quit"

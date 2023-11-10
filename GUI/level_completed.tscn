@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://bsxby8o6rxilk"]
+[gd_scene load_steps=2 format=3 uid="uid://bsxby8o6rxilk"]
+
+[ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="1_8n2gq"]
 
 [node name="LevelCompleted" type="Control"]
 layout_mode = 3
@@ -21,9 +23,11 @@ grow_horizontal = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_8n2gq")
 text = "Level Completed!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(0.564706, 0.486275, 0.407843, 1)
 layout_mode = 2

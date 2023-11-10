@@ -25,6 +25,7 @@ offset_top = -104.0
 offset_bottom = 44.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_constants/separation = 8
 
 [node name="ScoreLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -34,9 +35,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+modulate = Color(0.564706, 0.486275, 0.407843, 1)
 layout_mode = 2
 
 [node name="ScoreBox" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreBox2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreBox3" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
 [node name="FinalScoreContainer" type="VBoxContainer" parent="VBoxContainer"]
@@ -47,6 +55,7 @@ layout_mode = 2
 theme = ExtResource("2_1cxul")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/FinalScoreContainer"]
+modulate = Color(0.564706, 0.486275, 0.407843, 1)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/FinalScoreContainer"]

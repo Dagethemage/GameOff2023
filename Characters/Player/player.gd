@@ -106,6 +106,7 @@ func update_animations(input_axis):
 
 func hazard_detector_entered(area) -> void:
 	stats.health -= 1
+	Global.retry_points -= 100
 	if stats.health <= 0:
 		queue_free()
 	print(stats.health)

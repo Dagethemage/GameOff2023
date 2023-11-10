@@ -3,23 +3,19 @@ extends CanvasLayer
 @onready var level_completed = $LevelCompleted
 @onready var score_board = $ScoreBoard
 @onready var score_board_bg = $ScoreBoardBg
-@onready var pause_screen = $PauseScreen
+@onready var timer = $Timer
 
 var paused = false
 
 func _ready() -> void:
-	print(paused)
 	Global.level_completed.connect(on_level_completed)
 	Global.show_score.connect(show_score)
 
-func _process(delta):
-	if Input.is_action_just_pressed("start"):
-		pause_menu()
-		print(paused)
-
-
 func on_level_completed():
+	timer.stop()
 	level_completed.show()
+	await get_tree().create_timer(0.5).timeout
+	timer.hide()
 	await get_tree().create_timer(0.5).timeout
 	Global.show_score.emit()
 
@@ -31,18 +27,4 @@ func show_score():
 	tween.tween_property(score_board, "position", Vector2(640,180), 0.5).from(Vector2(900,180))
 	tween.tween_property(score_board_bg, "position", Vector2(0,0), 1).from(Vector2(640, 0)) 
 
-func pause_menu():
-	
-	if paused:
-		var tween = create_tween()
-		tween.set_trans(Tween.TRANS_SINE)
-		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(pause_screen, "position", Vector2(0,0), 1).from(Vector2(640, 0))
-	else:
-		var tween = create_tween()
-		tween.set_trans(Tween.TRANS_SINE)
-		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(pause_screen, "position", Vector2(640,180), 0.5).from(Vector2(900,180))
-	
-	paused = !paused
-	
+
