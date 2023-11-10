@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://7w0k5n6dtf1"]
+[gd_scene load_steps=7 format=3 uid="uid://7w0k5n6dtf1"]
 
 [ext_resource type="PackedScene" uid="uid://deqkhko62odxv" path="res://GUI/ScoreBoard.tscn" id="1_xi7xy"]
 [ext_resource type="Script" path="res://GUI/ui.gd" id="1_ya8w1"]
 [ext_resource type="PackedScene" uid="uid://bfdhkcma8s4us" path="res://GUI/health_points_ui.tscn" id="3_6nx7p"]
 [ext_resource type="PackedScene" uid="uid://bsxby8o6rxilk" path="res://GUI/level_completed.tscn" id="4_tgp7t"]
 [ext_resource type="PackedScene" uid="uid://bvgaokcmy0nhy" path="res://Overlap/timer.tscn" id="5_tg0a5"]
+[ext_resource type="PackedScene" uid="uid://dlpjba7ef3fvl" path="res://GUI/PauseScreen.tscn" id="6_nykx1"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
@@ -32,3 +33,5 @@ offset_right = 260.0
 [node name="Timer" parent="." instance=ExtResource("5_tg0a5")]
 offset_left = 304.0
 offset_right = 344.0
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_nykx1")]

@@ -63,3 +63,9 @@ layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
 theme = ExtResource("2_6l7gb")
 text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 600.0
+offset_top = 337.0
+offset_right = 640.0
+offset_bottom = 360.0

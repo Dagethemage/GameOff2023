@@ -25,6 +25,6 @@ func show_score():
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(score_board, "position", Vector2(640,180), 0.5).from(Vector2(900,180))
-	tween.tween_property(score_board_bg, "position", Vector2(0,0), 1).from(Vector2(640, 0)) 
+	tween.tween_property(score_board_bg, "position", Vector2(0,0), 0.6).from(Vector2(640, 0)) 
 
 
