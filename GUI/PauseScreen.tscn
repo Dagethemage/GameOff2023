@@ -50,10 +50,14 @@ vertical_alignment = 1
 modulate = Color(0.564706, 0.486275, 0.407843, 1)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PauseScreen/CenterContainer/MarginContainer/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="PauseScreen/CenterContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+theme = ExtResource("1_8hpkf")
+text = "Main Menu"
 
-[node name="Button2" type="Button" parent="PauseScreen/CenterContainer/MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="PauseScreen/CenterContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
+theme = ExtResource("1_8hpkf")
+text = "Quit"

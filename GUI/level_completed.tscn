@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsxby8o6rxilk"]
-
-[ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="1_8n2gq"]
+[gd_scene format=3 uid="uid://bsxby8o6rxilk"]
 
 [node name="LevelCompleted" type="Control"]
 layout_mode = 3
@@ -15,15 +13,16 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -67.0
-offset_top = 39.0
-offset_right = 67.0
-offset_bottom = 73.0
+offset_left = 74.0
+offset_top = 309.0
+offset_right = 322.0
+offset_bottom = 362.0
 grow_horizontal = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
+modulate = Color(0.564706, 0.486275, 0.407843, 1)
 layout_mode = 2
-theme = ExtResource("1_8n2gq")
+theme_override_font_sizes/font_size = 25
 text = "Level Completed!"
 horizontal_alignment = 1
 vertical_alignment = 1

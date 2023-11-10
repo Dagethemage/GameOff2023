@@ -20,9 +20,4 @@ func start():
 func reset_timer():
 	Global.time = 0.0
 
-func _unhandled_input(event):
-	if event.is_action_pressed("Back"):
-		stop()
-		await get_tree().create_timer(3).timeout
-		get_tree().reload_current_scene()
-		Global.time = 0.0
+
