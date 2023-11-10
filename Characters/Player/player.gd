@@ -11,7 +11,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var was_wall_normal = Vector2.ZERO
 
 #@onready var dash = $Dash
-
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var wall_jump_timer = $WallJumpTimer
 @onready var coyote_jump_timer = $CoyoteJumpTimer
