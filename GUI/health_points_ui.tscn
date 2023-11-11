@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfdhkcma8s4us"]
 
-[ext_resource type="Texture2D" uid="uid://cqostahkh57iw" path="res://Sprites/HealthIcon.png" id="1_5ogib"]
 [ext_resource type="Script" path="res://GUI/health_points_ui.gd" id="1_pu2fd"]
 [ext_resource type="Script" path="res://GUI/HitPointContainer.gd" id="2_eq1i3"]
+[ext_resource type="Texture2D" uid="uid://d1p6fndyshpj2" path="res://Sprites/TileSets/HealthIcon.png" id="2_w1vci"]
 
 [node name="HealthPointsUI" type="Control"]
 layout_mode = 3
@@ -15,7 +15,7 @@ script = ExtResource("1_pu2fd")
 layout_mode = 2
 offset_right = 64.0
 offset_bottom = 64.0
-texture = ExtResource("1_5ogib")
+texture = ExtResource("2_w1vci")
 
 [node name="HitPointContainer" type="HBoxContainer" parent="."]
 layout_mode = 2

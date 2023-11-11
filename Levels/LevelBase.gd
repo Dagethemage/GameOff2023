@@ -2,13 +2,14 @@ extends Node2D
 
 @export var next_level : PackedScene
 
+
 func _ready():
 	Global.coins = 0
 	Global.score = 0
 	Global.time = 0.0
 	Global.time_score = 0
 	Global.level_completed.connect(level_ended)
-	RenderingServer.set_default_clear_color(Color(0.28627452254295, 0.32941177487373, 0.20784313976765))
+
 
 func level_ended():
 	get_tree().paused = true

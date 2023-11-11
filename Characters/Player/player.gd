@@ -18,6 +18,7 @@ var was_wall_normal = Vector2.ZERO
 @onready var starting_position = global_position
 
 func _ready() -> void:
+	stats.health = 5
 	hazard_detector.area_entered.connect(hazard_detector_entered)
 
 func _physics_process(delta):

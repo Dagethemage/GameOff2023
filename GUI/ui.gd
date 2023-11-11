@@ -17,7 +17,7 @@ func on_level_completed():
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(level_completed, "position", Vector2(0,0), 1.7).from(Vector2(640, 0)) 
+	tween.tween_property(level_completed, "position", Vector2(0,0), 1).from(Vector2(640, 0))
 	await get_tree().create_timer(0.5).timeout
 	timer.hide()
 	await get_tree().create_timer(0.5).timeout
@@ -26,9 +26,10 @@ func on_level_completed():
 func show_score():
 	score_board.show()
 	var tween = create_tween()
+	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_QUINT)
 	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(score_board, "position", Vector2(640,180), 0.5).from(Vector2(900,180))
-	tween.tween_property(score_board_bg, "position", Vector2(0,0), 0.6).from(Vector2(640, 0)) 
+	tween.tween_property(score_board, "position", Vector2(640,180), 1).from(Vector2(900,180))
+	tween.tween_property(score_board_bg, "position", Vector2(0,0), 1.2).from(Vector2(640, 0)) 
 
 

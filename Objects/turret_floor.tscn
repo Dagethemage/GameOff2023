@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://brpxbo5kqrer0"]
+
+[ext_resource type="Texture2D" uid="uid://v66ekbygmaxg" path="res://Sprites/TileSets/GameOff2023_tileset.png" id="1_7g75y"]
+[ext_resource type="Script" path="res://Objects/turret_floor.gd" id="1_ea8be"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unkt5"]
+atlas = ExtResource("1_7g75y")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4ffx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unkt5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Turret_floor" type="Node2D"]
+script = ExtResource("1_ea8be")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_n4ffx")
+
+[node name="Muzzel" type="Marker2D" parent="."]
+position = Vector2(0, -4)

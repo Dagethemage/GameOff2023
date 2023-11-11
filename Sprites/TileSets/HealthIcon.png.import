@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhycwl4d226nd"
-path="res://.godot/imported/Tileset.png-1a478f130a6eee484a98ab2509ea04dc.ctex"
+uid="uid://d1p6fndyshpj2"
+path="res://.godot/imported/HealthIcon.png-807270e542eaf5d751903759c085cccf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TileSets/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-1a478f130a6eee484a98ab2509ea04dc.ctex"]
+source_file="res://Sprites/TileSets/HealthIcon.png"
+dest_files=["res://.godot/imported/HealthIcon.png-807270e542eaf5d751903759c085cccf.ctex"]
 
 [params]
 

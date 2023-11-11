@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtbxwf8ki1gsj"]
+
+[ext_resource type="PackedScene" uid="uid://c7bb64a0lw7x2" path="res://Objects/Projectiles/projectile.tscn" id="1_5sub5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a20e8"]
+size = Vector2(11, 2)
+
+[node name="Left_Projectile" instance=ExtResource("1_5sub5")]
+direction = Vector2(-1, 0)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_a20e8")

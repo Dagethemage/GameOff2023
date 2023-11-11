@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsbvh3o5yxv44"]
+
+[ext_resource type="Script" path="res://Objects/turret_wall.gd" id="1_413kf"]
+[ext_resource type="Texture2D" uid="uid://v66ekbygmaxg" path="res://Sprites/TileSets/GameOff2023_tileset.png" id="1_m4mt2"]
+[ext_resource type="PackedScene" uid="uid://b4wgwf4jhsu6c" path="res://Objects/Projectiles/right_projectile.tscn" id="2_upw5h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unkt5"]
+atlas = ExtResource("1_m4mt2")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mf7b7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unkt5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Turret_wall" type="Node2D"]
+position = Vector2(33, 44)
+script = ExtResource("1_413kf")
+shoot_speed = 0.1
+projectile = ExtResource("2_upw5h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, -8)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_mf7b7")
+
+[node name="Muzzel" type="Marker2D" parent="."]
+position = Vector2(10, -8)
+rotation = 1.5708
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3

@@ -1,5 +1,8 @@
 extends Node
 
+
+
+
 var score: int = 0: set = set_score
 var time_score: int = 0: set = set_time_score
 var coins: int = 0: set = set_coins
@@ -22,6 +25,7 @@ signal level_completed
 signal level_ended
 signal show_score
 signal paused
+
 
 func set_score(new_score):
 	score = new_score

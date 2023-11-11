@@ -1,32 +1,32 @@
 [gd_scene load_steps=9 format=3 uid="uid://cbm0kp37eyl1p"]
 
 [ext_resource type="PackedScene" uid="uid://be0bvhnl1l3qa" path="res://Objects/collectable_object.tscn" id="1_qqnmn"]
-[ext_resource type="Texture2D" uid="uid://v6qcrddhy0ph" path="res://Sprites/Coin.png" id="2_8u1ie"]
 [ext_resource type="Script" path="res://Objects/coin.gd" id="2_ovyjm"]
+[ext_resource type="Texture2D" uid="uid://7hd6712wc15g" path="res://Sprites/TileSets/Coin.png" id="3_sn7no"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tceun"]
-atlas = ExtResource("2_8u1ie")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghnx3"]
+atlas = ExtResource("3_sn7no")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3l0t3"]
-atlas = ExtResource("2_8u1ie")
+[sub_resource type="AtlasTexture" id="AtlasTexture_aes4y"]
+atlas = ExtResource("3_sn7no")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_46154"]
-atlas = ExtResource("2_8u1ie")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr027"]
+atlas = ExtResource("3_sn7no")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1xcbr"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tceun")
+"texture": SubResource("AtlasTexture_ghnx3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3l0t3")
+"texture": SubResource("AtlasTexture_aes4y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_46154")
+"texture": SubResource("AtlasTexture_hr027")
 }],
 "loop": true,
 "name": &"Spin",

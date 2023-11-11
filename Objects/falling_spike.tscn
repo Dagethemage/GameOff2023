@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://geygaa0pb2nb"]
+[gd_scene load_steps=6 format=3 uid="uid://c48ulj8qecc05"]
 
 [ext_resource type="Script" path="res://Objects/FallingSpike.gd" id="1_sx107"]
-[ext_resource type="Texture2D" uid="uid://dhycwl4d226nd" path="res://Sprites/TileSets/Tileset.png" id="2_wnfyc"]
+[ext_resource type="Texture2D" uid="uid://v66ekbygmaxg" path="res://Sprites/TileSets/GameOff2023_tileset.png" id="2_1g0yo"]
 [ext_resource type="PackedScene" uid="uid://cgwofmd5bywoy" path="res://Overlap/hit_box.tscn" id="3_nutnq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26awv"]
@@ -16,9 +16,9 @@ speed = 200.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 8)
-texture = ExtResource("2_wnfyc")
+texture = ExtResource("2_1g0yo")
 region_enabled = true
-region_rect = Rect2(112, 64, 16, 16)
+region_rect = Rect2(80, 32, 16, 16)
 
 [node name="HitBox" parent="." instance=ExtResource("3_nutnq")]
 collision_layer = 4

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk6pdsf5oi3sy"]
+[gd_scene load_steps=6 format=3 uid="uid://dk6pdsf5oi3sy"]
 
 [ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_0le7q"]
-[ext_resource type="PackedScene" uid="uid://7w0k5n6dtf1" path="res://GUI/ui.tscn" id="2_ghqqs"]
+[ext_resource type="PackedScene" uid="uid://ceagat2lwf2g6" path="res://GUI/ui.tscn" id="2_ghqqs"]
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="3_d4vs7"]
 [ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://Objects/level_goal.tscn" id="4_87lhm"]
+[ext_resource type="PackedScene" uid="uid://kklwejuri6h8" path="res://GUI/level_one_parallax.tscn" id="5_8qvqi"]
 
 [node name="LevelBase" type="Node2D"]
 script = ExtResource("1_0le7q")
@@ -13,3 +14,5 @@ script = ExtResource("1_0le7q")
 [node name="LevelGoal" parent="." instance=ExtResource("4_87lhm")]
 
 [node name="Player" parent="." instance=ExtResource("3_d4vs7")]
+
+[node name="LevelOneParallax" parent="." instance=ExtResource("5_8qvqi")]

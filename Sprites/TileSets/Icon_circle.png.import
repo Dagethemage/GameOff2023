@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7umngv0x2nkb"
-path="res://.godot/imported/Level_Goal.png-c2bac49cae1d60c3e07bc8e2ad31ba73.ctex"
+uid="uid://dib0cvnc6dscp"
+path="res://.godot/imported/Icon_circle.png-3d5b447452c5a1c776c0d597f90380c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Level_Goal.png"
-dest_files=["res://.godot/imported/Level_Goal.png-c2bac49cae1d60c3e07bc8e2ad31ba73.ctex"]
+source_file="res://Sprites/TileSets/Icon_circle.png"
+dest_files=["res://.godot/imported/Icon_circle.png-3d5b447452c5a1c776c0d597f90380c1.ctex"]
 
 [params]
 

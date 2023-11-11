@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7bb64a0lw7x2"]
+
+[ext_resource type="PackedScene" uid="uid://cgwofmd5bywoy" path="res://Overlap/hit_box.tscn" id="1_u00vg"]
+[ext_resource type="Script" path="res://Objects/Projectiles/projectile.gd" id="2_7vosu"]
+[ext_resource type="Texture2D" uid="uid://bxo1npoh4pmpc" path="res://Objects/Projectiles/projectile.png" id="3_p6jor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8p0t"]
+atlas = ExtResource("3_p6jor")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s4rg"]
+atlas = ExtResource("3_p6jor")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjgh5"]
+atlas = ExtResource("3_p6jor")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lbffn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8p0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s4rg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjgh5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Projectile" instance=ExtResource("1_u00vg")]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("2_7vosu")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_lbffn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+[node name="Timer" type="Timer" parent="." index="2"]
+wait_time = 3.0
+autostart = true
