@@ -20,7 +20,6 @@ animations = [{
 }]
 
 [node name="Turret_wall" type="Node2D"]
-position = Vector2(33, 44)
 script = ExtResource("1_413kf")
 shoot_speed = 0.1
 projectile = ExtResource("2_upw5h")
@@ -35,4 +34,3 @@ position = Vector2(10, -8)
 rotation = 1.5708
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3

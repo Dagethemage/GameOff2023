@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmjki1cqbhc4t"
-path="res://.godot/imported/Parallax_layer_4.png-1128e7a076373a9e213459d8d1f73f67.ctex"
+uid="uid://bouvtb43f4ran"
+path="res://.godot/imported/Player.png-918e3a9c01c2a7630de5d1a7001b0711.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Parallax_layer_4.png"
-dest_files=["res://.godot/imported/Parallax_layer_4.png-1128e7a076373a9e213459d8d1f73f67.ctex"]
+source_file="res://Characters/Player/Player.png"
+dest_files=["res://.godot/imported/Player.png-918e3a9c01c2a7630de5d1a7001b0711.ctex"]
 
 [params]
 
