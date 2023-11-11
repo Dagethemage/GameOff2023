@@ -14,7 +14,7 @@ func _ready() -> void:
 	timer.timeout.connect(_timeout)
 
 func _physics_process(delta) -> void:
-	var movement = direction.rotated(rotation) * speed * delta
+	var movement = direction * speed * delta
 	global_position += movement
 
 
