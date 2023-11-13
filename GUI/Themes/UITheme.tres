@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ceqslen8rfbmx"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ceqslen8rfbmx"]
+
+[ext_resource type="FontFile" uid="uid://c5njume5ca01f" path="res://GUI/Fonts/pdark.ttf" id="1_agvui"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nka0w"]
 
@@ -12,9 +14,11 @@
 Button/colors/font_color = Color(0.364706, 0.462745, 0.262745, 1)
 Button/colors/font_focus_color = Color(0.878431, 0.643137, 0.431373, 1)
 Button/colors/font_hover_color = Color(0.878431, 0.643137, 0.431373, 1)
+Button/fonts/font = ExtResource("1_agvui")
 Button/styles/disabled = null
 Button/styles/focus = SubResource("StyleBoxEmpty_nka0w")
 Button/styles/hover = SubResource("StyleBoxEmpty_g8bt6")
 Button/styles/normal = SubResource("StyleBoxEmpty_n5wim")
 Button/styles/pressed = SubResource("StyleBoxEmpty_whory")
 Label/colors/font_color = Color(0.301961, 0.32549, 0.227451, 1)
+Label/fonts/font = ExtResource("1_agvui")

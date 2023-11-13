@@ -1,10 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://dwqs43w46uc2a"]
+[gd_scene load_steps=16 format=3 uid="uid://dwqs43w46uc2a"]
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_folvt"]
 [ext_resource type="Script" path="res://Characters/Player/PlayerMovementData.gd" id="2_jrmri"]
-[ext_resource type="Resource" uid="uid://dj2mv8o18nx5k" path="res://Characters/Player/PlayerStats.tres" id="3_lk4wm"]
 [ext_resource type="Texture2D" uid="uid://bouvtb43f4ran" path="res://Characters/Player/Player.png" id="4_l5wlt"]
-[ext_resource type="Script" path="res://Characters/Player/PlayerCamera.gd" id="5_tq5k1"]
 [ext_resource type="PackedScene" uid="uid://b5wnw0imh5fuq" path="res://Characters/Player/Abilities/Dash.tscn" id="6_0l3fi"]
 
 [sub_resource type="Resource" id="Resource_1v1pr"]
@@ -87,7 +85,6 @@ floor_snap_length = 3.0
 safe_margin = 0.1
 script = ExtResource("1_folvt")
 MovementData = SubResource("Resource_1v1pr")
-stats = ExtResource("3_lk4wm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
@@ -108,14 +105,6 @@ one_shot = true
 [node name="WallJumpTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -32)
-zoom = Vector2(2, 2)
-process_callback = 0
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-script = ExtResource("5_tq5k1")
 
 [node name="HazardDetector" type="Area2D" parent="."]
 collision_layer = 0

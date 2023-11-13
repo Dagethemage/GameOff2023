@@ -7,6 +7,4 @@ func _ready() -> void:
 	area_entered.connect(on_area_entered)
 
 func on_area_entered(area) -> void:
-	Global.score += 100
-	Global.coins += 1
 	queue_free()

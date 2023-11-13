@@ -1,13 +1,9 @@
 extends Node2D
 
 @export var next_level : PackedScene
-
+@export var level_data: Resource
 
 func _ready():
-	Global.coins = 0
-	Global.score = 0
-	Global.time = 0.0
-	Global.time_score = 0
 	Global.level_completed.connect(level_ended)
 
 

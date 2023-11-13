@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfdhkcma8s4us"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="Script" path="res://GUI/health_points_ui.gd" id="1_pu2fd"]
-[ext_resource type="Script" path="res://GUI/HitPointContainer.gd" id="2_eq1i3"]
+[ext_resource type="Script" path="res://Extra/health_points_ui.gd" id="1_pu2fd"]
+[ext_resource type="Script" path="res://Extra/HitPointContainer.gd" id="2_eq1i3"]
 [ext_resource type="Texture2D" uid="uid://d1p6fndyshpj2" path="res://Sprites/TileSets/HealthIcon.png" id="2_w1vci"]
 
 [node name="HealthPointsUI" type="Control"]

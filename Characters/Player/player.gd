@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 #Exported Resources
 @export var MovementData : PlayerMovementData
-@export var stats : Resource
 
 var air_jump = false
 var just_wall_jumped = false
@@ -18,7 +17,6 @@ var was_wall_normal = Vector2.ZERO
 @onready var starting_position = global_position
 
 func _ready() -> void:
-	stats.health = 5
 	hazard_detector.area_entered.connect(hazard_detector_entered)
 
 func _physics_process(delta):
@@ -105,10 +103,4 @@ func update_animations(input_axis):
 #		animated_sprite_2d.play("Jump")
 
 func hazard_detector_entered(area) -> void:
-	stats.health -= 1
-	Global.retry_points -= 100
-	if stats.health <= 0:
-		queue_free()
-	print(stats.health)
-	stats.health_changed.emit(stats.health)
 	global_position = starting_position

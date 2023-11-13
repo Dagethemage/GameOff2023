@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://v66ekbygmaxg" path="res://Sprites/TileSets/GameOff2023_tileset.png" id="2_xo2c6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xv7x"]
-size = Vector2(16, 8)
+size = Vector2(13, 4)
 
 [node name="Spikes" instance=ExtResource("1_bytah")]
 
@@ -13,5 +13,5 @@ texture = ExtResource("2_xo2c6")
 region_rect = Rect2(64, 32, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
-position = Vector2(8, 12)
+position = Vector2(8.5, 14)
 shape = SubResource("RectangleShape2D_6xv7x")

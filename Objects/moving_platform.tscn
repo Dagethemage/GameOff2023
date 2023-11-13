@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0g8tysrab01p"]
+
+[ext_resource type="PackedScene" uid="uid://w4r0utnjs22s" path="res://Characters/Enemies/MovingPathEnemyBase.tscn" id="1_6nmik"]
+[ext_resource type="Script" path="res://Objects/moving_platform.gd" id="2_4umag"]
+[ext_resource type="Texture2D" uid="uid://bwoesoa61pwv3" path="res://Sprites/MovingPlatform_UP.png" id="2_qdfdy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbk2e"]
+atlas = ExtResource("2_qdfdy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulkjm"]
+atlas = ExtResource("2_qdfdy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfewr"]
+atlas = ExtResource("2_qdfdy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7wb4"]
+atlas = ExtResource("2_qdfdy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wqc6"]
+atlas = ExtResource("2_qdfdy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gpib"]
+atlas = ExtResource("2_qdfdy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oyr4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbk2e")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulkjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfewr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7wb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wqc6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gpib")
+}],
+"loop": true,
+"name": &"Moving",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lkwv"]
+size = Vector2(32, 5)
+
+[node name="MovingPlatform" instance=ExtResource("1_6nmik")]
+curve = null
+script = ExtResource("2_4umag")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D/Enemy" index="0"]
+sprite_frames = SubResource("SpriteFrames_oyr4j")
+animation = &"Moving"
+frame_progress = 0.0362002
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PathFollow2D/Enemy" index="1"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Enemy/StaticBody2D" index="0"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2lkwv")
+
+[node name="Detect Zone" type="Area2D" parent="." index="2"]
