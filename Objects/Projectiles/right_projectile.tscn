@@ -8,6 +8,10 @@ size = Vector2(11, 2)
 [node name="Right_Projectile" instance=ExtResource("1_1o25a")]
 direction = Vector2(1, 0)
 
+[node name="Sprite2D" parent="." index="0"]
+rotation = 1.5708
+
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0.5, 0)
+position = Vector2(2.18557e-08, 0.5)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_ygyl2")

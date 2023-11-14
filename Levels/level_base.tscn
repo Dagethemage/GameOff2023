@@ -14,5 +14,6 @@ script = ExtResource("1_0le7q")
 [node name="Player" parent="." instance=ExtResource("3_d4vs7")]
 
 [node name="Camera2D" parent="Player" instance=ExtResource("6_s3j44")]
+zoom = Vector2(2, 2)
 
 [node name="LevelOneParallax" parent="." instance=ExtResource("5_8qvqi")]

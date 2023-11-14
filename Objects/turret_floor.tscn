@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://brpxbo5kqrer0"]
+[gd_scene load_steps=5 format=3 uid="uid://brpxbo5kqrer0"]
 
 [ext_resource type="Texture2D" uid="uid://v66ekbygmaxg" path="res://Sprites/TileSets/GameOff2023_tileset.png" id="1_7g75y"]
 [ext_resource type="Script" path="res://Objects/turret_floor.gd" id="1_ea8be"]
-[ext_resource type="PackedScene" uid="uid://bpfoeyr57b56" path="res://Objects/Projectiles/up_projectile.tscn" id="2_w6p5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_unkt5"]
 atlas = ExtResource("1_7g75y")
@@ -21,7 +20,6 @@ animations = [{
 
 [node name="Turret_floor" type="Node2D"]
 script = ExtResource("1_ea8be")
-projectile = ExtResource("2_w6p5x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)

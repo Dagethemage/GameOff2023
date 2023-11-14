@@ -9,7 +9,7 @@ extends Area2D
 @export var direction = Vector2()
 
 func _ready() -> void:
-	sprite_2d.is_playing() == true
+
 	area_entered.connect(_area_entered)
 	timer.timeout.connect(_timeout)
 

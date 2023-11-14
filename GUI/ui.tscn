@@ -1,64 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceagat2lwf2g6"]
+[gd_scene load_steps=3 format=3 uid="uid://ceagat2lwf2g6"]
 
-[ext_resource type="PackedScene" uid="uid://deqkhko62odxv" path="res://GUI/ScoreBoard.tscn" id="1_xi7xy"]
 [ext_resource type="Script" path="res://GUI/ui.gd" id="1_ya8w1"]
-[ext_resource type="Texture2D" uid="uid://bh5l2gvjafbfm" path="res://Sprites/TileSets/Parallax_layer_3.png" id="3_l2nyu"]
-[ext_resource type="PackedScene" uid="uid://bsxby8o6rxilk" path="res://GUI/level_completed.tscn" id="4_tgp7t"]
-[ext_resource type="Texture2D" uid="uid://d16pkqcyhj8nh" path="res://Sprites/TileSets/Parallax_layer_4.png" id="4_ygb75"]
-[ext_resource type="Texture2D" uid="uid://d1p6fndyshpj2" path="res://Sprites/TileSets/HealthIcon.png" id="5_2uxt6"]
 [ext_resource type="PackedScene" uid="uid://dlpjba7ef3fvl" path="res://GUI/PauseScreen.tscn" id="6_nykx1"]
-[ext_resource type="Texture2D" uid="uid://dib0cvnc6dscp" path="res://Sprites/TileSets/Icon_circle.png" id="6_vrcsu"]
 
 [node name="UI" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_ya8w1")
-
-[node name="ScoreBoardBg" type="ColorRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 640.0
-offset_right = 640.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.286275, 0.329412, 0.207843, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="ScoreBoardBg"]
-texture = ExtResource("3_l2nyu")
-centered = false
-
-[node name="Sprite2D2" type="Sprite2D" parent="ScoreBoardBg"]
-texture = ExtResource("4_ygb75")
-centered = false
-
-[node name="Sprite2D3" type="Sprite2D" parent="ScoreBoardBg"]
-position = Vector2(160, 88)
-scale = Vector2(10, 10)
-texture = ExtResource("5_2uxt6")
-centered = false
-region_rect = Rect2(144, 48, 16, 16)
-
-[node name="Sprite2D" type="Sprite2D" parent="ScoreBoardBg/Sprite2D3"]
-texture = ExtResource("6_vrcsu")
-centered = false
-
-[node name="Label" type="Label" parent="ScoreBoardBg"]
-modulate = Color(0.878431, 0.643137, 0.431373, 1)
-layout_mode = 0
-offset_left = 178.0
-offset_top = 255.0
-offset_right = 301.0
-offset_bottom = 307.0
-theme_override_font_sizes/font_size = 35
-text = "Great!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ScoreBoard" parent="." instance=ExtResource("1_xi7xy")]
-offset_left = 260.0
-offset_right = 260.0
-
-[node name="LevelCompleted" parent="." instance=ExtResource("4_tgp7t")]
-visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_nykx1")]
