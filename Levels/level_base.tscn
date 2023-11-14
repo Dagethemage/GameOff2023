@@ -14,10 +14,5 @@ script = ExtResource("1_0le7q")
 [node name="Player" parent="." instance=ExtResource("3_d4vs7")]
 
 [node name="Camera2D" parent="Player" instance=ExtResource("6_s3j44")]
-offset = Vector2(4, 0)
-position_smoothing_speed = 2.7
-drag_horizontal_offset = 0.2
-drag_left_margin = 0.0
-drag_right_margin = 0.0
 
 [node name="LevelOneParallax" parent="." instance=ExtResource("5_8qvqi")]

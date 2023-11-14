@@ -1,38 +1,37 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0g8tysrab01p"]
+[gd_scene load_steps=14 format=3 uid="uid://condfc4wly161"]
 
-[ext_resource type="PackedScene" uid="uid://w4r0utnjs22s" path="res://Characters/Enemies/MovingPathEnemyBase.tscn" id="1_6nmik"]
-[ext_resource type="Script" path="res://Objects/moving_platform.gd" id="2_4umag"]
+[ext_resource type="Script" path="res://Objects/MovingPlatform.gd" id="1_2iovo"]
 [ext_resource type="Texture2D" uid="uid://bwoesoa61pwv3" path="res://Sprites/MovingPlatform_UP.png" id="2_qdfdy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rbk2e"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ouuq"]
 atlas = ExtResource("2_qdfdy")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ulkjm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0khj"]
 atlas = ExtResource("2_qdfdy")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rfewr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vgwy"]
 atlas = ExtResource("2_qdfdy")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e7wb4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_it5p7"]
 atlas = ExtResource("2_qdfdy")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3wqc6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbm8s"]
 atlas = ExtResource("2_qdfdy")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2gpib"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg1dx"]
 atlas = ExtResource("2_qdfdy")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_oyr4j"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wd6t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rbk2e")
+"texture": SubResource("AtlasTexture_5ouuq")
 }],
 "loop": true,
 "name": &"Idle",
@@ -40,42 +39,91 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ulkjm")
+"texture": SubResource("AtlasTexture_m0khj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rfewr")
+"texture": SubResource("AtlasTexture_5vgwy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e7wb4")
+"texture": SubResource("AtlasTexture_it5p7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3wqc6")
+"texture": SubResource("AtlasTexture_wbm8s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2gpib")
+"texture": SubResource("AtlasTexture_rg1dx")
 }],
 "loop": true,
 "name": &"Moving",
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lkwv"]
-size = Vector2(32, 5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlsij"]
+size = Vector2(32, 9)
 
-[node name="MovingPlatform" instance=ExtResource("1_6nmik")]
-curve = null
-script = ExtResource("2_4umag")
+[sub_resource type="Animation" id="Animation_oh2pb"]
+resource_name = "Move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.56, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D/Enemy" index="0"]
-sprite_frames = SubResource("SpriteFrames_oyr4j")
-animation = &"Moving"
-frame_progress = 0.0362002
+[sub_resource type="Animation" id="Animation_c6ynp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PathFollow2D/Enemy" index="1"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_34iuw"]
+_data = {
+"Move": SubResource("Animation_oh2pb"),
+"RESET": SubResource("Animation_c6ynp")
+}
+
+[node name="MovingPlatform" type="Path2D"]
+script = ExtResource("1_2iovo")
+loop = false
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+progress = 256.0
+rotates = false
+cubic_interp = false
+loop = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Enemy/StaticBody2D" index="0"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_2lkwv")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="AnimatableBody2D"]
+sprite_frames = SubResource("SpriteFrames_8wd6t")
+animation = &"Moving"
+frame_progress = 0.560788
 
-[node name="Detect Zone" type="Area2D" parent="." index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_xlsij")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_34iuw")
+}
