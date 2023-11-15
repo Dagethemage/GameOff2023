@@ -14,9 +14,13 @@ var was_wall_normal = Vector2.ZERO
 @onready var wall_jump_timer = $WallJumpTimer
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var hazard_detector = $HazardDetector
-@onready var starting_position = global_position
+
+#test
+@onready var reset = $Reset
+
 
 func _ready() -> void:
+	Global.starting_position = global_position
 	hazard_detector.area_entered.connect(hazard_detector_entered)
 
 func _physics_process(delta):
@@ -103,4 +107,9 @@ func update_animations(input_axis):
 #		animated_sprite_2d.play("Jump")
 
 func hazard_detector_entered(area) -> void:
-	global_position = starting_position
+	reset.show()
+	get_tree().paused = true
+	await get_tree().create_timer(1).timeout
+	get_tree().paused = false
+	reset.hide()
+	global_position = Global.starting_position

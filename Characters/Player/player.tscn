@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwqs43w46uc2a"]
+[gd_scene load_steps=17 format=3 uid="uid://dwqs43w46uc2a"]
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_folvt"]
 [ext_resource type="Script" path="res://Characters/Player/PlayerMovementData.gd" id="2_jrmri"]
 [ext_resource type="Texture2D" uid="uid://bouvtb43f4ran" path="res://Characters/Player/Player.png" id="4_l5wlt"]
+[ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="5_yyd20"]
 [ext_resource type="PackedScene" uid="uid://b5wnw0imh5fuq" path="res://Characters/Player/Abilities/Dash.tscn" id="6_0l3fi"]
 
 [sub_resource type="Resource" id="Resource_1v1pr"]
@@ -72,10 +73,10 @@ animations = [{
 size = Vector2(6, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hddal"]
-size = Vector2(6, 28)
+size = Vector2(6, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpla7"]
-size = Vector2(8, 28)
+size = Vector2(8, 26.25)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -87,15 +88,14 @@ script = ExtResource("1_folvt")
 MovementData = SubResource("Resource_1v1pr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0.0294962, -15.5281)
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_s72ah")
 animation = &"Idle"
 frame_progress = 0.00450091
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -13.5)
+position = Vector2(0, -13.5281)
 shape = SubResource("RectangleShape2D_vd7u3")
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
@@ -111,8 +111,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector"]
-visible = false
-position = Vector2(0, -14)
+position = Vector2(0, -13.5)
 shape = SubResource("RectangleShape2D_hddal")
 
 [node name="CollectionZone" type="Area2D" parent="."]
@@ -120,8 +119,19 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionZone"]
-visible = false
-position = Vector2(0, -14)
+position = Vector2(0, -13.1218)
 shape = SubResource("RectangleShape2D_bpla7")
 
 [node name="Dash" parent="." instance=ExtResource("6_0l3fi")]
+
+[node name="Reset" type="Label" parent="."]
+visible = false
+offset_left = -21.3574
+offset_top = -55.229
+offset_right = 21.6426
+offset_bottom = -29.229
+theme = ExtResource("5_yyd20")
+theme_override_colors/font_color = Color(0.878431, 0.643137, 0.431373, 1)
+text = "Reset"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,9 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://cxu8fnclanix3"]
 
-[ext_resource type="Texture2D" uid="uid://51h0wm3jwwr6" path="res://Sprites/TileSets/Level_one_tileset-sheet-sheet.png" id="1_i3g6x"]
+[ext_resource type="Texture2D" uid="uid://sufrv2lc1pyw" path="res://Sprites/TileSets/Level_one_tileset.png" id="1_s7s14"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y00n2"]
-texture = ExtResource("1_i3g6x")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bw6ky"]
+texture = ExtResource("1_s7s14")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -207,7 +207,7 @@ physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "base"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/3 = SubResource("TileSetAtlasSource_y00n2")
+sources/1 = SubResource("TileSetAtlasSource_bw6ky")
 
 [node name="BaseLevelTileMap" type="TileMap"]
 tile_set = SubResource("TileSet_i0kgr")

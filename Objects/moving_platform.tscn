@@ -121,6 +121,7 @@ animation = &"Moving"
 frame_progress = 0.560788
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(0, 1.52897)
 shape = SubResource("RectangleShape2D_xlsij")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

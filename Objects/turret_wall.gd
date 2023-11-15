@@ -16,7 +16,6 @@ func _ready() -> void:
 func shoot():
 	var proj = projectile.instantiate()
 	muzzel.add_child(proj)
-	print(shoot)
 
 func on_timer_timeout() -> void:
 	shoot()

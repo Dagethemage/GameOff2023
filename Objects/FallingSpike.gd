@@ -19,7 +19,7 @@ func _physics_process(delta):
 
 func on_detect_zone(area):
 	current_speed = speed
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(2).timeout
 	position = spawn_position
 	current_speed = 0
 	

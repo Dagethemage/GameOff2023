@@ -2,10 +2,18 @@ extends Node2D
 
 @export var next_level : PackedScene
 @export var level_data: Resource
+@onready var player = $Player
+
+var player_postion = Vector2.ZERO
+
 
 func _ready():
+	player_postion = player.global_position
+	Global.checkpoint_met.connect(checkpoint_met)
 	Global.level_completed.connect(level_ended)
 
+func checkpoint_met(checkpoint_position):
+	Global.starting_position = checkpoint_position
 
 func level_ended():
 	get_tree().paused = true

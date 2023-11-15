@@ -34,8 +34,8 @@ animations = [{
 }]
 
 [node name="Projectile" instance=ExtResource("1_u00vg")]
-collision_layer = 0
-collision_mask = 4
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("2_7vosu")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." index="0"]
