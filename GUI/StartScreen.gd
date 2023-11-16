@@ -13,7 +13,7 @@ func start_pressed():
 	LevelTranstition.fade_to_black()
 	await LevelTranstition.fade_to_black()
 	await get_tree().create_timer(0.8).timeout
-	get_tree().change_scene_to_file("res://Levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://Levels/level_6.tscn")
 	LevelTranstition.fade_from_black()
 
 func quit_pressed():

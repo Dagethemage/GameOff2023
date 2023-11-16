@@ -15,6 +15,9 @@ level_data = ExtResource("2_j6x3o")
 [node name="Player" parent="." index="1"]
 position = Vector2(16, 64)
 
+[node name="LevelGoal" parent="." index="2"]
+position = Vector2(2384, 192)
+
 [node name="Spikes" parent="." index="3" instance=ExtResource("2_8ak6q")]
 position = Vector2(64, 80)
 
@@ -364,7 +367,4 @@ layer_0/tile_data = PackedInt32Array(851975, 196609, 2, 786439, 196609, 1, 85197
 position = Vector2(672, 256)
 
 [node name="Checkpoint2" parent="." index="111" instance=ExtResource("2_vvuaa")]
-position = Vector2(1376, 128)
-
-[node name="Checkpoint3" parent="." index="112" instance=ExtResource("2_vvuaa")]
-position = Vector2(2360, 192)
+position = Vector2(1648, 336)

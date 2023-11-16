@@ -14,6 +14,9 @@ level_data = ExtResource("3_lkiyb")
 [node name="Player" parent="." index="1"]
 position = Vector2(64, 192)
 
+[node name="LevelGoal" parent="." index="2"]
+position = Vector2(16, 16)
+
 [node name="Spikes" parent="." index="3" instance=ExtResource("2_4n7ja")]
 position = Vector2(128, 208)
 
