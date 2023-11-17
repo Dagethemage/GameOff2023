@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://kklwejuri6h8"]
 
 [ext_resource type="Script" path="res://GUI/level_one_parallax.gd" id="1_qwnut"]
-[ext_resource type="Texture2D" uid="uid://d1vkrhd771di" path="res://Trash/Parallax_BG_Temp.png" id="2_0rfd3"]
+[ext_resource type="Texture2D" uid="uid://bv1s8qadrdno" path="res://Sprites/Parallax_layer_1.png" id="2_e22x6"]
 [ext_resource type="Texture2D" uid="uid://c5b17k4apna8f" path="res://Trash/PBG_test_2.png" id="3_mjkc3"]
 [ext_resource type="Texture2D" uid="uid://dyormd7bqv8ax" path="res://Trash/PBG_test_3.png" id="4_0pvlt"]
 [ext_resource type="Texture2D" uid="uid://c00va4q33wqm" path="res://Trash/PBG_test_1.png" id="5_xgqgd"]
@@ -10,7 +10,7 @@
 script = ExtResource("1_qwnut")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_0rfd3")
+texture = ExtResource("2_e22x6")
 centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]

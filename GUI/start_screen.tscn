@@ -1,17 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://pcxcdy1vgq7y"]
+[gd_scene load_steps=6 format=3 uid="uid://pcxcdy1vgq7y"]
 
 [ext_resource type="Script" path="res://GUI/StartScreen.gd" id="1_xep82"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="2_6l7gb"]
+[ext_resource type="Texture2D" uid="uid://bv1s8qadrdno" path="res://Sprites/Parallax_layer_1.png" id="2_f5cvp"]
+[ext_resource type="Texture2D" uid="uid://dhufj5cgg5004" path="res://Sprites/32x32 square.png" id="4_0qsfn"]
+
+[sub_resource type="Gradient" id="Gradient_8ljc1"]
+offsets = PackedFloat32Array(0.449016, 0.629696, 0.824687)
+colors = PackedColorArray(0.878431, 0.643137, 0.431373, 1, 0.364706, 0.462745, 0.262745, 1, 0.301961, 0.32549, 0.227451, 1)
 
 [node name="StartScreen" type="CanvasLayer"]
 script = ExtResource("1_xep82")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_f5cvp")
+centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -57.0
-offset_bottom = 58.0
+offset_top = -45.0
+offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -29,6 +39,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_6l7gb")
+theme_override_font_sizes/font_size = 27
 text = "Tip The Scales"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -63,3 +74,19 @@ offset_left = 600.0
 offset_top = 337.0
 offset_right = 640.0
 offset_bottom = 360.0
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(315, 161)
+scale = Vector2(5, 5)
+amount = 50
+texture = ExtResource("4_0qsfn")
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 100)
+initial_velocity_max = 125.5
+linear_accel_min = -42.44
+linear_accel_max = -42.44
+scale_amount_min = 0.0
+scale_amount_max = 0.1
+color = Color(0.364706, 0.462745, 0.262745, 1)
+color_ramp = SubResource("Gradient_8ljc1")

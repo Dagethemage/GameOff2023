@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdt4eq8yqys7c"]
+
+[ext_resource type="PackedScene" uid="uid://efyc82qd7125" path="res://Characters/Enemies/walking_enemy_base.tscn" id="1_v8yyk"]
+[ext_resource type="Texture2D" uid="uid://cdvlmpgwvo7ds" path="res://Sprites/TileSets/SpikeBot.png" id="2_oaw1d"]
+[ext_resource type="PackedScene" uid="uid://cgwofmd5bywoy" path="res://Overlap/hit_box.tscn" id="3_gends"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1woqk"]
+atlas = ExtResource("2_oaw1d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jigv7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1woqk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkngs"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3h0r"]
+size = Vector2(16, 4)
+
+[node name="Level2WalkingEnemy" instance=ExtResource("1_v8yyk")]
+collision_layer = 16
+collision_mask = 3
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_jigv7")
+flip_h = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(1, -9)
+shape = SubResource("RectangleShape2D_lkngs")
+
+[node name="LedgeCheck" parent="." index="2"]
+position = Vector2(7, -9)
+
+[node name="HitBox" parent="." index="3" instance=ExtResource("3_gends")]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(1, -18)
+shape = SubResource("RectangleShape2D_g3h0r")

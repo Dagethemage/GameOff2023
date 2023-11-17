@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://clwgqlx30ljgl"]
+
+[ext_resource type="PackedScene" uid="uid://condfc4wly161" path="res://Objects/moving_platform.tscn" id="1_ip7p3"]
+[ext_resource type="Texture2D" uid="uid://c8jvehpnsi6pl" path="res://Sprites/TileSets/Level_Two_Moving_Platform.png" id="2_dapdd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj131"]
+atlas = ExtResource("2_dapdd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fk3fq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj131")
+}],
+"loop": true,
+"name": &"Moving",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31206"]
+size = Vector2(31.9793, 5.99225)
+
+[node name="LevelTwoMovingPlatform" instance=ExtResource("1_ip7p3")]
+
+[node name="AnimatedSprite2D" parent="AnimatableBody2D" index="0"]
+sprite_frames = SubResource("SpriteFrames_fk3fq")
+
+[node name="CollisionShape2D" parent="AnimatableBody2D" index="1"]
+shape = SubResource("RectangleShape2D_31206")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1fpmwlby62wt"]
+
+[ext_resource type="PackedScene" uid="uid://w4r0utnjs22s" path="res://Characters/Enemies/MovingPathEnemyBase.tscn" id="1_5wxj8"]
+[ext_resource type="Texture2D" uid="uid://dib0cvnc6dscp" path="res://Sprites/TileSets/Icon_circle.png" id="2_mhrk5"]
+[ext_resource type="PackedScene" uid="uid://cgwofmd5bywoy" path="res://Overlap/hit_box.tscn" id="3_f3rtr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7b537"]
+radius = 7.0
+
+[node name="SpikeBall" instance=ExtResource("1_5wxj8")]
+
+[node name="Sprite2D" type="Sprite2D" parent="PathFollow2D/Enemy" index="0"]
+texture = ExtResource("2_mhrk5")
+
+[node name="HitBox" parent="PathFollow2D/Enemy" index="1" instance=ExtResource("3_f3rtr")]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Enemy/HitBox" index="0"]
+shape = SubResource("CircleShape2D_7b537")

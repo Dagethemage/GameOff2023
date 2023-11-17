@@ -1,10 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://w4r0utnjs22s"]
-
-[sub_resource type="Curve2D" id="Curve2D_yu6n0"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 16, 24, 0, 0, 0, 0, 128, 192)
-}
-point_count = 2
+[gd_scene load_steps=5 format=3 uid="uid://w4r0utnjs22s"]
 
 [sub_resource type="Animation" id="3"]
 resource_name = "MoveAlongPathBounce"
@@ -63,10 +57,8 @@ _data = {
 }
 
 [node name="MovingSpikeEnemy" type="Path2D"]
-curve = SubResource("Curve2D_yu6n0")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(16, 24)
 rotates = false
 
 [node name="Enemy" type="Node2D" parent="PathFollow2D"]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://dpigtthq8e44j"]
+[gd_scene load_steps=16 format=3 uid="uid://dpigtthq8e44j"]
 
 [ext_resource type="Script" path="res://GUI/Transitions/level_transtition.gd" id="1_r6qtq"]
-[ext_resource type="Texture2D" uid="uid://bh5l2gvjafbfm" path="res://Sprites/TileSets/Parallax_layer_3.png" id="2_2n22q"]
-[ext_resource type="Texture2D" uid="uid://d16pkqcyhj8nh" path="res://Sprites/TileSets/Parallax_layer_4.png" id="3_fj6un"]
+[ext_resource type="Texture2D" uid="uid://dhufj5cgg5004" path="res://Sprites/32x32 square.png" id="2_tb6ou"]
+[ext_resource type="Texture2D" uid="uid://cm3ts0e5ujhg6" path="res://Sprites/TileSets/SavePoint.png" id="3_d0h8w"]
 
 [sub_resource type="Animation" id="Animation_g482y"]
 length = 0.001
@@ -18,30 +18,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/Sprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/Sprite2D2:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_7y584"]
 resource_name = "fade_from_black"
@@ -55,31 +31,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.286275, 0.329412, 0.207843, 1), Color(0, 0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/Sprite2D:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/Sprite2D2:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.7),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(0.0862745, 0.027451, 0.0705882, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wuo3e"]
@@ -95,31 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0), Color(0.286275, 0.329412, 0.207843, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect/Sprite2D2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect/Sprite2D:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [Color(0, 0, 0, 0), Color(0.0862745, 0.027451, 0.0705882, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qqtvc"]
@@ -128,6 +56,60 @@ _data = {
 "fade_from_black": SubResource("Animation_7y584"),
 "fade_to_black": SubResource("Animation_wuo3e")
 }
+
+[sub_resource type="Gradient" id="Gradient_opr5b"]
+offsets = PackedFloat32Array(0.449016, 0.629696, 0.824687)
+colors = PackedColorArray(0.878431, 0.643137, 0.431373, 1, 0.364706, 0.462745, 0.262745, 1, 0.301961, 0.32549, 0.227451, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx5vr"]
+atlas = ExtResource("3_d0h8w")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agp34"]
+atlas = ExtResource("3_d0h8w")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf7m5"]
+atlas = ExtResource("3_d0h8w")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc6es"]
+atlas = ExtResource("3_d0h8w")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5qq2"]
+atlas = ExtResource("3_d0h8w")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bahwy"]
+atlas = ExtResource("3_d0h8w")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g43li"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx5vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agp34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf7m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc6es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5qq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bahwy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="LevelTranstition" type="CanvasLayer"]
 process_mode = 3
@@ -148,12 +130,23 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
-modulate = Color(1, 1, 1, 0)
-texture = ExtResource("2_2n22q")
-centered = false
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(315, 161)
+scale = Vector2(5, 5)
+amount = 50
+texture = ExtResource("2_tb6ou")
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 100)
+initial_velocity_max = 125.5
+linear_accel_min = -42.44
+linear_accel_max = -42.44
+scale_amount_min = 0.0
+scale_amount_max = 0.1
+color = Color(0.364706, 0.462745, 0.262745, 1)
+color_ramp = SubResource("Gradient_opr5b")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ColorRect"]
-modulate = Color(1, 1, 1, 0)
-texture = ExtResource("3_fj6un")
-centered = false
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(617, 339)
+sprite_frames = SubResource("SpriteFrames_g43li")

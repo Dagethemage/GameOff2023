@@ -19,3 +19,4 @@ func shoot():
 
 func on_timer_timeout() -> void:
 	shoot()
+	print("shoot")
