@@ -133,7 +133,7 @@ color = Color(0, 0, 0, 0)
 [node name="GPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(315, 161)
 scale = Vector2(5, 5)
-amount = 50
+amount = 75
 texture = ExtResource("2_tb6ou")
 emission_shape = 1
 emission_sphere_radius = 128.0

@@ -16,7 +16,7 @@ point_count = 5
 [node name="Level2_5" instance=ExtResource("1_8r2dv")]
 
 [node name="Player" parent="." index="1"]
-position = Vector2(352, 208)
+position = Vector2(96, 256)
 
 [node name="LevelGoal" parent="." index="2"]
 position = Vector2(1000, 112)

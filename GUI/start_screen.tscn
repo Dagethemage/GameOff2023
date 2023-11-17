@@ -1,42 +1,427 @@
-[gd_scene load_steps=6 format=3 uid="uid://pcxcdy1vgq7y"]
+[gd_scene load_steps=27 format=3 uid="uid://pcxcdy1vgq7y"]
 
 [ext_resource type="Script" path="res://GUI/StartScreen.gd" id="1_xep82"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="2_6l7gb"]
 [ext_resource type="Texture2D" uid="uid://bv1s8qadrdno" path="res://Sprites/Parallax_layer_1.png" id="2_f5cvp"]
+[ext_resource type="Texture2D" uid="uid://cm3ts0e5ujhg6" path="res://Sprites/TileSets/SavePoint.png" id="3_q6jeo"]
 [ext_resource type="Texture2D" uid="uid://dhufj5cgg5004" path="res://Sprites/32x32 square.png" id="4_0qsfn"]
+[ext_resource type="PackedScene" uid="uid://cdt4eq8yqys7c" path="res://Characters/Enemies/level_2_walking_enemy.tscn" id="4_qrmt1"]
+[ext_resource type="Texture2D" uid="uid://bouvtb43f4ran" path="res://Characters/Player/Player.png" id="4_uev14"]
+[ext_resource type="PackedScene" uid="uid://cxu8fnclanix3" path="res://Sprites/TileSets/base_level_tile_map.tscn" id="5_3ypnp"]
+[ext_resource type="Texture2D" uid="uid://bwoesoa61pwv3" path="res://Sprites/MovingPlatform_UP.png" id="8_c5no6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm2x6"]
+atlas = ExtResource("8_c5no6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drwy7"]
+atlas = ExtResource("8_c5no6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p52t"]
+atlas = ExtResource("8_c5no6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4rtn"]
+atlas = ExtResource("8_c5no6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2eff"]
+atlas = ExtResource("8_c5no6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kttvf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm2x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drwy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p52t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4rtn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2eff")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4a0n"]
+atlas = ExtResource("4_uev14")
+region = Rect2(0, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7j14"]
+atlas = ExtResource("4_uev14")
+region = Rect2(32, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq252"]
+atlas = ExtResource("4_uev14")
+region = Rect2(64, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckwk1"]
+atlas = ExtResource("4_uev14")
+region = Rect2(96, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3ism"]
+atlas = ExtResource("4_uev14")
+region = Rect2(128, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy0mn"]
+atlas = ExtResource("4_uev14")
+region = Rect2(160, 0, 32, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tlvhs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4a0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7j14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq252")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckwk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3ism")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy0mn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="Gradient" id="Gradient_8ljc1"]
 offsets = PackedFloat32Array(0.449016, 0.629696, 0.824687)
 colors = PackedColorArray(0.878431, 0.643137, 0.431373, 1, 0.364706, 0.462745, 0.262745, 1, 0.301961, 0.32549, 0.227451, 1)
 
+[sub_resource type="Animation" id="Animation_gpvpr"]
+resource_name = "fade_in"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scale:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.7, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.2, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BaseLevelTileMap:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.2, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OptionsContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.8, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TitleContaner/VBoxContainer/Label:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TitleContaner/VBoxContainer/PressAButton:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Level2WalkingEnemy:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1.2, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Level2WalkingEnemy2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.2, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatedSprite2D:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(1.2, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimatedSprite2D2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(1.2, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cwgkn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scale:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BaseLevelTileMap:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("OptionsContainer:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TitleContaner/VBoxContainer/Label:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TitleContaner/VBoxContainer/PressAButton:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Level2WalkingEnemy:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Level2WalkingEnemy2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatedSprite2D:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimatedSprite2D2:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_og3a0"]
+_data = {
+"RESET": SubResource("Animation_cwgkn"),
+"fade_in": SubResource("Animation_gpvpr")
+}
+
 [node name="StartScreen" type="CanvasLayer"]
 script = ExtResource("1_xep82")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="BG" type="Sprite2D" parent="."]
 texture = ExtResource("2_f5cvp")
 centered = false
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(344, 240)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_kttvf")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(248, 192)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_kttvf")
+autoplay = "default"
+
+[node name="Level2WalkingEnemy" parent="." instance=ExtResource("4_qrmt1")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(120, 160)
+scale = Vector2(2, 2)
+
+[node name="Level2WalkingEnemy2" parent="." instance=ExtResource("4_qrmt1")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-56, 161)
+scale = Vector2(2, 2)
+
+[node name="Scale" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(432, 208)
+scale = Vector2(2, 2)
+texture = ExtResource("3_q6jeo")
+hframes = 6
+
+[node name="Player" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(480, 272)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tlvhs")
+autoplay = "default"
+frame_progress = 0.524723
+
+[node name="BaseLevelTileMap" parent="." instance=ExtResource("5_3ypnp")]
+modulate = Color(1, 1, 1, 0)
+layer_0/tile_data = PackedInt32Array(983064, 65537, 1, 983065, 131073, 1, 983066, 131073, 1, 983067, 196609, 1, 1441819, 131073, 3, 1376283, 131073, 2, 1310747, 131073, 2, 1245211, 327681, 0, 1179675, 196609, 2, 1114139, 196609, 2, 1048603, 196609, 2, 1441818, 131073, 3, 1376282, 131073, 2, 1310746, 131073, 2, 1245210, 131073, 2, 1179674, 131073, 2, 1114138, 131073, 2, 1048602, 131073, 2, 1441817, 131073, 3, 1376281, 131073, 2, 1310745, 131073, 2, 1245209, 131073, 2, 1179673, 131073, 2, 1114137, 131073, 2, 1048601, 131073, 2, 1441816, 65537, 3, 1376280, 65537, 2, 1310744, 65537, 2, 1245208, 65537, 2, 1179672, 65537, 2, 1114136, 65537, 2, 1048600, 65537, 2, 1441823, 131073, 3, 1376287, 131073, 2, 1310751, 327681, 0, 1245215, 196609, 1, 1441822, 131073, 3, 1376286, 131073, 2, 1310750, 131073, 2, 1245214, 131073, 1, 1441821, 131073, 3, 1376285, 131073, 2, 1310749, 131073, 2, 1245213, 131073, 1, 1441820, 131073, 3, 1376284, 131073, 2, 1310748, 131073, 2, 1245212, 131073, 1, 1441831, 196609, 3, 1376295, 196609, 2, 1310759, 196609, 1, 1441830, 131073, 3, 1376294, 131073, 2, 1310758, 131073, 1, 1441829, 131073, 3, 1376293, 131073, 2, 1310757, 131073, 1, 1441828, 131073, 3, 1376292, 131073, 2, 1310756, 131073, 1, 1441827, 131073, 3, 1376291, 131073, 2, 1310755, 131073, 1, 1441826, 131073, 3, 1376290, 131073, 2, 1310754, 131073, 1, 1441825, 131073, 3, 1376289, 131073, 2, 1310753, 131073, 1, 1441824, 131073, 3, 1376288, 131073, 2, 1310752, 131073, 1, 720907, 196609, 3, 655371, 196609, 1, 720906, 131073, 3, 655370, 131073, 1, 720905, 131073, 3, 655369, 131073, 1, 720904, 131073, 3, 655368, 131073, 1, 720903, 131073, 3, 655367, 131073, 1, 720902, 131073, 3, 655366, 131073, 1, 720901, 131073, 3, 655365, 131073, 1, 720900, 131073, 3, 655364, 131073, 1, 720899, 131073, 3, 655363, 131073, 1, 720898, 131073, 3, 655362, 131073, 1, 720897, 131073, 3, 655361, 131073, 1, 720896, 131073, 3, 655360, 131073, 1, 786431, 131073, 3, 720895, 131073, 1, 786430, 131073, 3, 720894, 131073, 1, 786429, 131073, 3, 720893, 131073, 1, 786428, 65537, 3, 720892, 65537, 1)
+
+[node name="TitleContaner" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -45.0
-offset_bottom = 70.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleContaner"]
 layout_mode = 2
-theme_override_constants/margin_left = 150
-theme_override_constants/margin_top = 150
-theme_override_constants/margin_right = 150
-theme_override_constants/margin_bottom = 150
+theme_override_constants/separation = 29
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
-custom_minimum_size = Vector2(175, 175)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TitleContaner/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("2_6l7gb")
 theme_override_font_sizes/font_size = 27
@@ -44,36 +429,30 @@ text = "Tip The Scales"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/MarginContainer/VBoxContainer"]
-modulate = Color(0.564706, 0.486275, 0.407843, 1)
+[node name="PressAButton" type="Button" parent="TitleContaner/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_6l7gb")
+text = "Press A"
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
+[node name="OptionsContainer" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 553.0
+offset_top = 236.0
+offset_right = 607.0
+offset_bottom = 313.0
+theme_override_constants/separation = 49
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 21
-
-[node name="StartButton" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="StartButton" type="Button" parent="OptionsContainer"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitButton")
 theme = ExtResource("2_6l7gb")
 text = "Start"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer2"]
+[node name="QuitButton" type="Button" parent="OptionsContainer"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../StartButton")
 theme = ExtResource("2_6l7gb")
 text = "Quit"
-
-[node name="Label" type="Label" parent="."]
-offset_left = 600.0
-offset_top = 337.0
-offset_right = 640.0
-offset_bottom = 360.0
 
 [node name="GPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2(315, 161)
@@ -90,3 +469,8 @@ scale_amount_min = 0.0
 scale_amount_max = 0.1
 color = Color(0.364706, 0.462745, 0.262745, 1)
 color_ramp = SubResource("Gradient_8ljc1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_og3a0")
+}
