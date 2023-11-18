@@ -76,6 +76,7 @@ offset_right = 104.0
 offset_bottom = -62.0
 
 [node name="Label" type="Label" parent="LevelIconPanel"]
+layout_mode = 0
 offset_right = 72.0
 offset_bottom = 26.0
 theme = ExtResource("3_ldlok")

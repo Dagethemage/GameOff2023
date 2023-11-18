@@ -1,19 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7e2pw18qakv2"]
+[gd_scene load_steps=6 format=3 uid="uid://b7e2pw18qakv2"]
 
-[ext_resource type="PackedScene" uid="uid://5s5xuqrlt7qj" path="res://Levels/level_base.tscn" id="1_qb7td"]
-[ext_resource type="PackedScene" uid="uid://dba88uhsuis60" path="res://Levels/main_hub.tscn" id="2_0a8gv"]
+[ext_resource type="PackedScene" uid="uid://5s5xuqrlt7qj" path="res://Levels/level_base.tscn" id="2_0a8gv"]
 [ext_resource type="PackedScene" uid="uid://cxu8fnclanix3" path="res://Sprites/TileSets/base_level_tile_map.tscn" id="2_nmt1h"]
 [ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://Objects/spikes.tscn" id="3_gdwis"]
 [ext_resource type="PackedScene" uid="uid://c48ulj8qecc05" path="res://Objects/falling_spike.tscn" id="4_l12no"]
 [ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://Objects/checkpoint.tscn" id="6_mkb86"]
 
-[node name="Level5" instance=ExtResource("1_qb7td")]
-next_level = ExtResource("2_0a8gv")
+[node name="Level5" instance=ExtResource("2_0a8gv")]
 
-[node name="Player" parent="." index="1"]
+[node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("tilemap")]
+limit_top = -25
+tilemap = NodePath("../BaseLevelTileMap")
+
+[node name="Player" parent="." index="2"]
 position = Vector2(24, 320)
 
-[node name="LevelGoal" parent="." index="2"]
+[node name="LevelGoal" parent="." index="3"]
 position = Vector2(1024, 64)
 
 [node name="Spikes" parent="." index="4" instance=ExtResource("3_gdwis")]

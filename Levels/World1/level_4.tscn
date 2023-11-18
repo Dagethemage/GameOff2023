@@ -10,10 +10,14 @@
 [node name="Level4" instance=ExtResource("1_y2upe")]
 next_level = ExtResource("2_li20e")
 
-[node name="Player" parent="." index="1"]
+[node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("tilemap")]
+limit_top = -35
+tilemap = NodePath("../BaseLevelTileMap")
+
+[node name="Player" parent="." index="2"]
 position = Vector2(32, 320)
 
-[node name="LevelGoal" parent="." index="2"]
+[node name="LevelGoal" parent="." index="3"]
 position = Vector2(640, 56)
 rotation = -1.5708
 

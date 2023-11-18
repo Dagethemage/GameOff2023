@@ -8,10 +8,15 @@
 [node name="Level2" instance=ExtResource("1_eowoo")]
 next_level = ExtResource("2_fg7ua")
 
-[node name="Player" parent="." index="1"]
+[node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("tilemap")]
+limit_top = -20
+limit_right = 700
+tilemap = NodePath("../BaseLevelTileMap")
+
+[node name="Player" parent="." index="2"]
 position = Vector2(64, 320)
 
-[node name="LevelGoal" parent="." index="2"]
+[node name="LevelGoal" parent="." index="3"]
 position = Vector2(600, 64)
 
 [node name="Spikes" parent="." index="4" instance=ExtResource("2_qvanx")]

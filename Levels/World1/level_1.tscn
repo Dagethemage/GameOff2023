@@ -9,10 +9,16 @@
 [node name="Level1" instance=ExtResource("1_lmrsx")]
 next_level = ExtResource("2_waxd3")
 
-[node name="Player" parent="." index="1"]
+[node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("tilemap")]
+limit_left = 0
+limit_top = 0
+position_smoothing_speed = 7.0
+tilemap = NodePath("../BaseLevelTileMap")
+
+[node name="Player" parent="." index="2"]
 position = Vector2(64, 320)
 
-[node name="LevelGoal" parent="." index="2"]
+[node name="LevelGoal" parent="." index="3"]
 position = Vector2(104, 112)
 
 [node name="Spikes" parent="." index="4" instance=ExtResource("2_f62tc")]
