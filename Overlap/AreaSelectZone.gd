@@ -35,8 +35,6 @@ func _on_area_entered(area):
 		lock.hide()
 	
 	
-	
-	
 	if not self.name in Global.key_found:
 		level_icon_panel.show()
 		lock.show()

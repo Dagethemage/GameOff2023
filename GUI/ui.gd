@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var score_board = $ScoreBoard
+#@onready var score_board = $ScoreBoard
 @onready var coin_label = $CoinLabel
  
 func _ready() -> void:

@@ -13,10 +13,5 @@ func _ready():
 	limit_bottom = world_size.y
 func _process(delta):
 	position = player.position
-	if Input.is_action_pressed("cam_down"):
-		position.y = 50
-	elif Input.is_action_pressed("cam_up"):
-		position.y = -50
-	else: position.y = 0
 
 
