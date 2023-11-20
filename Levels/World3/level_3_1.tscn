@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c5x7neduhgqsw"]
 
 [ext_resource type="PackedScene" uid="uid://5s5xuqrlt7qj" path="res://Levels/level_base.tscn" id="1_b2egl"]
-[ext_resource type="PackedScene" uid="uid://c37fnn6k2oduk" path="res://Levels/World3/level_3_2.tscn" id="2_w7mml"]
+[ext_resource type="Script" path="res://Levels/Doors/World3Doors/Level3_1_Door.gd" id="2_v5p0o"]
 [ext_resource type="PackedScene" uid="uid://vkdim54t7qkx" path="res://Sprites/TileSets/LevelThreeTilemap.tscn" id="2_ypt8j"]
 [ext_resource type="PackedScene" uid="uid://brpxbo5kqrer0" path="res://Objects/turret_floor.tscn" id="3_xtymj"]
 [ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://Objects/spikes.tscn" id="4_06m4w"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://Objects/checkpoint.tscn" id="10_ehjck"]
 
 [node name="Level3_1" instance=ExtResource("1_b2egl")]
-next_level = ExtResource("2_w7mml")
 
 [node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("tilemap")]
 limit_top = -20
@@ -24,6 +23,9 @@ position = Vector2(24, 192)
 
 [node name="LevelGoal" parent="." index="3"]
 position = Vector2(512, 64)
+
+[node name="Door" parent="LevelGoal" index="1"]
+script = ExtResource("2_v5p0o")
 
 [node name="Turret_floor" parent="." index="4" instance=ExtResource("3_xtymj")]
 position = Vector2(96, 208)
@@ -114,3 +116,7 @@ layer_0/tile_data = PackedInt32Array(1376255, 131072, 2, 1310719, 131072, 2, 124
 
 [node name="Checkpoint" parent="." index="27" instance=ExtResource("10_ehjck")]
 position = Vector2(416, 320)
+
+[connection signal="area_entered" from="LevelGoal/Door" to="LevelGoal/Door" method="_on_area_entered"]
+
+[editable path="LevelGoal"]

@@ -1,6 +1,6 @@
 extends Node
 
-var coin: int = 1
+var coin: int = 0
 var starting_position
 var key_found = []
 var log_found = []

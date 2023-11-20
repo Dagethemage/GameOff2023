@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7e2pw18qakv2"]
+[gd_scene load_steps=8 format=3 uid="uid://b7e2pw18qakv2"]
 
 [ext_resource type="PackedScene" uid="uid://5s5xuqrlt7qj" path="res://Levels/level_base.tscn" id="2_0a8gv"]
+[ext_resource type="Script" path="res://Levels/Doors/World1Doors/Level5_Door.gd" id="2_h1nj7"]
 [ext_resource type="PackedScene" uid="uid://cxu8fnclanix3" path="res://Sprites/TileSets/base_level_tile_map.tscn" id="2_nmt1h"]
 [ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://Objects/spikes.tscn" id="3_gdwis"]
 [ext_resource type="PackedScene" uid="uid://c48ulj8qecc05" path="res://Objects/falling_spike.tscn" id="4_l12no"]
@@ -14,10 +15,13 @@ limit_top = -25
 tilemap = NodePath("../BaseLevelTileMap")
 
 [node name="Player" parent="." index="2"]
-position = Vector2(992, 64)
+position = Vector2(24, 320)
 
 [node name="LevelGoal" parent="." index="3"]
 position = Vector2(1024, 64)
+
+[node name="Door" parent="LevelGoal" index="1"]
+script = ExtResource("2_h1nj7")
 
 [node name="Spikes" parent="." index="4" instance=ExtResource("3_gdwis")]
 position = Vector2(64, 192)
@@ -215,3 +219,7 @@ position = Vector2(448, 64)
 
 [node name="World2" parent="." index="69" instance=ExtResource("7_qsuq5")]
 position = Vector2(960, 88)
+
+[connection signal="area_entered" from="LevelGoal/Door" to="LevelGoal/Door" method="_on_area_entered"]
+
+[editable path="LevelGoal"]

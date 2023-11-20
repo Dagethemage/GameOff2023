@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var hub_world = load("res://Levels/hub_world.tscn")
 @onready var start_button = $OptionsContainer/StartButton
 @onready var quit_button = $OptionsContainer/QuitButton
 @onready var press_a_button = $TitleContaner/VBoxContainer/PressAButton
@@ -22,7 +23,7 @@ func start_pressed():
 	LevelTranstition.fade_to_black()
 	await LevelTranstition.fade_to_black()
 	await get_tree().create_timer(2).timeout
-	#get_tree().change_scene_to_file("res://Levels/hub_world.tscn")
+	LevelReferences.goto_scene("res://Levels/hub_world.tscn")
 	LevelTranstition.fade_from_black()
 
 func quit_pressed():

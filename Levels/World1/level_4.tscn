@@ -1,14 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://n501u0nsdfen"]
 
 [ext_resource type="PackedScene" uid="uid://5s5xuqrlt7qj" path="res://Levels/level_base.tscn" id="1_y2upe"]
-[ext_resource type="PackedScene" uid="uid://b7e2pw18qakv2" path="res://Levels/World1/level_5.tscn" id="2_li20e"]
+[ext_resource type="Script" path="res://Levels/Doors/World1Doors/Level4_Door.gd" id="2_3rgyr"]
 [ext_resource type="PackedScene" uid="uid://cxu8fnclanix3" path="res://Sprites/TileSets/base_level_tile_map.tscn" id="2_n3s4e"]
 [ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://Objects/spikes.tscn" id="3_x8e2h"]
 [ext_resource type="PackedScene" uid="uid://c48ulj8qecc05" path="res://Objects/falling_spike.tscn" id="4_sarpe"]
 [ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://Objects/checkpoint.tscn" id="6_3j81m"]
 
 [node name="Level4" instance=ExtResource("1_y2upe")]
-next_level = ExtResource("2_li20e")
 
 [node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("tilemap")]
 limit_top = -35
@@ -20,6 +19,9 @@ position = Vector2(32, 320)
 [node name="LevelGoal" parent="." index="3"]
 position = Vector2(640, 56)
 rotation = -1.5708
+
+[node name="Door" parent="LevelGoal" index="1"]
+script = ExtResource("2_3rgyr")
 
 [node name="Spikes" parent="." index="4" instance=ExtResource("3_x8e2h")]
 position = Vector2(240, 272)
@@ -108,3 +110,7 @@ layer_0/tile_data = PackedInt32Array(1572863, 131073, 2, 1507327, 131073, 2, 144
 
 [node name="Checkpoint" parent="." index="31" instance=ExtResource("6_3j81m")]
 position = Vector2(424, 192)
+
+[connection signal="area_entered" from="LevelGoal/Door" to="LevelGoal/Door" method="_on_area_entered"]
+
+[editable path="LevelGoal"]

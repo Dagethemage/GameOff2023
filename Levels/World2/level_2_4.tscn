@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5s5xuqrlt7qj" path="res://Levels/level_base.tscn" id="1_tkrrq"]
 [ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://Objects/spikes.tscn" id="2_3av13"]
-[ext_resource type="PackedScene" uid="uid://b0hqjbgwnbr67" path="res://Levels/World2/level_2_5.tscn" id="2_ip63f"]
+[ext_resource type="Script" path="res://Levels/Doors/World2Doors/Level2_4_Door.gd" id="2_eyrmy"]
 [ext_resource type="PackedScene" uid="uid://evvaqdev655g" path="res://Sprites/TileSets/level_two_tilemap_base.tscn" id="2_kslcp"]
 [ext_resource type="PackedScene" uid="uid://cdt4eq8yqys7c" path="res://Characters/Enemies/level_2_walking_enemy.tscn" id="3_ar3vv"]
 [ext_resource type="PackedScene" uid="uid://b1fpmwlby62wt" path="res://Characters/Enemies/spike_ball.tscn" id="4_bce3b"]
@@ -22,13 +22,15 @@ _data = {
 point_count = 5
 
 [node name="Level2_4" instance=ExtResource("1_tkrrq")]
-next_level = ExtResource("2_ip63f")
 
-[node name="Player" parent="." index="1"]
+[node name="Player" parent="." index="2"]
 position = Vector2(56, 128)
 
-[node name="LevelGoal" parent="." index="2"]
+[node name="LevelGoal" parent="." index="3"]
 position = Vector2(24, 224)
+
+[node name="Door" parent="LevelGoal" index="1"]
+script = ExtResource("2_eyrmy")
 
 [node name="Spikes" parent="." index="4" instance=ExtResource("2_3av13")]
 position = Vector2(449, 112)
@@ -167,3 +169,7 @@ layer_0/tile_data = PackedInt32Array(2031655, 131072, 3, 1966119, 131072, 2, 190
 
 [node name="Checkpoint" parent="." index="46" instance=ExtResource("8_gd3sy")]
 position = Vector2(622, 352)
+
+[connection signal="area_entered" from="LevelGoal/Door" to="LevelGoal/Door" method="_on_area_entered"]
+
+[editable path="LevelGoal"]

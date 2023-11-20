@@ -26,6 +26,7 @@ LevelTranstition="*res://GUI/Transitions/level_transtition.tscn"
 ReferenceStash="*res://Resource/ReferenceStash.gd"
 Test="*res://Resource/SaveManager.gd"
 Global="*res://Singletons/Global.gd"
+LevelReferences="*res://Singletons/LevelReferences.gd"
 
 [debug]
 

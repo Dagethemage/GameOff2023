@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://c37fnn6k2oduk"]
 
 [ext_resource type="PackedScene" uid="uid://5s5xuqrlt7qj" path="res://Levels/level_base.tscn" id="1_ni63e"]
+[ext_resource type="Script" path="res://Levels/Doors/World3Doors/Level3_2_Door.gd" id="2_ixs3n"]
 [ext_resource type="PackedScene" uid="uid://vkdim54t7qkx" path="res://Sprites/TileSets/LevelThreeTilemap.tscn" id="2_vjf88"]
 [ext_resource type="PackedScene" uid="uid://cdt4eq8yqys7c" path="res://Characters/Enemies/level_2_walking_enemy.tscn" id="2_vrqwq"]
-[ext_resource type="PackedScene" uid="uid://bngi1cww0mhmh" path="res://Levels/World3/level_3_3.tscn" id="2_yr38d"]
 [ext_resource type="PackedScene" uid="uid://brpxbo5kqrer0" path="res://Objects/turret_floor.tscn" id="4_6tkwb"]
 [ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://Objects/spikes.tscn" id="4_qdgks"]
 [ext_resource type="PackedScene" uid="uid://bpa5onlce0w1w" path="res://Objects/Projectiles/down_projectile.tscn" id="5_wjg7g"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://Objects/checkpoint.tscn" id="8_j85xs"]
 
 [node name="Level3_2" instance=ExtResource("1_ni63e")]
-next_level = ExtResource("2_yr38d")
 
 [node name="Camera2D" parent="." index="0" node_paths=PackedStringArray("tilemap")]
 limit_left = -60
@@ -27,6 +26,9 @@ position = Vector2(40, 320)
 
 [node name="LevelGoal" parent="." index="3"]
 position = Vector2(320, 64)
+
+[node name="Door" parent="LevelGoal" index="1"]
+script = ExtResource("2_ixs3n")
 
 [node name="Level2WalkingEnemy" parent="." index="5" instance=ExtResource("2_vrqwq")]
 position = Vector2(96, 224)
@@ -127,3 +129,7 @@ layer_0/tile_data = PackedInt32Array(1572863, 131072, 2, 1507327, 131072, 2, 144
 
 [node name="Checkpoint" parent="." index="32" instance=ExtResource("8_j85xs")]
 position = Vector2(358, 160)
+
+[connection signal="area_entered" from="LevelGoal/Door" to="LevelGoal/Door" method="_on_area_entered"]
+
+[editable path="LevelGoal"]

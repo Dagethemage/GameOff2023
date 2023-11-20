@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dudcliljichke"]
 
 [ext_resource type="PackedScene" uid="uid://5s5xuqrlt7qj" path="res://Levels/level_base.tscn" id="1_ph0m6"]
-[ext_resource type="PackedScene" uid="uid://cgu8hkens6nx0" path="res://Levels/World2/level_2_2.tscn" id="2_boes2"]
 [ext_resource type="PackedScene" uid="uid://evvaqdev655g" path="res://Sprites/TileSets/level_two_tilemap_base.tscn" id="2_m0sx5"]
+[ext_resource type="Script" path="res://Levels/Doors/World2Doors/Level2_1_Door.gd" id="2_rcmiw"]
 [ext_resource type="PackedScene" uid="uid://b1fpmwlby62wt" path="res://Characters/Enemies/spike_ball.tscn" id="3_5clug"]
 [ext_resource type="PackedScene" uid="uid://c48ulj8qecc05" path="res://Objects/falling_spike.tscn" id="3_dxv5f"]
 [ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://Objects/spikes.tscn" id="4_u3346"]
@@ -21,13 +21,15 @@ _data = {
 point_count = 4
 
 [node name="Level2_1" instance=ExtResource("1_ph0m6")]
-next_level = ExtResource("2_boes2")
 
-[node name="Player" parent="." index="1"]
+[node name="Player" parent="." index="2"]
 position = Vector2(41, 368)
 
-[node name="LevelGoal" parent="." index="2"]
+[node name="LevelGoal" parent="." index="3"]
 position = Vector2(624, 112)
+
+[node name="Door" parent="LevelGoal" index="1"]
+script = ExtResource("2_rcmiw")
 
 [node name="SpikeBall" parent="." index="4" instance=ExtResource("3_5clug")]
 position = Vector2(160, 339)
@@ -209,6 +211,9 @@ layer_0/tile_data = PackedInt32Array(1572863, 327680, 0, 1507327, 196608, 2, 144
 [node name="Checkpoint" parent="." index="36" instance=ExtResource("7_ygywy")]
 position = Vector2(600, 224)
 
+[connection signal="area_entered" from="LevelGoal/Door" to="LevelGoal/Door" method="_on_area_entered"]
+
+[editable path="LevelGoal"]
 [editable path="SpikeBall5"]
 [editable path="SpikeBall6"]
 [editable path="SpikeBall7"]
