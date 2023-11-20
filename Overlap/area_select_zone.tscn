@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://bavgpxopiixer"]
+[gd_scene load_steps=16 format=3 uid="uid://bavgpxopiixer"]
 
-[ext_resource type="Script" path="res://AreaSelectZone.gd" id="1_vpyhu"]
+[ext_resource type="Script" path="res://Overlap/AreaSelectZone.gd" id="1_vpyhu"]
 [ext_resource type="Texture2D" uid="uid://cuttvv8xdupei" path="res://Sprites/TileSets/Level_Goal.png" id="2_v1c02"]
+[ext_resource type="Texture2D" uid="uid://baidih1d7gv5x" path="res://Sprites/TileSets/level_icons.png" id="3_5150b"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="3_ldlok"]
+[ext_resource type="Texture2D" uid="uid://c7rsbqrx0p6o6" path="res://Sprites/TileSets/Lock.png" id="4_251hc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_16knp"]
 size = Vector2(48, 16)
@@ -50,6 +52,139 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_a8nnr"]
+resource_name = "Unlock"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lock:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.35),
+"transitions": PackedFloat32Array(1, -2, -2),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lock:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.0145786),
+"update": 0,
+"values": [0.0, 0.0, -0.607375]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lock:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(-2, 2, 0.5, -2),
+"update": 0,
+"values": [Vector2(0, -72), Vector2(0, -80), Vector2(0, -64), Vector2(0, -72)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lock:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LockedIcon:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yeyn2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lock:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lock:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lock:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -72)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lock:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LockedIcon:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_calvq"]
+_data = {
+"RESET": SubResource("Animation_yeyn2"),
+"Unlock": SubResource("Animation_a8nnr")
+}
+
 [node name="AreaSelectZone" type="Area2D"]
 collision_layer = 0
 collision_mask = 128
@@ -68,6 +203,17 @@ autoplay = "default"
 [node name="LevelIcon" type="Sprite2D" parent="."]
 position = Vector2(0, -72)
 region_rect = Rect2(0, 0, 64, 64)
+
+[node name="LockedIcon" type="Sprite2D" parent="."]
+position = Vector2(0, -72)
+texture = ExtResource("3_5150b")
+region_enabled = true
+region_rect = Rect2(0, 80, 64, 64)
+
+[node name="Lock" type="Sprite2D" parent="."]
+position = Vector2(0, -72)
+texture = ExtResource("4_251hc")
+hframes = 3
 
 [node name="LevelIconPanel" type="Panel" parent="."]
 offset_left = 32.0
@@ -95,6 +241,11 @@ theme_override_colors/font_color = Color(0.878431, 0.643137, 0.431373, 1)
 text = "GO!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_calvq")
+}
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

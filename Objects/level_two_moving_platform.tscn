@@ -25,6 +25,7 @@ size = Vector2(31.9793, 5.99225)
 
 [node name="AnimatedSprite2D" parent="AnimatableBody2D" index="0"]
 sprite_frames = SubResource("SpriteFrames_fk3fq")
+animation = &"Moving"
 
 [node name="CollisionShape2D" parent="AnimatableBody2D" index="1"]
 shape = SubResource("RectangleShape2D_31206")

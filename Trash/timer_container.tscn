@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://da3w5bokqt4yi"]
 
-[ext_resource type="Script" path="res://GUI/TimerContainer.gd" id="1_jeq0v"]
+[ext_resource type="Script" path="res://Trash/TimerContainer.gd" id="1_jeq0v"]
 
 [node name="TimerContainer" type="HBoxContainer"]
 offset_right = 40.0

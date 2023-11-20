@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ciwy5gdwm6l8s"]
 
-[ext_resource type="Script" path="res://GUI/coin_container.gd" id="1_v1txa"]
+[ext_resource type="Script" path="res://Trash/coin_container.gd" id="1_v1txa"]
 
 [node name="CoinContainer" type="HBoxContainer"]
 offset_right = 40.0

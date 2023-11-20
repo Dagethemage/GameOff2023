@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://wtu1ls85p8tu"]
 
-[ext_resource type="Script" path="res://GUI/RetryContainer.gd" id="1_pve4u"]
+[ext_resource type="Script" path="res://Trash/RetryContainer.gd" id="1_pve4u"]
 
 [node name="RetryContainer" type="HBoxContainer"]
 offset_right = 69.0

@@ -7,5 +7,6 @@ func _ready() -> void:
 	area_entered.connect(on_area_entered)
 
 func on_area_entered(area) -> void:
-	Global.level_data.coin_amount += 1
+	Global.coin += 1
+	print(Global.coin)
 	queue_free()

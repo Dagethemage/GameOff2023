@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b3xbyehaviphc"]
 
-[ext_resource type="Script" path="res://GUI/score_container.gd" id="1_sw786"]
+[ext_resource type="Script" path="res://Trash/score_container.gd" id="1_sw786"]
 
 [node name="ScoreContainer" type="HBoxContainer"]
 offset_right = 40.0
