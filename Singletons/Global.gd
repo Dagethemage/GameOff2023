@@ -3,6 +3,7 @@ extends Node
 var coin: int = 1
 var starting_position
 var key_found = []
+var log_found = []
 var opened_door = []
 
 
