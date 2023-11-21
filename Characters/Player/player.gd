@@ -1,8 +1,8 @@
-class_name Player
 extends CharacterBody2D
 
 #Exported Resources
 @export var MovementData : PlayerMovementData
+@export var inventory: Inventory
 
 var air_jump = false
 var just_wall_jumped = false
@@ -113,3 +113,6 @@ func hazard_detector_entered(area) -> void:
 	get_tree().paused = false
 	reset.hide()
 	global_position = Global.starting_position
+
+func collect(item):
+	inventory.insert(item)

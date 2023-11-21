@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceagat2lwf2g6"]
+[gd_scene load_steps=11 format=3 uid="uid://ceagat2lwf2g6"]
 
 [ext_resource type="Script" path="res://GUI/ui.gd" id="1_ya8w1"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="3_t2qgx"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://da1jlg81ihg38" path="res://Sprites/TileSets/Logs.png" id="5_w5ilj"]
 [ext_resource type="PackedScene" uid="uid://bsxby8o6rxilk" path="res://GUI/level_completed.tscn" id="6_0m2uf"]
 [ext_resource type="PackedScene" uid="uid://dlpjba7ef3fvl" path="res://GUI/PauseScreen.tscn" id="6_nykx1"]
+[ext_resource type="PackedScene" uid="uid://cg72fj0owt86n" path="res://GUI/inventory.tscn" id="7_e3elk"]
 
 [sub_resource type="Animation" id="Animation_ksruh"]
 length = 0.001
@@ -84,6 +85,9 @@ centered = false
 offset_right = 640.0
 offset_bottom = 360.0
 color = Color(0, 0, 0, 0)
+
+[node name="Inventory" parent="." instance=ExtResource("7_e3elk")]
+metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_nykx1")]
 

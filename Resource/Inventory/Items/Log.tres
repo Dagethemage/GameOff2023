@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b6pq82gbwkxcq"]
+
+[ext_resource type="Script" path="res://Resource/Inventory/Item.gd" id="1_elp8p"]
+[ext_resource type="Texture2D" uid="uid://da1jlg81ihg38" path="res://Sprites/TileSets/Logs.png" id="1_fds60"]
+
+[resource]
+script = ExtResource("1_elp8p")
+item_name = "Log"
+icon = ExtResource("1_fds60")

@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg72fj0owt86n"]
+
+[ext_resource type="Script" path="res://GUI/inventory.gd" id="1_al2g6"]
+[ext_resource type="PackedScene" uid="uid://bau5h8jwwn2rs" path="res://GUI/inventory_slot.tscn" id="1_io5eg"]
+
+[node name="Inventory" type="Control"]
+process_mode = 3
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_al2g6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.0
+offset_top = 92.0
+offset_right = 96.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.454902)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/CenterContainer"]
+layout_mode = 2
+columns = 5
+
+[node name="InventorySlot" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="ColorRect/CenterContainer/GridContainer" instance=ExtResource("1_io5eg")]
+layout_mode = 2
