@@ -9,3 +9,4 @@ func _unhandled_input(event):
 		await get_tree().create_timer(1.5).timeout
 		LevelReferences.goto_scene("res://Levels/World1/level_1.tscn")
 		LevelTranstition.fade_from_black()
+

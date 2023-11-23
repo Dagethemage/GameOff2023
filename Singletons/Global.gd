@@ -18,6 +18,7 @@ signal level_ended
 signal checkpoint_met(checkpoint_position)
 signal paused
 
+signal level_one_started
 #var level_data: LevelData = load("res://Resource/DefaultLevelData.tres")
 
 func set_coin(new_coin):

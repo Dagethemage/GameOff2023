@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 
 aseprite_executable_path="F:/GameDevelopment/Aseprite/Aseprite.exe"
 
+[audio]
+
+buses/default_bus_layout="res://Sounds/default_bus_layout.tres"
+
 [autoload]
 
 LevelTranstition="*res://GUI/Transitions/level_transtition.tscn"

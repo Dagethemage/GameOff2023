@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlpjba7ef3fvl"]
+[gd_scene load_steps=5 format=3 uid="uid://dlpjba7ef3fvl"]
 
 [ext_resource type="Script" path="res://GUI/PauseScreen.gd" id="1_1d74i"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="1_8hpkf"]
+[ext_resource type="AudioStream" uid="uid://ba6gry1cd47l3" path="res://Sounds/Focus_ui.wav" id="3_keqiw"]
+[ext_resource type="AudioStream" uid="uid://ohvihft8vkag" path="res://Sounds/Select.wav" id="4_w1i77"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 1
@@ -61,3 +63,11 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme = ExtResource("1_8hpkf")
 text = "Quit"
+
+[node name="Focus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_keqiw")
+bus = &"UISounds"
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_w1i77")
+bus = &"UISounds"

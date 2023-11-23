@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bouvtb43f4ran" path="res://Characters/Player/Player.png" id="4_uev14"]
 [ext_resource type="PackedScene" uid="uid://cxu8fnclanix3" path="res://Sprites/TileSets/base_level_tile_map.tscn" id="5_3ypnp"]
 [ext_resource type="Texture2D" uid="uid://bwoesoa61pwv3" path="res://Sprites/MovingPlatform_UP.png" id="8_c5no6"]
-[ext_resource type="AudioStream" uid="uid://ceggenimcspjg" path="res://Sounds/SelectUI.wav" id="10_8c72j"]
-[ext_resource type="AudioStream" uid="uid://dmui1hlto8uvm" path="res://Sounds/StartUI.wav" id="11_vibak"]
+[ext_resource type="AudioStream" uid="uid://ohvihft8vkag" path="res://Sounds/Select.wav" id="10_ch55p"]
+[ext_resource type="AudioStream" uid="uid://ba6gry1cd47l3" path="res://Sounds/Focus_ui.wav" id="10_rkh2b"]
 [ext_resource type="AudioStream" uid="uid://bpvts5750r7u4" path="res://Sounds/ErrorUI.wav" id="12_xah3p"]
 [ext_resource type="AudioStream" uid="uid://cwe0iynqxp8vn" path="res://Sounds/BackUI.wav" id="13_lrgui"]
 
@@ -480,13 +480,17 @@ libraries = {
 }
 
 [node name="Select" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_8c72j")
+stream = ExtResource("10_ch55p")
+bus = &"UISounds"
 
 [node name="Start" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_vibak")
+stream = ExtResource("10_rkh2b")
+bus = &"UISounds"
 
 [node name="Error" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_xah3p")
+bus = &"UISounds"
 
 [node name="Back" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_lrgui")
+bus = &"UISounds"

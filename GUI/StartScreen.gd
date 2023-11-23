@@ -16,7 +16,6 @@ func _ready() -> void:
 	MusicController.play_title_music()
 	press_a_button.grab_focus()
 	press_a_button.pressed.connect(press_a_pressed)
-	press_a_button.focus_entered.connect(a_focus_entered)
 	start_button.focus_entered.connect(start_focus_entered)
 	quit_button.focus_entered.connect(quit_focus_entered)
 	start_button.pressed.connect(start_pressed)
@@ -39,12 +38,10 @@ func start_pressed():
 	LevelTranstition.fade_from_black()
 
 func quit_pressed():
-	back.play()
+	start.play()
 	await get_tree().create_timer(1).timeout
 	get_tree().quit()
 
-func a_focus_entered():
-	select.play()
 
 func start_focus_entered():
 	select.play()
