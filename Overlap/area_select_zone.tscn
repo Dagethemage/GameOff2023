@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bavgpxopiixer"]
+[gd_scene load_steps=16 format=3 uid="uid://bavgpxopiixer"]
 
+[ext_resource type="Script" path="res://Levels/door.gd" id="1_4cdxy"]
 [ext_resource type="Texture2D" uid="uid://cuttvv8xdupei" path="res://Sprites/TileSets/Level_Goal.png" id="2_v1c02"]
 [ext_resource type="Texture2D" uid="uid://baidih1d7gv5x" path="res://Sprites/TileSets/level_icons.png" id="3_5150b"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="3_ldlok"]
@@ -187,6 +188,7 @@ _data = {
 [node name="AreaSelectZone" type="Area2D"]
 collision_layer = 0
 collision_mask = 128
+script = ExtResource("1_4cdxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

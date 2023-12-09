@@ -10,5 +10,5 @@ func play_title_music():
 	music.play()
 
 func play_level_1_music():
-	music.stream = title_music
+	music.stream = level_1_music
 	music.play()

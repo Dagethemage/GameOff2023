@@ -15,7 +15,7 @@ func _ready() -> void:
 	Global.show_score.connect(show_score)
 
 func _process(delta):
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("Inventory"):
 		
 		if is_open:
 			close()
