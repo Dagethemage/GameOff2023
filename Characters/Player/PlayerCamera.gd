@@ -1,17 +1,25 @@
-class_name PlayerCamera
 extends Camera2D
 
+@export_category("Follow Player")
 @export var player: CharacterBody2D
-@export var tilemap: TileMap
+
+@export_category("Camera Smoothing")
+@export var smoothing_enabled: bool
+@export_range(1, 10) var smoothing_distance : int = 8
+
+var weight: float
 
 func _ready():
-	var map_rect = tilemap.get_used_rect()
-	var tile_size = tilemap.rendering_quadrant_size
-	var world_size = map_rect.size * tile_size
-	
-	limit_right = world_size.x
-	limit_bottom = world_size.y
-func _process(delta):
-	position = player.position
+	weight = float(11 - smoothing_distance) / 100
+
+func _physics_process(delta):
+	if player != null:
+		var camera_position: Vector2
+		if smoothing_enabled:
+			camera_position = lerp(global_position, player.global_position, weight)
+		else:
+			camera_position = player.global_position
+		
+		global_position = camera_position.floor()
 
 

@@ -7,8 +7,33 @@ extends Area2D
 @onready var locked_icon = $LockedIcon
 @onready var animation_player = $AnimationPlayer
 
+@export var next_level:PackedScene
+
 var show_icon = false
 var unlocked = false
+var timer = Timer.new()
+
+func _ready():
+	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
+	#Adds Timer to Scene Tree
+	add_child(timer)
+	#Signal for completing level
+	Global.level_completed.connect(func level_completed():
+		#sets timer properties when level is completed
+		timer.one_shot = true
+		timer.autostart = true
+		timer.wait_time = 1.0
+		timer.timeout.connect(func time_out():
+			change_level())
+		timer.start()
+		#Wait for the timeout signal to finish before changing scenes
+		await timer.timeout
+		)
+	
+	#Emits signal that the level has started
+	Global.level_started.emit()
+
 
 func _on_area_entered(area):
 	if self.name in Global.key_found:
@@ -37,3 +62,8 @@ func _on_area_exited(area):
 	level_icon_panel.hide()
 	lock.hide()
 	locked_icon.hide()
+
+func change_level() -> void:
+	if not next_level is PackedScene: return
+		#Change to next_level if set in editor
+	get_tree().change_scene_to_packed(next_level)

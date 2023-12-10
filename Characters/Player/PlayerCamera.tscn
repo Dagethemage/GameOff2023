@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" path="res://Characters/Player/PlayerCamera.gd" id="1_n4b44"]
 
-[node name="Camera2D" type="Camera2D"]
-limit_left = -10
-limit_top = -10
-position_smoothing_enabled = true
+[node name="PlayerCamera2D" type="Camera2D"]
+position = Vector2(21, 341)
+limit_left = -15
+limit_top = -30
+limit_right = 655
+limit_bottom = 385
+editor_draw_limits = true
 script = ExtResource("1_n4b44")
+smoothing_enabled = true
+smoothing_distance = 2
