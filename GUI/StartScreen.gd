@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var quit_button = $OptionsContainer/QuitButton
 @onready var press_a_button = $TitleContaner/VBoxContainer/PressAButton
 @onready var animation_player = $AnimationPlayer
+@onready var tile_map = $TileMap
 
 #sounds
 @onready var select = $Select
@@ -13,7 +14,8 @@ extends CanvasLayer
 @onready var back = $Back
 
 func _ready() -> void:
-	MusicController.play_title_music()
+	
+
 	press_a_button.grab_focus()
 	press_a_button.pressed.connect(press_a_pressed)
 	start_button.focus_entered.connect(start_focus_entered)
