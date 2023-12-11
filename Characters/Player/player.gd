@@ -15,12 +15,13 @@ var was_wall_normal = Vector2.ZERO
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var hazard_detector = $HazardDetector
 
-#test
-@onready var reset = $Reset
-
 
 func _ready() -> void:
 	Global.starting_position = global_position
+	Global.level_completed.connect(func level_completed():
+		MovementData.zero_stats())
+	Global.level_started.connect(func level_started():
+		MovementData.rest_stats())
 	hazard_detector.area_entered.connect(hazard_detector_entered)
 
 func _physics_process(delta):
@@ -107,12 +108,15 @@ func update_animations(input_axis):
 #		animated_sprite_2d.play("Jump")
 
 func hazard_detector_entered(area) -> void:
-	reset.show()
-	get_tree().paused = true
-	await get_tree().create_timer(1).timeout
-	get_tree().paused = false
-	reset.hide()
+	MovementData.zero_stats()
+	#play death animation
+	#await get_tree().create_timer(0.5).timeout
 	global_position = Global.starting_position
+	await get_tree().create_timer(0.1).timeout
+	MovementData.rest_stats()
 
 func collect(item):
 	inventory.insert(item)
+
+
+

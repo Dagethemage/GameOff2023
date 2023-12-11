@@ -13,7 +13,27 @@ extends Resource
 
 
 
+func zero_stats():
+	normal_speed = 0.0
+	dash_speed = 0.0
+	dash_length = 0.12
+	acceleraton = 800.0
+	friction = 1000.0
+	jump_velocity = 0.0
+	gravity_scale = 1.0
+	air_resistance = 0.0
+	air_acceleration = 0.0
 
+func rest_stats():
+	normal_speed = 100.0
+	dash_speed = 800.0
+	dash_length = 0.12
+	acceleraton = 800.0
+	friction = 1000.0
+	jump_velocity = -300.0
+	gravity_scale = 1.0
+	air_resistance = 200.0
+	air_acceleration = 400.0
 
 
 

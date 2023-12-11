@@ -39,4 +39,20 @@ position = Vector2(128, 352)
 texture = ExtResource("4_f2vok")
 region_enabled = true
 
+[node name="World2" parent="." instance=ExtResource("3_4dutx")]
+position = Vector2(320, 350)
+
+[node name="LevelIcon" parent="World2" index="2"]
+texture = ExtResource("4_f2vok")
+region_enabled = true
+
+[node name="World3" parent="." instance=ExtResource("3_4dutx")]
+position = Vector2(512, 352)
+
+[node name="LevelIcon" parent="World3" index="2"]
+texture = ExtResource("4_f2vok")
+region_enabled = true
+
 [editable path="World1"]
+[editable path="World2"]
+[editable path="World3"]

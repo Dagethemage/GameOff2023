@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5vse4msmchhh"]
+[gd_scene load_steps=11 format=3 uid="uid://c5vse4msmchhh"]
 
 [ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_pvha8"]
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="2_fclji"]
+[ext_resource type="PackedScene" uid="uid://q6qw0s6tnbwg" path="res://Levels/World1/level_4.tscn" id="2_jaiuf"]
 [ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://Objects/level_goal.tscn" id="3_ytrpw"]
 [ext_resource type="TileSet" uid="uid://0oujyisaoies" path="res://Resource/Tilesets/World_1_Tileset.tres" id="4_gddjj"]
 [ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://Objects/checkpoint.tscn" id="5_wogas"]
@@ -13,6 +14,7 @@
 [node name="Level_3" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_pvha8")
 player = NodePath("Player")
+next_level = ExtResource("2_jaiuf")
 
 [node name="Player" parent="." instance=ExtResource("2_fclji")]
 position = Vector2(24, 352)

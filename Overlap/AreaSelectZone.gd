@@ -13,6 +13,14 @@ var show_icon = false
 var unlocked = false
 var timer = Timer.new()
 
+#func _unhandled_input(event):
+	#if event.is_action_pressed("Interact"):
+		#if self.name in Global.key_found:
+			#LevelTranstition.fade_to_black()
+			#await get_tree().create_timer(2).timeout
+			#LevelTranstition.fade_from_black()
+			#change_level()
+
 func _ready():
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
@@ -49,6 +57,7 @@ func _on_area_entered(area):
 		locked_icon.hide()
 		lock.hide()
 	
+
 	
 	if not self.name in Global.key_found:
 		level_icon_panel.show()
@@ -65,5 +74,6 @@ func _on_area_exited(area):
 
 func change_level() -> void:
 	if not next_level is PackedScene: return
+	
 		#Change to next_level if set in editor
 	get_tree().change_scene_to_packed(next_level)
