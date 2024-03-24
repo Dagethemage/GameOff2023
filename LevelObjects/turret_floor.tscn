@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://brpxbo5kqrer0"]
 
 [ext_resource type="Texture2D" uid="uid://v66ekbygmaxg" path="res://Sprites/TileSets/GameOff2023_tileset.png" id="1_7g75y"]
-[ext_resource type="Script" path="res://Objects/turret_floor.gd" id="1_ea8be"]
+[ext_resource type="Script" path="res://LevelObjects/turret_floor.gd" id="1_ea8be"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_unkt5"]
 atlas = ExtResource("1_7g75y")
@@ -26,6 +26,6 @@ position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_n4ffx")
 
 [node name="Muzzel" type="Marker2D" parent="."]
-position = Vector2(1, -12)
+position = Vector2(0, -8)
 
 [node name="Timer" type="Timer" parent="."]

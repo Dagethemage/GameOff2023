@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://b8wlolipcbp6b"]
 
-[ext_resource type="Script" path="res://Objects/key.gd" id="1_yrrg7"]
+[ext_resource type="Script" path="res://LevelObjects/key.gd" id="1_yrrg7"]
 [ext_resource type="Texture2D" uid="uid://b54nuycvy7pbd" path="res://Sprites/TileSets/KeyCard.png" id="2_27lpw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8enqr"]

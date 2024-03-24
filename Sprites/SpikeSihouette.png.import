@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxo1npoh4pmpc"
-path="res://.godot/imported/projectile.png-d7d882b347f2d8439f7e8c12dff4b970.ctex"
+uid="uid://dex2hpr2hv0rs"
+path="res://.godot/imported/SpikeSihouette.png-586eeefe63e79e5f13bbed248fe14ca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects/Projectiles/projectile.png"
-dest_files=["res://.godot/imported/projectile.png-d7d882b347f2d8439f7e8c12dff4b970.ctex"]
+source_file="res://Sprites/SpikeSihouette.png"
+dest_files=["res://.godot/imported/SpikeSihouette.png-586eeefe63e79e5f13bbed248fe14ca3.ctex"]
 
 [params]
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://bavgpxopiixer"]
+[gd_scene load_steps=16 format=3 uid="uid://bavgpxopiixer"]
 
 [ext_resource type="Script" path="res://Overlap/AreaSelectZone.gd" id="1_i80wc"]
-[ext_resource type="PackedScene" uid="uid://cm5siay54e51c" path="res://Levels/World1/level_1.tscn" id="2_uivkg"]
 [ext_resource type="Texture2D" uid="uid://cuttvv8xdupei" path="res://Sprites/TileSets/Level_Goal.png" id="2_v1c02"]
 [ext_resource type="Texture2D" uid="uid://baidih1d7gv5x" path="res://Sprites/TileSets/level_icons.png" id="3_5150b"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="3_ldlok"]
@@ -190,7 +189,6 @@ _data = {
 collision_layer = 0
 collision_mask = 128
 script = ExtResource("1_i80wc")
-next_level = ExtResource("2_uivkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

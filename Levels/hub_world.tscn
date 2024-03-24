@@ -1,20 +1,20 @@
-[gd_scene load_steps=10 format=3 uid="uid://blox6t18hdjll"]
+[gd_scene load_steps=11 format=3 uid="uid://blox6t18hdjll"]
 
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="2_os1r8"]
 [ext_resource type="PackedScene" uid="uid://dekfnec588ri5" path="res://Characters/Player/PlayerCamera.tscn" id="2_r4vd6"]
 [ext_resource type="PackedScene" uid="uid://bavgpxopiixer" path="res://Overlap/area_select_zone.tscn" id="3_4dutx"]
-[ext_resource type="Resource" uid="uid://bbu4jw5uw6r6f" path="res://Resource/Inventory/PlayerInventory.tres" id="3_hmmqg"]
 [ext_resource type="Texture2D" uid="uid://baidih1d7gv5x" path="res://Sprites/TileSets/level_icons.png" id="4_f2vok"]
 [ext_resource type="PackedScene" uid="uid://kklwejuri6h8" path="res://GUI/level_one_parallax.tscn" id="5_20e7r"]
-[ext_resource type="PackedScene" uid="uid://b8wlolipcbp6b" path="res://Objects/key.tscn" id="7_u1g32"]
+[ext_resource type="PackedScene" uid="uid://b8wlolipcbp6b" path="res://LevelObjects/key.tscn" id="7_u1g32"]
+[ext_resource type="PackedScene" uid="uid://bbvwtqjnj45kc" path="res://Levels/World1/level_1_1.tscn" id="8_63vxs"]
 [ext_resource type="TileSet" uid="uid://0oujyisaoies" path="res://Resource/Tilesets/World_1_Tileset.tres" id="8_ni01f"]
+[ext_resource type="PackedScene" uid="uid://il8ajt2lxg05" path="res://LevelObjects/disappearing_spike.tscn" id="10_smv47"]
 [ext_resource type="PackedScene" uid="uid://ceagat2lwf2g6" path="res://GUI/ui.tscn" id="11_brfhn"]
 
 [node name="HubWorld" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_os1r8")]
 position = Vector2(11, 350)
-inventory = ExtResource("3_hmmqg")
 
 [node name="LevelOneParallax" parent="." instance=ExtResource("5_20e7r")]
 
@@ -34,17 +34,24 @@ layer_0/tile_data = PackedInt32Array(1310719, 196608, 2, 1245183, 196608, 2, 117
 
 [node name="World1" parent="." instance=ExtResource("3_4dutx")]
 position = Vector2(128, 352)
+next_level = ExtResource("8_63vxs")
 
 [node name="LevelIcon" parent="World1" index="2"]
 texture = ExtResource("4_f2vok")
 region_enabled = true
 
+[node name="Label" parent="World1/LevelIconPanel" index="0"]
+text = "World 1"
+
 [node name="World2" parent="." instance=ExtResource("3_4dutx")]
-position = Vector2(320, 350)
+position = Vector2(320, 352)
 
 [node name="LevelIcon" parent="World2" index="2"]
 texture = ExtResource("4_f2vok")
 region_enabled = true
+
+[node name="Label" parent="World2/LevelIconPanel" index="0"]
+text = "World 2"
 
 [node name="World3" parent="." instance=ExtResource("3_4dutx")]
 position = Vector2(512, 352)
@@ -52,6 +59,12 @@ position = Vector2(512, 352)
 [node name="LevelIcon" parent="World3" index="2"]
 texture = ExtResource("4_f2vok")
 region_enabled = true
+
+[node name="Label" parent="World3/LevelIconPanel" index="0"]
+text = "World 3"
+
+[node name="DisappearingSpike" parent="." instance=ExtResource("10_smv47")]
+position = Vector2(80, 336)
 
 [editable path="World1"]
 [editable path="World2"]

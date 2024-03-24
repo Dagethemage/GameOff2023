@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwd1qt71jsfqs"]
 
-[ext_resource type="PackedScene" uid="uid://btnluppyote4q" path="res://Objects/Hazard.tscn" id="1_bytah"]
+[ext_resource type="PackedScene" uid="uid://btnluppyote4q" path="res://LevelObjects/Hazard.tscn" id="1_bytah"]
 [ext_resource type="Texture2D" uid="uid://v66ekbygmaxg" path="res://Sprites/TileSets/GameOff2023_tileset.png" id="2_xo2c6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xv7x"]

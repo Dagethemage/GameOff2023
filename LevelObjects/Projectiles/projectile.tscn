@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c7bb64a0lw7x2"]
 
 [ext_resource type="PackedScene" uid="uid://cgwofmd5bywoy" path="res://Overlap/hit_box.tscn" id="1_u00vg"]
-[ext_resource type="Script" path="res://Objects/Projectiles/projectile.gd" id="2_7vosu"]
-[ext_resource type="Texture2D" uid="uid://bxo1npoh4pmpc" path="res://Objects/Projectiles/projectile.png" id="3_p6jor"]
+[ext_resource type="Script" path="res://LevelObjects/Projectiles/projectile.gd" id="2_7vosu"]
+[ext_resource type="Texture2D" uid="uid://bxo1npoh4pmpc" path="res://LevelObjects/Projectiles/projectile.png" id="3_p6jor"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i8p0t"]
 atlas = ExtResource("3_p6jor")

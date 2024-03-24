@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dk6rgi2c2k2b4"]
 
-[ext_resource type="Script" path="res://Objects/checkpoint.gd" id="1_j7f88"]
+[ext_resource type="Script" path="res://LevelObjects/checkpoint.gd" id="1_j7f88"]
 [ext_resource type="Texture2D" uid="uid://cm3ts0e5ujhg6" path="res://Sprites/TileSets/SavePoint.png" id="1_uciv6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1iyqu"]

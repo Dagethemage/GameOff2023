@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dvuox177k0rsm"]
 
 [ext_resource type="Texture2D" uid="uid://da1jlg81ihg38" path="res://Sprites/TileSets/Logs.png" id="1_iwpx5"]
-[ext_resource type="Script" path="res://Objects/log.gd" id="1_wfgo1"]
+[ext_resource type="Script" path="res://LevelObjects/log.gd" id="1_wfgo1"]
 [ext_resource type="Resource" uid="uid://b6pq82gbwkxcq" path="res://Resource/Inventory/Items/Log.tres" id="2_sa1vy"]
 
 [sub_resource type="Animation" id="Animation_rk5f2"]

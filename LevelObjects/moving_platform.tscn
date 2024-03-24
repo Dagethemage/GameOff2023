@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://condfc4wly161"]
 
-[ext_resource type="Script" path="res://Objects/MovingPlatform.gd" id="1_2iovo"]
+[ext_resource type="Script" path="res://LevelObjects/MovingPlatform.gd" id="1_2iovo"]
 
 [sub_resource type="Animation" id="Animation_oh2pb"]
 resource_name = "Move"

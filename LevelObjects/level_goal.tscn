@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4vmg54yu6ats"]
+[gd_scene load_steps=10 format=3 uid="uid://b4vmg54yu6ats"]
 
-[ext_resource type="Script" path="res://Objects/level_goal.gd" id="1_j1vs5"]
+[ext_resource type="Script" path="res://LevelObjects/level_goal.gd" id="1_j1vs5"]
 [ext_resource type="Texture2D" uid="uid://cuttvv8xdupei" path="res://Sprites/TileSets/Level_Goal.png" id="2_up832"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8x1r"]
@@ -46,6 +46,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7uby"]
+size = Vector2(16, 8)
+
 [node name="LevelGoal" type="Node2D"]
 script = ExtResource("1_j1vs5")
 
@@ -57,4 +60,8 @@ animation = &"Idle"
 
 [node name="Door" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_g7uby")

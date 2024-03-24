@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsbvh3o5yxv44"]
 
-[ext_resource type="Script" path="res://Objects/turret_wall.gd" id="1_413kf"]
+[ext_resource type="Script" path="res://LevelObjects/turret_wall.gd" id="1_413kf"]
 [ext_resource type="Texture2D" uid="uid://v66ekbygmaxg" path="res://Sprites/TileSets/GameOff2023_tileset.png" id="1_m4mt2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_unkt5"]

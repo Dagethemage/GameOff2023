@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dwqs43w46uc2a"]
+[gd_scene load_steps=18 format=3 uid="uid://dwqs43w46uc2a"]
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_folvt"]
 [ext_resource type="Script" path="res://Characters/Player/PlayerMovementData.gd" id="2_jrmri"]
+[ext_resource type="Resource" uid="uid://bbu4jw5uw6r6f" path="res://Resource/Inventory/PlayerInventory.tres" id="3_7i6t3"]
 [ext_resource type="Texture2D" uid="uid://bouvtb43f4ran" path="res://Characters/Player/Player.png" id="4_l5wlt"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="5_yyd20"]
 [ext_resource type="PackedScene" uid="uid://b5wnw0imh5fuq" path="res://Characters/Player/Abilities/Dash.tscn" id="6_0l3fi"]
@@ -86,6 +87,7 @@ floor_snap_length = 3.0
 safe_margin = 0.1
 script = ExtResource("1_folvt")
 MovementData = SubResource("Resource_1v1pr")
+inventory = ExtResource("3_7i6t3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.0294962, -15.5281)

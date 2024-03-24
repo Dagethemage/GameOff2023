@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ukgjyx1xx6i0"]
 
-[ext_resource type="PackedScene" uid="uid://condfc4wly161" path="res://Objects/moving_platform.tscn" id="1_ohb31"]
+[ext_resource type="PackedScene" uid="uid://condfc4wly161" path="res://LevelObjects/moving_platform.tscn" id="1_ohb31"]
 [ext_resource type="Texture2D" uid="uid://bwoesoa61pwv3" path="res://Sprites/MovingPlatform_UP.png" id="2_l5lwb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esvd8"]
@@ -53,6 +53,7 @@ size = Vector2(31.996, 5.95275)
 
 [node name="AnimatedSprite2D" parent="AnimatableBody2D" index="0"]
 sprite_frames = SubResource("SpriteFrames_8du8d")
+animation = &"Moving"
 
 [node name="CollisionShape2D" parent="AnimatableBody2D" index="1"]
 position = Vector2(0.0669203, 0.0374041)

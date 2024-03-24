@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://3onl8cjtd3uy"]
 
 [ext_resource type="Script" path="res://Extra/health_points_ui.gd" id="1_pu2fd"]
 [ext_resource type="Script" path="res://Extra/HitPointContainer.gd" id="2_eq1i3"]

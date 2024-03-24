@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpfoeyr57b56"]
 
-[ext_resource type="PackedScene" uid="uid://c7bb64a0lw7x2" path="res://Objects/Projectiles/projectile.tscn" id="1_7hao4"]
+[ext_resource type="PackedScene" uid="uid://c7bb64a0lw7x2" path="res://LevelObjects/Projectiles/projectile.tscn" id="1_7hao4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a20e8"]
 size = Vector2(11, 2)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://clwgqlx30ljgl"]
 
-[ext_resource type="PackedScene" uid="uid://condfc4wly161" path="res://Objects/moving_platform.tscn" id="1_ip7p3"]
+[ext_resource type="PackedScene" uid="uid://condfc4wly161" path="res://LevelObjects/moving_platform.tscn" id="1_ip7p3"]
 [ext_resource type="Texture2D" uid="uid://c8jvehpnsi6pl" path="res://Sprites/TileSets/Level_Two_Moving_Platform.png" id="2_dapdd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yj131"]

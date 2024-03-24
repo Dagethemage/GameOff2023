@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="GameOff2023"
+config/name="Tip The Scales"
 run/main_scene="res://GUI/start_screen.tscn"
 config/custom_user_dir_name="SaveSystemData"
 config/features=PackedStringArray("4.2", "GL Compatibility")
@@ -41,7 +41,6 @@ gdscript/warnings/unused_parameter=0
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=3
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"

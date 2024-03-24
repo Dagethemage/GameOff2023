@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cbm0kp37eyl1p"]
 
-[ext_resource type="PackedScene" uid="uid://be0bvhnl1l3qa" path="res://Objects/collectable_object.tscn" id="1_qqnmn"]
-[ext_resource type="Script" path="res://Objects/coin.gd" id="2_ovyjm"]
+[ext_resource type="PackedScene" uid="uid://be0bvhnl1l3qa" path="res://LevelObjects/collectable_object.tscn" id="1_qqnmn"]
+[ext_resource type="Script" path="res://LevelObjects/coin.gd" id="2_ovyjm"]
 [ext_resource type="Texture2D" uid="uid://7hd6712wc15g" path="res://Sprites/TileSets/Coin.png" id="3_sn7no"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghnx3"]

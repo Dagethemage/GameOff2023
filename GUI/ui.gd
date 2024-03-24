@@ -2,8 +2,8 @@ extends CanvasLayer
 
 var is_open = false
 #@onready var score_board = $ScoreBoard
-@onready var coin_label = $IconContainer/CoinLabel
-@onready var log_label = $IconContainer/LogLabel
+@onready var coin_label = %CoinLabel
+@onready var log_label = %LogLabel
 @onready var level_completed = $LevelCompleted
 @onready var animation_player = $AnimationPlayer
 @onready var inventory = $Inventory
@@ -12,6 +12,7 @@ func _ready() -> void:
 	close()
 	Global.level_completed.connect(on_level_completed)
 	Global.coins_changed.connect(coins_changed)
+	Global.log_changed.connect(log_changed)
 	Global.show_score.connect(show_score)
 
 func _process(delta):
@@ -40,6 +41,9 @@ func on_level_completed():
 
 func coins_changed():
 	coin_label.text = str(Global.coin)
+
+func log_changed():
+	log_label.text = str(Global._log)
 
 func open():
 	inventory.visible = true

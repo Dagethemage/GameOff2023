@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c48ulj8qecc05"]
 
-[ext_resource type="Script" path="res://Objects/FallingSpike.gd" id="1_sx107"]
+[ext_resource type="Script" path="res://LevelObjects/FallingSpike.gd" id="1_sx107"]
 [ext_resource type="Texture2D" uid="uid://v66ekbygmaxg" path="res://Sprites/TileSets/GameOff2023_tileset.png" id="2_1g0yo"]
 [ext_resource type="PackedScene" uid="uid://cgwofmd5bywoy" path="res://Overlap/hit_box.tscn" id="3_nutnq"]
 
