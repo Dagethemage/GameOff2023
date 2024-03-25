@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://blox6t18hdjll"]
+[gd_scene load_steps=11 format=3 uid="uid://blox6t18hdjll"]
 
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="2_os1r8"]
 [ext_resource type="PackedScene" uid="uid://dekfnec588ri5" path="res://Characters/Player/PlayerCamera.tscn" id="2_r4vd6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b8wlolipcbp6b" path="res://LevelObjects/key.tscn" id="7_u1g32"]
 [ext_resource type="PackedScene" uid="uid://bbvwtqjnj45kc" path="res://Levels/World1/level_1_1.tscn" id="8_63vxs"]
 [ext_resource type="TileSet" uid="uid://0oujyisaoies" path="res://Resource/Tilesets/World_1_Tileset.tres" id="8_ni01f"]
+[ext_resource type="PackedScene" uid="uid://il8ajt2lxg05" path="res://LevelObjects/disappearing_spike.tscn" id="10_smv47"]
 [ext_resource type="PackedScene" uid="uid://ceagat2lwf2g6" path="res://GUI/ui.tscn" id="11_brfhn"]
 
 [node name="HubWorld" type="Node2D"]
@@ -20,7 +21,7 @@ position = Vector2(11, 350)
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="World1" parent="Node2D" instance=ExtResource("7_u1g32")]
-position = Vector2(64, 344)
+position = Vector2(149, 211)
 
 [node name="UI" parent="." instance=ExtResource("11_brfhn")]
 
@@ -61,6 +62,9 @@ region_enabled = true
 
 [node name="Label" parent="World3/LevelIconPanel" index="0"]
 text = "World 3"
+
+[node name="DisappearingSpike" parent="." instance=ExtResource("10_smv47")]
+position = Vector2(38, 335)
 
 [editable path="World1"]
 [editable path="World2"]

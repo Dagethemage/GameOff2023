@@ -13,10 +13,13 @@ func _physics_process(delta) -> void:
 		SWITCH.ON:
 			silhouette.hide()
 			sprite_2d.show()
+			#collision_shape_2d.call_deferred("is_disabled")
+			collision_shape_2d.disabled = false
 		SWITCH.OFF:
 			silhouette.show()
 			sprite_2d.hide()
-			
+			#collision_shape_2d.call_deferred("is_disabled")
+			collision_shape_2d.disabled = true
 	if Input.is_action_just_pressed("jump"):
 		if switch_type == SWITCH.ON:
 			switch_type = SWITCH.OFF
