@@ -15,7 +15,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	
-	MusicController.play_title_music()
+	#MusicController.play_title_music()
 	press_a_button.grab_focus()
 	press_a_button.pressed.connect(press_a_pressed)
 	start_button.focus_entered.connect(start_focus_entered)
@@ -36,7 +36,7 @@ func start_pressed():
 	LevelTranstition.fade_to_black()
 	await LevelTranstition.fade_to_black()
 	await get_tree().create_timer(2).timeout
-	LevelReferences.goto_scene("res://Levels/hub_world.tscn")
+	#LevelReferences.goto_scene("res://Levels/hub_world.tscn")
 	#get_tree().change_scene_to_file("res://Levels/hub_world.tscn")
 	LevelTranstition.fade_from_black()
 

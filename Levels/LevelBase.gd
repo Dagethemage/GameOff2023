@@ -5,7 +5,7 @@ extends Node2D
 #Level Exports
 @export var player: CharacterBody2D
 @export var audio_stream_player: AudioStreamPlayer
-@export var next_level:PackedScene
+#@export var next_level:PackedScene
 
 var player_postion = Vector2.ZERO
 var timer = Timer.new()
@@ -37,6 +37,8 @@ func _ready():
 	player_postion = player.global_position
 
 func change_level() -> void:
-	if not next_level is PackedScene: return
-		#Change to next_level if set in editor
-	get_tree().change_scene_to_packed(next_level)
+	#if not next_level is PackedScene: return
+		##Change to next_level if set in editor
+	#get_tree().change_scene_to_packed(next_level)
+	pass
+
