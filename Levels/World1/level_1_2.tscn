@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bpp7dxmmt6elo"]
+[gd_scene load_steps=15 format=3 uid="uid://bpp7dxmmt6elo"]
 
 [ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_8rwqc"]
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="1_y5lkd"]
 [ext_resource type="PackedScene" uid="uid://dekfnec588ri5" path="res://Characters/Player/PlayerCamera.tscn" id="2_kt37e"]
 [ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://LevelObjects/checkpoint.tscn" id="3_dumna"]
+[ext_resource type="PackedScene" uid="uid://d3a4dyovj4gke" path="res://Levels/World1/TileMaps/level_1_2_tile_map.tscn" id="4_c35l1"]
 [ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://LevelObjects/level_goal.tscn" id="4_nsxmf"]
 [ext_resource type="PackedScene" uid="uid://cbm0kp37eyl1p" path="res://LevelObjects/coin.tscn" id="4_tv4s5"]
 [ext_resource type="PackedScene" uid="uid://dvuox177k0rsm" path="res://LevelObjects/log.tscn" id="5_wjpvu"]
@@ -14,18 +15,21 @@
 [ext_resource type="PackedScene" uid="uid://kklwejuri6h8" path="res://GUI/level_one_parallax.tscn" id="8_v0a56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdp5l"]
+size = Vector2(2944, 20)
 
 [node name="Level_1_2" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_8rwqc")
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("1_y5lkd")]
+position = Vector2(35, 320)
 
 [node name="PlayerCamera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_kt37e")]
+limit_top = -195
+limit_right = 2305
 player = NodePath("../Player")
 
-[node name="Level_1_2TileMap" type="TileMap" parent="."]
-format = 2
+[node name="Level_1_2TileMap" parent="." instance=ExtResource("4_c35l1")]
 
 [node name="CoinStash" type="Node2D" parent="."]
 
@@ -34,20 +38,157 @@ format = 2
 [node name="SpikeStash" type="Node2D" parent="."]
 
 [node name="Spikes" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(304, 304)
+
+[node name="Spikes2" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(320, 304)
+
+[node name="Spikes3" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(336, 304)
+
+[node name="Spikes4" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(352, 304)
+
+[node name="Spikes5" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(488, 144)
+
+[node name="Spikes8" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(544, 232)
+rotation = -1.57079
+
+[node name="Spikes10" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(784, 160)
+rotation = -1.57079
+
+[node name="Spikes11" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(752, 256)
+rotation = -1.57079
+
+[node name="Spikes12" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(856, 352)
+
+[node name="Spikes13" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(984, 320)
+
+[node name="Spikes14" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1248, 192)
+rotation = 1.57079
+
+[node name="Spikes16" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(784, 304)
+rotation = 1.57079
+
+[node name="Spikes17" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(768, 160)
+rotation = 1.57079
+
+[node name="Spikes15" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1264, 144)
+rotation = -1.57079
+
+[node name="Spikes9" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(544, 176)
+rotation = 1.57079
+
+[node name="Spikes18" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1920, 152)
+rotation = -1.57079
+
+[node name="Spikes20" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1760, 256)
+rotation = -1.57079
+
+[node name="Spikes21" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1824, 304)
+
+[node name="Spikes22" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1840, 304)
+
+[node name="Spikes23" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1888, 304)
+
+[node name="Spikes24" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1904, 304)
+
+[node name="Spikes25" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1952, 304)
+
+[node name="Spikes26" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1968, 304)
+
+[node name="Spikes27" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(2016, 304)
+
+[node name="Spikes28" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(2032, 304)
+
+[node name="Spikes29" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1968, 80)
+
+[node name="Spikes30" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1984, 80)
+
+[node name="Spikes31" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(2064, 80)
+
+[node name="Spikes32" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(2080, 80)
+
+[node name="Spikes19" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(1920, 96)
+rotation = 1.57079
+
+[node name="Spikes6" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(472, 144)
+
+[node name="Spikes7" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+position = Vector2(456, 144)
 
 [node name="EnemyStash" type="Node2D" parent="."]
 
 [node name="Level2WalkingEnemy" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(599, 160)
+
+[node name="Level2WalkingEnemy3" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(1504, 176)
+
+[node name="Level2WalkingEnemy10" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(1184, 288)
+
+[node name="Level2WalkingEnemy4" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(1504, 80)
+
+[node name="Level2WalkingEnemy5" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(1504, -80)
+
+[node name="Level2WalkingEnemy6" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(1856, 240)
+
+[node name="Level2WalkingEnemy8" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(2136, 112)
+
+[node name="Level2WalkingEnemy9" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(2200, 112)
+
+[node name="Level2WalkingEnemy7" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(1984, 320)
+
+[node name="Level2WalkingEnemy2" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+position = Vector2(232, 320)
 
 [node name="Checkpoint" parent="." instance=ExtResource("3_dumna")]
+position = Vector2(1312, 128)
 
 [node name="LevelGoal" parent="." instance=ExtResource("4_nsxmf")]
+position = Vector2(2256, 80)
 
 [node name="Log" parent="." instance=ExtResource("5_wjpvu")]
 
 [node name="LevelFallZone" parent="." instance=ExtResource("6_w1kli")]
+position = Vector2(11, 392)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFallZone"]
+position = Vector2(1205, 0)
 shape = SubResource("RectangleShape2D_mdp5l")
 
 [node name="UI" parent="." instance=ExtResource("7_jmp5w")]
