@@ -1,0 +1,55 @@
+[gd_scene load_steps=14 format=3 uid="uid://bpp7dxmmt6elo"]
+
+[ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_8rwqc"]
+[ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="1_y5lkd"]
+[ext_resource type="PackedScene" uid="uid://dekfnec588ri5" path="res://Characters/Player/PlayerCamera.tscn" id="2_kt37e"]
+[ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://LevelObjects/checkpoint.tscn" id="3_dumna"]
+[ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://LevelObjects/level_goal.tscn" id="4_nsxmf"]
+[ext_resource type="PackedScene" uid="uid://cbm0kp37eyl1p" path="res://LevelObjects/coin.tscn" id="4_tv4s5"]
+[ext_resource type="PackedScene" uid="uid://dvuox177k0rsm" path="res://LevelObjects/log.tscn" id="5_wjpvu"]
+[ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://LevelObjects/spikes.tscn" id="5_y66g3"]
+[ext_resource type="PackedScene" uid="uid://tcai4ygpkl6q" path="res://LevelObjects/LevelFallZone.tscn" id="6_w1kli"]
+[ext_resource type="PackedScene" uid="uid://cdt4eq8yqys7c" path="res://Characters/Enemies/level_2_walking_enemy.tscn" id="6_xc84p"]
+[ext_resource type="PackedScene" uid="uid://ceagat2lwf2g6" path="res://GUI/ui.tscn" id="7_jmp5w"]
+[ext_resource type="PackedScene" uid="uid://kklwejuri6h8" path="res://GUI/level_one_parallax.tscn" id="8_v0a56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdp5l"]
+
+[node name="Level_1_2" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_8rwqc")
+player = NodePath("Player")
+
+[node name="Player" parent="." instance=ExtResource("1_y5lkd")]
+
+[node name="PlayerCamera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_kt37e")]
+player = NodePath("../Player")
+
+[node name="Level_1_2TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="CoinStash" type="Node2D" parent="."]
+
+[node name="Coin" parent="CoinStash" instance=ExtResource("4_tv4s5")]
+
+[node name="SpikeStash" type="Node2D" parent="."]
+
+[node name="Spikes" parent="SpikeStash" instance=ExtResource("5_y66g3")]
+
+[node name="EnemyStash" type="Node2D" parent="."]
+
+[node name="Level2WalkingEnemy" parent="EnemyStash" instance=ExtResource("6_xc84p")]
+
+[node name="Checkpoint" parent="." instance=ExtResource("3_dumna")]
+
+[node name="LevelGoal" parent="." instance=ExtResource("4_nsxmf")]
+
+[node name="Log" parent="." instance=ExtResource("5_wjpvu")]
+
+[node name="LevelFallZone" parent="." instance=ExtResource("6_w1kli")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFallZone"]
+shape = SubResource("RectangleShape2D_mdp5l")
+
+[node name="UI" parent="." instance=ExtResource("7_jmp5w")]
+
+[node name="LevelOneParallax" parent="." instance=ExtResource("8_v0a56")]
