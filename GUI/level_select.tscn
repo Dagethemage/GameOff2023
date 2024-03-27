@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://dreoe35d3xj4n"]
+[gd_scene load_steps=5 format=3 uid="uid://dreoe35d3xj4n"]
+
+[ext_resource type="StyleBox" uid="uid://c6tnw3ngpmhrt" path="res://GUI/Themes/level_panel_base_theme.tres" id="1_v5bxq"]
+[ext_resource type="PackedScene" uid="uid://cuhwq72s200rd" path="res://GUI/level_selecet_icon.tscn" id="2_dipdv"]
+[ext_resource type="PackedScene" uid="uid://kklwejuri6h8" path="res://GUI/level_one_parallax.tscn" id="3_ufsnf"]
+[ext_resource type="PackedScene" uid="uid://dfse1hbqmd4fl" path="res://GUI/tool_tip.tscn" id="4_grbag"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -7,3 +12,53 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_v5bxq")
+
+[node name="LevelSelectIcon" parent="CenterContainer/Panel" instance=ExtResource("2_dipdv")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 7.0
+offset_right = 89.95
+offset_bottom = 22.475
+
+[node name="LevelSelectIcon2" parent="CenterContainer/Panel" instance=ExtResource("2_dipdv")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 190.0
+offset_right = 86.95
+offset_bottom = 206.475
+
+[node name="LevelSelectIcon3" parent="CenterContainer/Panel" instance=ExtResource("2_dipdv")]
+layout_mode = 1
+offset_left = 189.727
+offset_top = 7.0
+offset_right = 268.677
+offset_bottom = 22.475
+
+[node name="LevelSelectIcon4" parent="CenterContainer/Panel" instance=ExtResource("2_dipdv")]
+layout_mode = 1
+offset_left = 189.727
+offset_top = 190.0
+offset_right = 265.677
+offset_bottom = 206.475
+
+[node name="LevelOneParallax" parent="." instance=ExtResource("3_ufsnf")]
+
+[node name="ToolTip" parent="." instance=ExtResource("4_grbag")]
+layout_mode = 0
+offset_left = 21.3816
+offset_top = 104.235
+offset_right = 131.382
+offset_bottom = 140.235

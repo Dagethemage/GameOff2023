@@ -12,6 +12,8 @@ const HOVER_PANEL_THEME := preload("res://GUI/Themes/level_panel_hover_theme.tre
 @onready var animation_player = $LevelIcon/AnimationPlayer
 @onready var level_icon_state_machine = $LevelIcon/LevelIconStateMachine as LevelIconStateMachine
 
+@export_multiline var icon_tooltip_text: String
+
 var tween: Tween
 
 func _ready() -> void:

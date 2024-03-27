@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfse1hbqmd4fl"]
+
+[ext_resource type="Script" path="res://GUI/tool_tip.gd" id="1_y35fu"]
+
+[node name="ToolTip" type="PanelContainer"]
+offset_right = 110.0
+offset_bottom = 36.0
+script = ExtResource("1_y35fu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ToolTipIcon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ToolTipText" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2

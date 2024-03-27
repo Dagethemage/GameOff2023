@@ -19,7 +19,8 @@ signal level_ended
 signal checkpoint_met(checkpoint_position)
 signal paused
 
-
+signal icon_tooltip_requested(icon: LevelIconUI)
+signal tooltip_hide_requested
 
 signal area_selected
 #var level_data: LevelData = load("res://Resource/DefaultLevelData.tres")

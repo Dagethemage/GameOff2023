@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cuhwq72s200rd"]
+[gd_scene load_steps=12 format=3 uid="uid://cuhwq72s200rd"]
 
 [ext_resource type="StyleBox" uid="uid://c6tnw3ngpmhrt" path="res://GUI/Themes/level_panel_base_theme.tres" id="1_icnp7"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="2_h870c"]
@@ -7,69 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7rsbqrx0p6o6" path="res://Sprites/TileSets/Lock.png" id="4_ms21h"]
 [ext_resource type="PackedScene" uid="uid://cmjnf2ejdfd1w" path="res://GUI/LevelIconStateMachine.tscn" id="6_ww2ww"]
 [ext_resource type="Script" path="res://GUI/IconBaseState.gd" id="7_svchx"]
-
-[sub_resource type="Animation" id="Animation_srh8w"]
-resource_name = "Unlock"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Lock:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Lock:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(-2, 2, 0.5, -2),
-"update": 0,
-"values": [Vector2(76, 76), Vector2(76, 68), Vector2(76, 94), Vector2(76, 68)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Lock:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.5),
-"transitions": PackedFloat32Array(0.5, 0.5, 0.0145786),
-"update": 0,
-"values": [0.0, 0.0, -0.607375]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Lock:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.6, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("LockedIcon:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.7, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
+[ext_resource type="Script" path="res://GUI/IconClickedState.gd" id="8_2v5wq"]
 
 [sub_resource type="Animation" id="Animation_bi7r0"]
 length = 0.001
@@ -134,6 +72,69 @@ tracks/4/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_srh8w"]
+resource_name = "Unlock"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lock:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lock:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(-2, 2, 0.5, -2),
+"update": 0,
+"values": [Vector2(76, 76), Vector2(76, 68), Vector2(76, 94), Vector2(76, 68)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lock:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.0145786),
+"update": 0,
+"values": [0.0, 0.0, -0.607375]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lock:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LockedIcon:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8g4ob"]
 _data = {
 "RESET": SubResource("Animation_bi7r0"),
@@ -150,12 +151,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 script = ExtResource("2_sw7p6")
+icon_tooltip_text = "based"
 
 [node name="LevelIcon" type="Panel" parent="."]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 0
-offset_right = 150.0
+offset_right = 152.0
 offset_bottom = 150.0
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("1_icnp7")
@@ -203,3 +206,7 @@ initial_state = NodePath("IconBaseState")
 
 [node name="IconBaseState" type="Node" parent="LevelIcon/LevelIconStateMachine"]
 script = ExtResource("7_svchx")
+
+[node name="IconClickedState" type="Node" parent="LevelIcon/LevelIconStateMachine"]
+script = ExtResource("8_2v5wq")
+state = 1
