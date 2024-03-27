@@ -22,7 +22,7 @@ script = ExtResource("1_57u13")
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("1_i4jcf")]
-position = Vector2(2632, 240)
+position = Vector2(8, 352)
 
 [node name="PlayerCamera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_v21cc")]
 limit_top = -60
@@ -356,6 +356,5 @@ shape = SubResource("RectangleShape2D_3bok4")
 position = Vector2(1664, 64)
 
 [node name="UI" parent="." instance=ExtResource("7_vjp0c")]
-visible = false
 
 [node name="LevelOneParallax" parent="." instance=ExtResource("8_vp8im")]

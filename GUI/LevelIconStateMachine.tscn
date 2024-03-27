@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmjnf2ejdfd1w"]
+
+[ext_resource type="Script" path="res://GUI/LevelIconStateMachine.gd" id="1_wevy7"]
+
+[node name="LevelIconStateMachine" type="Node"]
+script = ExtResource("1_wevy7")

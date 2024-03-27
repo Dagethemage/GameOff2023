@@ -201,19 +201,16 @@ sprite_frames = SubResource("SpriteFrames_n5a2q")
 autoplay = "default"
 
 [node name="LevelIcon" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, -72)
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="LockedIcon" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, -72)
 texture = ExtResource("3_5150b")
 region_enabled = true
 region_rect = Rect2(0, 80, 64, 64)
 
 [node name="Lock" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(0, -72)
 texture = ExtResource("4_251hc")
 hframes = 3

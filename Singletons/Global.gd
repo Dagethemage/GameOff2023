@@ -7,7 +7,6 @@ var key_found = []
 var log_found = []
 var opened_door = []
 
-
 signal coins_changed
 signal log_changed
 signal time_changed
@@ -19,6 +18,8 @@ signal show_score
 signal level_ended
 signal checkpoint_met(checkpoint_position)
 signal paused
+
+
 
 signal area_selected
 #var level_data: LevelData = load("res://Resource/DefaultLevelData.tres")

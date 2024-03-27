@@ -1,0 +1,207 @@
+[gd_scene load_steps=15 format=3 uid="uid://dyywkr1eqsyu3"]
+
+[ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_151nv"]
+[ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="2_n5rkj"]
+[ext_resource type="PackedScene" uid="uid://dekfnec588ri5" path="res://Characters/Player/PlayerCamera.tscn" id="3_gylvr"]
+[ext_resource type="PackedScene" uid="uid://tcai4ygpkl6q" path="res://LevelObjects/LevelFallZone.tscn" id="4_lmvp0"]
+[ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://LevelObjects/checkpoint.tscn" id="5_wby5a"]
+[ext_resource type="PackedScene" uid="uid://41y277b7bbml" path="res://Levels/World1/TileMaps/level_1_4_tile_map.tscn" id="6_62xfy"]
+[ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://LevelObjects/level_goal.tscn" id="7_cowbs"]
+[ext_resource type="PackedScene" uid="uid://dvuox177k0rsm" path="res://LevelObjects/log.tscn" id="8_3vv6f"]
+[ext_resource type="PackedScene" uid="uid://kklwejuri6h8" path="res://GUI/level_one_parallax.tscn" id="9_3qkjn"]
+[ext_resource type="PackedScene" uid="uid://il8ajt2lxg05" path="res://LevelObjects/disappearing_spike.tscn" id="9_ka70a"]
+[ext_resource type="PackedScene" uid="uid://ceagat2lwf2g6" path="res://GUI/ui.tscn" id="10_c2iww"]
+[ext_resource type="PackedScene" uid="uid://cdt4eq8yqys7c" path="res://Characters/Enemies/level_2_walking_enemy.tscn" id="10_o6wg2"]
+[ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://LevelObjects/spikes.tscn" id="10_sfapk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py4v8"]
+size = Vector2(2048, 20)
+
+[node name="Level_1_4" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_151nv")
+player = NodePath("Player")
+
+[node name="Player" parent="." instance=ExtResource("2_n5rkj")]
+position = Vector2(16, 320)
+
+[node name="PlayerCamera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_gylvr")]
+limit_right = 1790
+player = NodePath("../Player")
+
+[node name="LevelFallZone" parent="." instance=ExtResource("4_lmvp0")]
+position = Vector2(-8, 400)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelFallZone"]
+position = Vector2(904, 0)
+shape = SubResource("RectangleShape2D_py4v8")
+
+[node name="Checkpoint" parent="." instance=ExtResource("5_wby5a")]
+position = Vector2(944, 144)
+
+[node name="Level_1_4TileMap" parent="." instance=ExtResource("6_62xfy")]
+
+[node name="LevelGoal" parent="." instance=ExtResource("7_cowbs")]
+position = Vector2(1680, 112)
+
+[node name="Log" parent="." instance=ExtResource("8_3vv6f")]
+position = Vector2(656, 255)
+
+[node name="CoinStash" type="Node2D" parent="."]
+
+[node name="DisappearingSpikeStash" type="Node2D" parent="."]
+
+[node name="DisappearingSpike" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(64, 304)
+
+[node name="DisappearingSpike3" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(111, 304)
+
+[node name="DisappearingSpike2" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(80, 304)
+switch_type = 1
+
+[node name="DisappearingSpike4" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(128, 304)
+switch_type = 1
+
+[node name="DisappearingSpike5" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(224, 304)
+
+[node name="DisappearingSpike6" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(241, 304)
+switch_type = 1
+
+[node name="DisappearingSpike7" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(288, 304)
+
+[node name="DisappearingSpike8" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(305, 304)
+switch_type = 1
+
+[node name="DisappearingSpike9" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(352, 304)
+
+[node name="DisappearingSpike11" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(416, 272)
+
+[node name="DisappearingSpike22" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(624, 256)
+
+[node name="DisappearingSpike23" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(672, 256)
+
+[node name="DisappearingSpike29" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(624, 160)
+
+[node name="DisappearingSpike30" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(672, 160)
+
+[node name="DisappearingSpike31" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(656, 80)
+
+[node name="DisappearingSpike24" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(576, 208)
+switch_type = 1
+
+[node name="DisappearingSpike26" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(648, 256)
+switch_type = 1
+
+[node name="DisappearingSpike25" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(528, 208)
+switch_type = 1
+
+[node name="DisappearingSpike27" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(768, 208)
+switch_type = 1
+
+[node name="DisappearingSpike28" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(720, 208)
+switch_type = 1
+
+[node name="DisappearingSpike12" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(400, 208)
+
+[node name="DisappearingSpike13" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(416, 144)
+
+[node name="DisappearingSpike14" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(448, 48)
+
+[node name="DisappearingSpike10" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(369, 304)
+switch_type = 1
+
+[node name="DisappearingSpike18" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(1200, 160)
+switch_type = 1
+
+[node name="DisappearingSpike15" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(1104, 264)
+rotation = 1.57079
+
+[node name="DisappearingSpike19" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(1280, 160)
+
+[node name="DisappearingSpike20" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(1328, 160)
+switch_type = 1
+
+[node name="DisappearingSpike21" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(1408, 160)
+
+[node name="DisappearingSpike17" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(1104, 184)
+rotation = 1.57079
+
+[node name="DisappearingSpike16" parent="DisappearingSpikeStash" instance=ExtResource("9_ka70a")]
+position = Vector2(1104, 238)
+rotation = -4.71238
+switch_type = 1
+
+[node name="SpikeStash" type="Node2D" parent="."]
+
+[node name="Spikes" parent="SpikeStash" instance=ExtResource("10_sfapk")]
+position = Vector2(1536, 96)
+
+[node name="Spikes2" parent="SpikeStash" instance=ExtResource("10_sfapk")]
+position = Vector2(1584, 96)
+
+[node name="Spikes3" parent="SpikeStash" instance=ExtResource("10_sfapk")]
+position = Vector2(1504, 224)
+
+[node name="Spikes4" parent="SpikeStash" instance=ExtResource("10_sfapk")]
+position = Vector2(1520, 224)
+
+[node name="Spikes5" parent="SpikeStash" instance=ExtResource("10_sfapk")]
+position = Vector2(1552, 224)
+
+[node name="Spikes6" parent="SpikeStash" instance=ExtResource("10_sfapk")]
+position = Vector2(1568, 224)
+
+[node name="Spikes7" parent="SpikeStash" instance=ExtResource("10_sfapk")]
+position = Vector2(1600, 224)
+
+[node name="Spikes8" parent="SpikeStash" instance=ExtResource("10_sfapk")]
+position = Vector2(1616, 224)
+
+[node name="EnemyStash" type="Node2D" parent="."]
+
+[node name="Level2WalkingEnemy" parent="EnemyStash" instance=ExtResource("10_o6wg2")]
+position = Vector2(544, 96)
+
+[node name="Level2WalkingEnemy2" parent="EnemyStash" instance=ExtResource("10_o6wg2")]
+position = Vector2(800, 96)
+
+[node name="Level2WalkingEnemy5" parent="EnemyStash" instance=ExtResource("10_o6wg2")]
+position = Vector2(1056, 336)
+
+[node name="Level2WalkingEnemy3" parent="EnemyStash" instance=ExtResource("10_o6wg2")]
+position = Vector2(1248, 192)
+
+[node name="Level2WalkingEnemy4" parent="EnemyStash" instance=ExtResource("10_o6wg2")]
+position = Vector2(1376, 192)
+
+[node name="LevelOneParallax" parent="." instance=ExtResource("9_3qkjn")]
+
+[node name="UI" parent="." instance=ExtResource("10_c2iww")]
