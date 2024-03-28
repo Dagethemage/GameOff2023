@@ -1,11 +1,12 @@
 class_name IconState
 extends Node
 
-enum State {BASE, CLICKED, HOVER}
+enum State {BASE, CLICKED}
 
 signal transition_requested(from: IconState, to: State)
 
 @export var state: State
+
 
 var icon_ui: LevelIconUI
 

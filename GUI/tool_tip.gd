@@ -10,7 +10,15 @@ var tween: Tween
 var is_visiable = false
 
 func _ready() -> void:
-	Global.icon_tooltip_requested.connect(show_tooltip)
+	Global.icon_tooltip_requested.connect(func show_tooltip(text: String) -> void:
+		is_visiable = true
+		if tween:
+			tween.kill()
+			
+		tool_tip_text.text = text
+		tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+		tween.tween_callback(show)
+		tween.tween_property(self, "modulate", Color.WHITE, fade_seconds))
 	Global.tooltip_hide_requested.connect(func hide_tooltip() -> void:
 		is_visiable = false
 		if tween:
@@ -25,12 +33,4 @@ func hide_animation() -> void:
 		tween.tween_property(self, "modulate", Color.TRANSPARENT, fade_seconds)
 		tween.tween_callback(hide)
 
-func show_tooltip(text: String) -> void:
-		is_visiable = true
-		if tween:
-			tween.kill()
-			
-		tool_tip_text.text = text
-		tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
-		tween.tween_callback(show)
-		tween.tween_property(self, "modulate", Color.WHITE, fade_seconds)
+

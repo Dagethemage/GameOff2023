@@ -3,7 +3,6 @@ extends Node2D
 #Level Exports
 @export var player: CharacterBody2D
 #@export var audio_stream_player: AudioStreamPlayer
-#@export var next_level:PackedScene
 
 var player_postion = Vector2.ZERO
 var timer = Timer.new()
