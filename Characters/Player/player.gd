@@ -8,15 +8,19 @@ var air_jump = false
 var just_wall_jumped = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var was_wall_normal = Vector2.ZERO
+var scent_trail = []
 
 @onready var dash = $Dash
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var wall_jump_timer = $WallJumpTimer
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var hazard_detector = $HazardDetector
-
+@onready var scent_position = $ScentPosition
+@onready var scent = preload("res://Overlap/Scent.tscn")
+@onready var scent_timer = $ScentTimer
 
 func _ready() -> void:
+	scent_timer.timeout.connect(scent_timeout)
 	Global.starting_position = global_position
 	Global.level_completed.connect(func level_completed():
 		MovementData.zero_stats())
@@ -26,8 +30,10 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	apply_gravity(delta)
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and dash.can_dash:
+		dash.dashing = true
 		dash.start_dash(MovementData.dash_length)
+		dash.timer_2.start()
 	handle_wall_jump()
 	handle_jump()
 	var input_axis = Input.get_axis("left", "right")
@@ -114,6 +120,15 @@ func hazard_detector_entered(area) -> void:
 	global_position = Global.starting_position
 	await get_tree().create_timer(0.1).timeout
 	MovementData.rest_stats()
+
+func spawn_scent():
+	var scent_spawn = scent.instantiate()
+	get_parent().add_child(scent_spawn)
+	scent_spawn.position = scent_position.global_position
+	scent_trail.push_front(scent_spawn)
+
+func scent_timeout():
+	spawn_scent()
 
 func collect(item):
 	inventory.insert(item)

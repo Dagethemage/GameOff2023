@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://lwr030e16rlk"]
-
-[ext_resource type="Script" path="res://Trash/LevelData.gd" id="1_x0o1v"]
-
-[resource]
-script = ExtResource("1_x0o1v")
-level_name = ""
-coin_amount = 0

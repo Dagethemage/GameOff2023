@@ -11,8 +11,6 @@ extends Resource
 @export var air_resistance = 200.0
 @export var air_acceleration = 400.0
 
-
-
 func zero_stats():
 	normal_speed = 0.0
 	dash_speed = 0.0
@@ -34,8 +32,6 @@ func rest_stats():
 	gravity_scale = 1.0
 	air_resistance = 200.0
 	air_acceleration = 400.0
-
-
 
 #testing only
 @export var inventory = []

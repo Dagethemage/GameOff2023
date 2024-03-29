@@ -1,11 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://deigsiv5gshl8"]
+[gd_scene load_steps=14 format=3 uid="uid://deigsiv5gshl8"]
 
 [ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_57u13"]
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="1_i4jcf"]
 [ext_resource type="PackedScene" uid="uid://dekfnec588ri5" path="res://Characters/Player/PlayerCamera.tscn" id="2_v21cc"]
 [ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://LevelObjects/level_goal.tscn" id="3_oru0u"]
 [ext_resource type="PackedScene" uid="uid://m3tkk8u3uk6y" path="res://Levels/World1/TileMaps/level_1_3_tile_map.tscn" id="4_4v2ne"]
-[ext_resource type="PackedScene" uid="uid://dvuox177k0rsm" path="res://LevelObjects/log.tscn" id="4_4x6i6"]
 [ext_resource type="PackedScene" uid="uid://tcai4ygpkl6q" path="res://LevelObjects/LevelFallZone.tscn" id="5_6acsk"]
 [ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://LevelObjects/spikes.tscn" id="5_yfq12"]
 [ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://LevelObjects/checkpoint.tscn" id="6_c71rt"]
@@ -342,8 +341,6 @@ position = Vector2(1568, 112)
 
 [node name="Level2WalkingEnemy12" parent="EnemyStash" instance=ExtResource("7_6b00f")]
 position = Vector2(1920, 240)
-
-[node name="Log" parent="." instance=ExtResource("4_4x6i6")]
 
 [node name="LevelFallZone" parent="." instance=ExtResource("5_6acsk")]
 position = Vector2(-24, 448)

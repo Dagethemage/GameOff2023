@@ -7,3 +7,6 @@ script = ExtResource("1_xsdhg")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.4

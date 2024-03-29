@@ -1,6 +1,6 @@
 extends HBoxContainer
 
-@onready var health_point = preload("res://Extra/health_point.tscn")
+@onready var health_point = preload("res://GUI/health_point.tscn")
 
 
 func set_max_health_points(max_health_points: int):

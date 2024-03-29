@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dyywkr1eqsyu3"]
+[gd_scene load_steps=14 format=3 uid="uid://dyywkr1eqsyu3"]
 
 [ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_151nv"]
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="2_n5rkj"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dk6rgi2c2k2b4" path="res://LevelObjects/checkpoint.tscn" id="5_wby5a"]
 [ext_resource type="PackedScene" uid="uid://41y277b7bbml" path="res://Levels/World1/TileMaps/level_1_4_tile_map.tscn" id="6_62xfy"]
 [ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://LevelObjects/level_goal.tscn" id="7_cowbs"]
-[ext_resource type="PackedScene" uid="uid://dvuox177k0rsm" path="res://LevelObjects/log.tscn" id="8_3vv6f"]
 [ext_resource type="PackedScene" uid="uid://kklwejuri6h8" path="res://GUI/level_one_parallax.tscn" id="9_3qkjn"]
 [ext_resource type="PackedScene" uid="uid://il8ajt2lxg05" path="res://LevelObjects/disappearing_spike.tscn" id="9_ka70a"]
 [ext_resource type="PackedScene" uid="uid://ceagat2lwf2g6" path="res://GUI/ui.tscn" id="10_c2iww"]
@@ -42,9 +41,6 @@ position = Vector2(944, 144)
 
 [node name="LevelGoal" parent="." instance=ExtResource("7_cowbs")]
 position = Vector2(1680, 112)
-
-[node name="Log" parent="." instance=ExtResource("8_3vv6f")]
-position = Vector2(656, 255)
 
 [node name="CoinStash" type="Node2D" parent="."]
 

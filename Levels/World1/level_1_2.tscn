@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bpp7dxmmt6elo"]
+[gd_scene load_steps=14 format=3 uid="uid://bpp7dxmmt6elo"]
 
 [ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_8rwqc"]
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="1_y5lkd"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://d3a4dyovj4gke" path="res://Levels/World1/TileMaps/level_1_2_tile_map.tscn" id="4_c35l1"]
 [ext_resource type="PackedScene" uid="uid://b4vmg54yu6ats" path="res://LevelObjects/level_goal.tscn" id="4_nsxmf"]
 [ext_resource type="PackedScene" uid="uid://cbm0kp37eyl1p" path="res://LevelObjects/coin.tscn" id="4_tv4s5"]
-[ext_resource type="PackedScene" uid="uid://dvuox177k0rsm" path="res://LevelObjects/log.tscn" id="5_wjpvu"]
 [ext_resource type="PackedScene" uid="uid://cwd1qt71jsfqs" path="res://LevelObjects/spikes.tscn" id="5_y66g3"]
 [ext_resource type="PackedScene" uid="uid://tcai4ygpkl6q" path="res://LevelObjects/LevelFallZone.tscn" id="6_w1kli"]
 [ext_resource type="PackedScene" uid="uid://cdt4eq8yqys7c" path="res://Characters/Enemies/level_2_walking_enemy.tscn" id="6_xc84p"]
@@ -181,8 +180,6 @@ position = Vector2(1312, 128)
 
 [node name="LevelGoal" parent="." instance=ExtResource("4_nsxmf")]
 position = Vector2(2256, 80)
-
-[node name="Log" parent="." instance=ExtResource("5_wjpvu")]
 
 [node name="LevelFallZone" parent="." instance=ExtResource("6_w1kli")]
 position = Vector2(11, 392)

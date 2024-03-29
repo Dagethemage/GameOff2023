@@ -14,7 +14,7 @@ func _ready():
 	Global.level_completed.connect(func level_completed():
 		#sets timer properties when level is completed
 		timer.one_shot = true
-		timer.autostart = true
+		timer.autodstart = true
 		timer.wait_time = 1.0
 		timer.timeout.connect(func time_out():
 			change_level())

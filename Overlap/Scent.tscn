@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxltmy5iugixb"]
+
+[ext_resource type="Script" path="res://Overlap/Scent.gd" id="1_5kv58"]
+
+[node name="Scent" type="Node2D" groups=["scent"]]
+script = ExtResource("1_5kv58")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0.878431, 0.643137, 0.431373, 1)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
