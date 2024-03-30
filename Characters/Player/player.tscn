@@ -78,7 +78,7 @@ size = Vector2(6, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpla7"]
 size = Vector2(8, 26.25)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 17
 floor_constant_speed = true
@@ -117,8 +117,8 @@ shape = SubResource("RectangleShape2D_bpla7")
 
 [node name="Dash" parent="." instance=ExtResource("6_0l3fi")]
 
-[node name="ScentPosition" type="Marker2D" parent="."]
-position = Vector2(-9.84444, -26.3631)
+[node name="SoulPosition" type="Marker2D" parent="." groups=["soul_marker"]]
+position = Vector2(-16.9958, -33.7131)
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.15
@@ -127,7 +127,3 @@ one_shot = true
 [node name="WallJumpTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
-
-[node name="ScentTimer" type="Timer" parent="."]
-wait_time = 0.2
-autostart = true

@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkr2i8so81qvj"]
+[gd_scene load_steps=7 format=3 uid="uid://dkr2i8so81qvj"]
 
 [ext_resource type="Texture2D" uid="uid://jqf4rlddm7wq" path="res://Sprites/Health_Pickup_2.png" id="1_pg86e"]
 [ext_resource type="Script" path="res://LevelObjects/soul.gd" id="1_uo4uo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e1j65"]
+radius = 5.0
 
 [sub_resource type="Gradient" id="Gradient_irskx"]
 colors = PackedColorArray(0.341176, 0.623529, 0.705882, 1, 0.796078, 0.819608, 0.745098, 1)
@@ -17,9 +20,12 @@ gravity = Vector3(0, 98, 0)
 color_initial_ramp = SubResource("GradientTexture1D_f0ahb")
 
 [node name="Soul" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_uo4uo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_e1j65")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 amount = 5
@@ -30,9 +36,5 @@ speed_scale = 0.7
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_pg86e")
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-collision_mask = 2
-collide_with_areas = true
 
 [node name="Timer" type="Timer" parent="."]
