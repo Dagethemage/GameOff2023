@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuhwq72s200rd"]
+[gd_scene load_steps=13 format=3 uid="uid://cuhwq72s200rd"]
 
 [ext_resource type="StyleBox" uid="uid://c6tnw3ngpmhrt" path="res://GUI/Themes/level_panel_base_theme.tres" id="1_icnp7"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="2_h870c"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cmjnf2ejdfd1w" path="res://GUI/LevelIconStateMachine.tscn" id="6_ww2ww"]
 [ext_resource type="Script" path="res://GUI/IconBaseState.gd" id="7_svchx"]
 [ext_resource type="Script" path="res://GUI/IconClickedState.gd" id="8_2v5wq"]
+[ext_resource type="AudioStream" uid="uid://ohvihft8vkag" path="res://Sounds/Select.wav" id="9_j1otm"]
 
 [sub_resource type="Animation" id="Animation_bi7r0"]
 length = 0.001
@@ -209,3 +210,6 @@ script = ExtResource("7_svchx")
 [node name="IconClickedState" type="Node" parent="LevelIcon/LevelIconStateMachine"]
 script = ExtResource("8_2v5wq")
 state = 1
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_j1otm")

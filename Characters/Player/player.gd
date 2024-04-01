@@ -14,6 +14,8 @@ var was_wall_normal = Vector2.ZERO
 @onready var wall_jump_timer = $WallJumpTimer
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var hazard_detector = $HazardDetector
+@onready var hazard_collision = $HazardDetector/CollisionShape2D
+@onready var animation_player = $AnimationPlayer
 
 func _ready() -> void:
 	Global.starting_position = global_position
@@ -112,6 +114,8 @@ func update_animations(input_axis):
 
 func hazard_detector_entered(area) -> void:
 	MovementData.zero_stats()
+	animation_player.play("hit_flash")
+	await animation_player.animation_finished
 	Global.lives -= 1
 	#await get_tree().create_timer(0.5).timeout
 	global_position = Global.starting_position
@@ -125,6 +129,10 @@ func hazard_detector_entered(area) -> void:
 		animated_sprite_2d.sprite_frames = Global.full_health_sprite
 	await get_tree().create_timer(0.1).timeout
 	MovementData.rest_stats()
+	hazard_collision.disabled = true
+	animation_player.play("iframe")
+	await animation_player.animation_finished
+	hazard_collision.disabled = false
 
 func update_sprite():
 	if Global.lives == 3:

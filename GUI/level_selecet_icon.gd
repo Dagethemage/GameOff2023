@@ -11,6 +11,7 @@ const HOVER_PANEL_THEME := preload("res://GUI/Themes/level_panel_hover_theme.tre
 @onready var label = $LevelIcon/Label
 @onready var animation_player = $LevelIcon/AnimationPlayer
 @onready var level_icon_state_machine = $LevelIcon/LevelIconStateMachine as LevelIconStateMachine
+@onready var select = $Select
 
 @export var level: PackedScene
 
@@ -27,6 +28,7 @@ func on_gui_input(event: InputEvent) -> void:
 
 func on_mouse_entered() -> void:
 	level_icon_state_machine.on_mouse_entered()
+	select.play()
 	print("entered")
 
 func on_mouse_exited() -> void:
