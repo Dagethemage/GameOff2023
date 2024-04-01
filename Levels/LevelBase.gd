@@ -17,7 +17,7 @@ func _ready():
 		timer.autodstart = true
 		timer.wait_time = 1.0
 		timer.timeout.connect(func time_out():
-			change_level())
+			level_select_screen())
 		timer.start()
 		#Wait for the timeout signal to finish before changing scenes
 		await timer.timeout
@@ -33,9 +33,8 @@ func _ready():
 	#Stores the players postion on start
 	player_postion = player.global_position
 
-func change_level() -> void:
-	#if not next_level is PackedScene: return
-		##Change to next_level if set in editor
-	#get_tree().change_scene_to_packed(next_level)
-	pass
+func level_select_screen() -> void:
+	get_tree().change_scene_to_file("res://GUI/level_select.tscn")
+
+
 

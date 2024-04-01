@@ -11,6 +11,7 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_whory"]
 
 [resource]
+default_font_size = 25
 Button/colors/font_color = Color(0.364706, 0.462745, 0.262745, 1)
 Button/colors/font_focus_color = Color(0.878431, 0.643137, 0.431373, 1)
 Button/colors/font_hover_color = Color(0.878431, 0.643137, 0.431373, 1)

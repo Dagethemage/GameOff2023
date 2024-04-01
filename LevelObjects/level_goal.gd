@@ -10,3 +10,4 @@ func _ready() -> void:
 
 func _on_area_entered(area):
 	Global.level_completed.emit()
+	
