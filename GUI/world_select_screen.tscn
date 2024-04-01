@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://didvu6m7yellf"]
+
+[ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="1_5cfwm"]
+[ext_resource type="PackedScene" uid="uid://7ikh4ur7cwpt" path="res://GUI/Menu_Particle_Effect.tscn" id="1_pgodf"]
+[ext_resource type="PackedScene" uid="uid://cuhwq72s200rd" path="res://GUI/level_selecet_icon.tscn" id="2_1vg30"]
+[ext_resource type="PackedScene" uid="uid://dreoe35d3xj4n" path="res://GUI/level_select.tscn" id="4_55res"]
+
+[node name="WorldSelectScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.027451, 0.0705882, 1)
+
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -138.313
+offset_top = 16.6687
+offset_right = 138.687
+offset_bottom = 47.6687
+grow_horizontal = 2
+theme = ExtResource("1_5cfwm")
+theme_override_colors/font_color = Color(0.878431, 0.643137, 0.431373, 1)
+theme_override_font_sizes/font_size = 35
+text = "World Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("1_pgodf")]
+
+[node name="LevelSelectIcon" parent="." instance=ExtResource("2_1vg30")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0812
+offset_top = 142.94
+offset_right = -452.919
+offset_bottom = -67.06
+grow_horizontal = 1
+level = ExtResource("4_55res")
+
+[node name="Icon" parent="LevelSelectIcon/LevelIcon" index="0"]
+visible = true
+
+[node name="LockedIcon" parent="LevelSelectIcon/LevelIcon" index="1"]
+visible = false
+
+[node name="Lock" parent="LevelSelectIcon/LevelIcon" index="2"]
+visible = false
+
+[node name="Label" parent="LevelSelectIcon/LevelIcon" index="3"]
+text = "World 1"
+
+[node name="LevelSelectIcon2" parent="." instance=ExtResource("2_1vg30")]
+layout_mode = 1
+offset_left = 252.0
+offset_top = 142.94
+offset_right = 254.24
+offset_bottom = 142.82
+grow_vertical = 0
+
+[node name="Label" parent="LevelSelectIcon2/LevelIcon" index="3"]
+text = "World 2"
+
+[node name="LevelSelectIcon3" parent="." instance=ExtResource("2_1vg30")]
+layout_mode = 1
+offset_left = 458.687
+offset_top = 142.94
+offset_right = 460.927
+offset_bottom = 142.82
+
+[node name="Label" parent="LevelSelectIcon3/LevelIcon" index="3"]
+text = "World 3"
+
+[editable path="LevelSelectIcon"]
+[editable path="LevelSelectIcon2"]
+[editable path="LevelSelectIcon3"]

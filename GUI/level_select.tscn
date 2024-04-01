@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dreoe35d3xj4n"]
+[gd_scene load_steps=5 format=3 uid="uid://dreoe35d3xj4n"]
 
 [ext_resource type="StyleBox" uid="uid://c6tnw3ngpmhrt" path="res://GUI/Themes/level_panel_base_theme.tres" id="1_v5bxq"]
 [ext_resource type="PackedScene" uid="uid://cuhwq72s200rd" path="res://GUI/level_selecet_icon.tscn" id="2_dipdv"]
+[ext_resource type="PackedScene" uid="uid://ba0mpt2684itx" path="res://Levels/World1/level_1_1.tscn" id="3_jfo3g"]
 [ext_resource type="PackedScene" uid="uid://kklwejuri6h8" path="res://GUI/level_one_parallax.tscn" id="3_ufsnf"]
 
 [node name="LevelSelect" type="Control"]
@@ -31,6 +32,16 @@ offset_left = 11.0
 offset_top = 7.0
 offset_right = 89.95
 offset_bottom = 22.475
+level = ExtResource("3_jfo3g")
+
+[node name="Icon" parent="CenterContainer/Panel/LevelSelectIcon/LevelIcon" index="0"]
+visible = true
+
+[node name="LockedIcon" parent="CenterContainer/Panel/LevelSelectIcon/LevelIcon" index="1"]
+visible = false
+
+[node name="Lock" parent="CenterContainer/Panel/LevelSelectIcon/LevelIcon" index="2"]
+visible = false
 
 [node name="LevelSelectIcon2" parent="CenterContainer/Panel" instance=ExtResource("2_dipdv")]
 layout_mode = 1
@@ -39,12 +50,18 @@ offset_top = 190.0
 offset_right = 86.95
 offset_bottom = 206.475
 
+[node name="Label" parent="CenterContainer/Panel/LevelSelectIcon2/LevelIcon" index="3"]
+text = "Level 3"
+
 [node name="LevelSelectIcon3" parent="CenterContainer/Panel" instance=ExtResource("2_dipdv")]
 layout_mode = 1
 offset_left = 189.727
 offset_top = 7.0
 offset_right = 268.677
 offset_bottom = 22.475
+
+[node name="Label" parent="CenterContainer/Panel/LevelSelectIcon3/LevelIcon" index="3"]
+text = "Level 2"
 
 [node name="LevelSelectIcon4" parent="CenterContainer/Panel" instance=ExtResource("2_dipdv")]
 layout_mode = 1
@@ -53,4 +70,12 @@ offset_top = 190.0
 offset_right = 265.677
 offset_bottom = 206.475
 
+[node name="Label" parent="CenterContainer/Panel/LevelSelectIcon4/LevelIcon" index="3"]
+text = "Level 4"
+
 [node name="LevelOneParallax" parent="." instance=ExtResource("3_ufsnf")]
+
+[editable path="CenterContainer/Panel/LevelSelectIcon"]
+[editable path="CenterContainer/Panel/LevelSelectIcon2"]
+[editable path="CenterContainer/Panel/LevelSelectIcon3"]
+[editable path="CenterContainer/Panel/LevelSelectIcon4"]

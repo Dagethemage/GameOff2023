@@ -15,13 +15,13 @@ var was_wall_normal = Vector2.ZERO
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var hazard_detector = $HazardDetector
 
-
 func _ready() -> void:
 	Global.starting_position = global_position
 	Global.level_completed.connect(func level_completed():
 		MovementData.zero_stats())
 	Global.level_started.connect(func level_started():
 		MovementData.rest_stats())
+	Global.dead.connect(dead)
 	hazard_detector.area_entered.connect(hazard_detector_entered)
 
 func _physics_process(delta):
@@ -38,6 +38,7 @@ func _physics_process(delta):
 	apply_friction(input_axis, delta)
 	apply_air_resistance(input_axis, delta)
 	update_animations(input_axis)
+	update_sprite()
 	var was_on_floor = is_on_floor()
 	var was_on_wall = is_on_wall_only()
 	if was_on_wall:
@@ -111,15 +112,33 @@ func update_animations(input_axis):
 
 func hazard_detector_entered(area) -> void:
 	MovementData.zero_stats()
-	#play death animation
+	Global.lives -= 1
 	#await get_tree().create_timer(0.5).timeout
 	global_position = Global.starting_position
+	if Global.lives == 2:
+		animated_sprite_2d.sprite_frames = Global.half_health_sprite
+	elif Global.lives == 1:
+		animated_sprite_2d.sprite_frames = Global.low_health_sprite
+	elif Global.lives == 0:
+		Global.dead.emit()
+	else:
+		animated_sprite_2d.sprite_frames = Global.full_health_sprite
 	await get_tree().create_timer(0.1).timeout
 	MovementData.rest_stats()
 
+func update_sprite():
+	if Global.lives == 3:
+		animated_sprite_2d.sprite_frames = Global.full_health_sprite
+	elif Global.lives == 2:
+		animated_sprite_2d.sprite_frames = Global.half_health_sprite
+	elif Global.lives == 1:
+		animated_sprite_2d.sprite_frames = Global.low_health_sprite
 
 func collect(item):
 	inventory.insert(item)
 
+func dead():
+	#animations for death
+	queue_free()
 
 

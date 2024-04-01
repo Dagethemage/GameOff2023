@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5b2c75tpu1w"]
+
+[ext_resource type="PackedScene" uid="uid://dra8vw856pq10" path="res://LevelObjects/floating_item.tscn" id="1_mvfy6"]
+[ext_resource type="Script" path="res://LevelObjects/health_pick_up.gd" id="2_b6abd"]
+[ext_resource type="Texture2D" uid="uid://2q5ih48uwabj" path="res://Sprites/True_Health_Pickup.png" id="2_kwbl8"]
+
+[node name="HealthPickUp" instance=ExtResource("1_mvfy6")]
+script = ExtResource("2_b6abd")
+
+[node name="Sprite2D" parent="Marker2D" index="0"]
+texture = ExtResource("2_kwbl8")

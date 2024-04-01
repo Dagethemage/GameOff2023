@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dwqs43w46uc2a"]
+[gd_scene load_steps=10 format=3 uid="uid://dwqs43w46uc2a"]
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_folvt"]
 [ext_resource type="Script" path="res://Characters/Player/PlayerMovementData.gd" id="2_jrmri"]
 [ext_resource type="Resource" uid="uid://bbu4jw5uw6r6f" path="res://Resource/Inventory/PlayerInventory.tres" id="3_7i6t3"]
-[ext_resource type="Texture2D" uid="uid://bouvtb43f4ran" path="res://Characters/Player/Player.png" id="4_l5wlt"]
+[ext_resource type="SpriteFrames" uid="uid://bsskbtw13vbyr" path="res://Characters/Player/player_full_health.tres" id="4_4wy37"]
 [ext_resource type="PackedScene" uid="uid://b5wnw0imh5fuq" path="res://Characters/Player/Abilities/Dash.tscn" id="6_0l3fi"]
 
 [sub_resource type="Resource" id="Resource_1v1pr"]
@@ -18,56 +18,6 @@ gravity_scale = 1.0
 air_resistance = 200.0
 air_acceleration = 400.0
 inventory = []
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hde2b"]
-atlas = ExtResource("4_l5wlt")
-region = Rect2(0, 0, 32, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f0r62"]
-atlas = ExtResource("4_l5wlt")
-region = Rect2(32, 0, 32, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jpmbr"]
-atlas = ExtResource("4_l5wlt")
-region = Rect2(64, 0, 32, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bnyp4"]
-atlas = ExtResource("4_l5wlt")
-region = Rect2(96, 0, 32, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_obwr7"]
-atlas = ExtResource("4_l5wlt")
-region = Rect2(128, 0, 32, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jdy8x"]
-atlas = ExtResource("4_l5wlt")
-region = Rect2(160, 0, 32, 31)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_s72ah"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hde2b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f0r62")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jpmbr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bnyp4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_obwr7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jdy8x")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 10.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vd7u3"]
 size = Vector2(6, 27)
@@ -91,15 +41,16 @@ inventory = ExtResource("3_7i6t3")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.0294962, -15.5281)
 scale = Vector2(-1, 1)
-sprite_frames = SubResource("SpriteFrames_s72ah")
+sprite_frames = ExtResource("4_4wy37")
 animation = &"Idle"
-frame_progress = 0.00450091
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -13.5281)
 shape = SubResource("RectangleShape2D_vd7u3")
 
 [node name="HazardDetector" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 4
 
@@ -108,6 +59,7 @@ position = Vector2(0, -13.5)
 shape = SubResource("RectangleShape2D_hddal")
 
 [node name="CollectionZone" type="Area2D" parent="."]
+visible = false
 collision_layer = 128
 collision_mask = 0
 
@@ -116,9 +68,6 @@ position = Vector2(0, -13.1218)
 shape = SubResource("RectangleShape2D_bpla7")
 
 [node name="Dash" parent="." instance=ExtResource("6_0l3fi")]
-
-[node name="SoulPosition" type="Marker2D" parent="." groups=["soul_marker"]]
-position = Vector2(-16.9958, -33.7131)
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.15

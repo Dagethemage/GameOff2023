@@ -1,14 +1,14 @@
-[gd_scene load_steps=31 format=3 uid="uid://pcxcdy1vgq7y"]
+[gd_scene load_steps=30 format=3 uid="uid://pcxcdy1vgq7y"]
 
 [ext_resource type="Script" path="res://GUI/StartScreen.gd" id="1_xep82"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="2_6l7gb"]
 [ext_resource type="Texture2D" uid="uid://bv1s8qadrdno" path="res://Sprites/Parallax_layer_1.png" id="2_f5cvp"]
 [ext_resource type="Texture2D" uid="uid://cm3ts0e5ujhg6" path="res://Sprites/TileSets/SavePoint.png" id="3_q6jeo"]
-[ext_resource type="Texture2D" uid="uid://dhufj5cgg5004" path="res://Sprites/32x32 square.png" id="4_0qsfn"]
 [ext_resource type="PackedScene" uid="uid://cdt4eq8yqys7c" path="res://Characters/Enemies/level_2_walking_enemy.tscn" id="4_qrmt1"]
 [ext_resource type="Texture2D" uid="uid://bouvtb43f4ran" path="res://Characters/Player/Player.png" id="4_uev14"]
 [ext_resource type="TileSet" uid="uid://0oujyisaoies" path="res://Resource/Tilesets/World_1_Tileset.tres" id="7_0tpyp"]
 [ext_resource type="Texture2D" uid="uid://bwoesoa61pwv3" path="res://Sprites/MovingPlatform_UP.png" id="8_c5no6"]
+[ext_resource type="PackedScene" uid="uid://7ikh4ur7cwpt" path="res://GUI/Menu_Particle_Effect.tscn" id="9_j7hh3"]
 [ext_resource type="AudioStream" uid="uid://ohvihft8vkag" path="res://Sounds/Select.wav" id="10_ch55p"]
 [ext_resource type="AudioStream" uid="uid://ba6gry1cd47l3" path="res://Sounds/Focus_ui.wav" id="10_rkh2b"]
 [ext_resource type="AudioStream" uid="uid://bpvts5750r7u4" path="res://Sounds/ErrorUI.wav" id="12_xah3p"]
@@ -106,10 +106,6 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
-
-[sub_resource type="Gradient" id="Gradient_8ljc1"]
-offsets = PackedFloat32Array(0.449016, 0.629696, 0.824687)
-colors = PackedColorArray(0.878431, 0.643137, 0.431373, 1, 0.364706, 0.462745, 0.262745, 1, 0.301961, 0.32549, 0.227451, 1)
 
 [sub_resource type="Animation" id="Animation_cwgkn"]
 length = 0.001
@@ -460,21 +456,7 @@ focus_neighbor_bottom = NodePath("../StartButton")
 theme = ExtResource("2_6l7gb")
 text = "Quit"
 
-[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(315, 161)
-scale = Vector2(5, 5)
-amount = 50
-texture = ExtResource("4_0qsfn")
-emission_shape = 1
-emission_sphere_radius = 128.0
-gravity = Vector2(0, 100)
-initial_velocity_max = 125.5
-linear_accel_min = -42.44
-linear_accel_max = -42.44
-scale_amount_min = 0.0
-scale_amount_max = 0.1
-color = Color(0.364706, 0.462745, 0.262745, 1)
-color_ramp = SubResource("Gradient_8ljc1")
+[node name="GPUParticles2D" parent="." instance=ExtResource("9_j7hh3")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba0mpt2684itx"]
+[gd_scene load_steps=12 format=3 uid="uid://ba0mpt2684itx"]
 
 [ext_resource type="Script" path="res://Levels/LevelBase.gd" id="1_hl4d3"]
 [ext_resource type="PackedScene" uid="uid://dwqs43w46uc2a" path="res://Characters/Player/player.tscn" id="2_ai7ju"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://tcai4ygpkl6q" path="res://LevelObjects/LevelFallZone.tscn" id="7_qkv1q"]
 [ext_resource type="PackedScene" uid="uid://ceagat2lwf2g6" path="res://GUI/ui.tscn" id="8_ovxep"]
 [ext_resource type="PackedScene" uid="uid://kklwejuri6h8" path="res://GUI/level_one_parallax.tscn" id="9_tacvd"]
-[ext_resource type="PackedScene" uid="uid://dkr2i8so81qvj" path="res://LevelObjects/soul.tscn" id="11_hufdq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ucnw"]
 size = Vector2(3912, 20)
@@ -20,7 +19,7 @@ script = ExtResource("1_hl4d3")
 player = NodePath("Player")
 
 [node name="Player" parent="." instance=ExtResource("2_ai7ju")]
-position = Vector2(24, 320)
+position = Vector2(40, 320)
 
 [node name="PlayerCamera2D" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_g5t8w")]
 limit_left = 0
@@ -50,6 +49,3 @@ shape = SubResource("RectangleShape2D_4ucnw")
 [node name="LevelOneParallax" parent="." instance=ExtResource("9_tacvd")]
 
 [node name="Log" parent="." instance=ExtResource("7_kin52")]
-
-[node name="Soul" parent="." instance=ExtResource("11_hufdq")]
-position = Vector2(16, 272)

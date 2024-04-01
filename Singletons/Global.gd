@@ -2,15 +2,21 @@ extends Node
 
 var coin: int = 0: set = set_coin
 var _log: int = 0: set = set_log
+var lives: int = 3
 var starting_position
 var key_found = []
 var log_found = []
 var opened_door = []
 
+var full_health_sprite = load("res://Characters/Player/player_full_health.tres")
+var half_health_sprite = load("res://Characters/Player/player_half_health.tres")
+var low_health_sprite = load("res://Characters/Player/player_low_health.tres")
+
 signal coins_changed
 signal log_changed
 signal time_changed
 signal time_score_changed
+signal dead
 
 signal level_started
 signal level_completed

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dra8vw856pq10" path="res://LevelObjects/floating_item.tscn" id="1_estqd"]
 [ext_resource type="Texture2D" uid="uid://da1jlg81ihg38" path="res://Sprites/TileSets/Logs.png" id="1_iwpx5"]
-[ext_resource type="Script" path="res://Log.gd" id="2_58mex"]
+[ext_resource type="Script" path="res://LevelObjects/Log.gd" id="2_58mex"]
 [ext_resource type="Resource" uid="uid://b6pq82gbwkxcq" path="res://Resource/Inventory/Items/Log.tres" id="2_sa1vy"]
 
 [node name="Log" instance=ExtResource("1_estqd")]

@@ -1,0 +1,53 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://bg7tk8rerdxfu"]
+
+[ext_resource type="Texture2D" uid="uid://bp54yulxhubgb" path="res://Sprites/Player_last_life.png" id="1_o8kgx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0gek"]
+atlas = ExtResource("1_o8kgx")
+region = Rect2(0, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx31x"]
+atlas = ExtResource("1_o8kgx")
+region = Rect2(32, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chhmm"]
+atlas = ExtResource("1_o8kgx")
+region = Rect2(64, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xdhn"]
+atlas = ExtResource("1_o8kgx")
+region = Rect2(96, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmetu"]
+atlas = ExtResource("1_o8kgx")
+region = Rect2(128, 0, 32, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3gad"]
+atlas = ExtResource("1_o8kgx")
+region = Rect2(160, 0, 32, 31)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0gek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx31x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chhmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xdhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pmetu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3gad")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}]

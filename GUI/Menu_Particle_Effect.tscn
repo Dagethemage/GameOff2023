@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://7ikh4ur7cwpt"]
+
+[ext_resource type="Texture2D" uid="uid://dhufj5cgg5004" path="res://Sprites/32x32 square.png" id="1_vyuy3"]
+
+[sub_resource type="Gradient" id="Gradient_8ljc1"]
+offsets = PackedFloat32Array(0.449016, 0.629696, 0.824687)
+colors = PackedColorArray(0.878431, 0.643137, 0.431373, 1, 0.364706, 0.462745, 0.262745, 1, 0.301961, 0.32549, 0.227451, 1)
+
+[node name="GPUParticles2D" type="CPUParticles2D"]
+position = Vector2(315, 161)
+scale = Vector2(5, 5)
+amount = 50
+texture = ExtResource("1_vyuy3")
+emission_shape = 1
+emission_sphere_radius = 128.0
+gravity = Vector2(0, 100)
+initial_velocity_max = 125.5
+linear_accel_min = -42.44
+linear_accel_max = -42.44
+scale_amount_min = 0.0
+scale_amount_max = 0.1
+color = Color(0.364706, 0.462745, 0.262745, 1)
+color_ramp = SubResource("Gradient_8ljc1")
