@@ -7,6 +7,7 @@ var is_open = false
 @onready var level_completed = $LevelCompleted
 @onready var animation_player = $AnimationPlayer
 @onready var inventory = $Inventory
+@onready var game_over_screen = $GameOverScreen
 
 func _ready() -> void:
 	close()
@@ -14,6 +15,7 @@ func _ready() -> void:
 	Global.coins_changed.connect(coins_changed)
 	Global.log_changed.connect(log_changed)
 	Global.show_score.connect(show_score)
+	Global.dead.connect(dead)
 
 func _process(delta):
 	if Input.is_action_just_pressed("Inventory"):
@@ -52,3 +54,6 @@ func open():
 func close():
 	inventory.visible = false
 	is_open = false
+
+func dead():
+	game_over_screen.show()

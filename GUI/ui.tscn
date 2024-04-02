@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ceagat2lwf2g6"]
+[gd_scene load_steps=12 format=3 uid="uid://ceagat2lwf2g6"]
 
 [ext_resource type="Script" path="res://GUI/ui.gd" id="1_ya8w1"]
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="3_t2qgx"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bsxby8o6rxilk" path="res://GUI/level_completed.tscn" id="6_0m2uf"]
 [ext_resource type="PackedScene" uid="uid://dlpjba7ef3fvl" path="res://GUI/PauseScreen.tscn" id="6_nykx1"]
 [ext_resource type="PackedScene" uid="uid://cg72fj0owt86n" path="res://GUI/inventory.tscn" id="7_e3elk"]
+[ext_resource type="PackedScene" uid="uid://cyv0lst4n4sjh" path="res://GUI/game_over_screen.tscn" id="8_0052y"]
 
 [sub_resource type="Animation" id="Animation_ksruh"]
 length = 0.001
@@ -96,6 +97,9 @@ metadata/_edit_use_anchors_ = true
 [node name="LevelCompleted" parent="." instance=ExtResource("6_0m2uf")]
 offset_left = 640.0
 offset_right = 640.0
+
+[node name="GameOverScreen" parent="." instance=ExtResource("8_0052y")]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

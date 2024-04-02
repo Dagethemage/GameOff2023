@@ -4,6 +4,7 @@ extends Node2D
 @export var player: CharacterBody2D
 #@export var audio_stream_player: AudioStreamPlayer
 
+
 var player_postion = Vector2.ZERO
 var timer = Timer.new()
 
@@ -14,8 +15,8 @@ func _ready():
 	Global.level_completed.connect(func level_completed():
 		#sets timer properties when level is completed
 		timer.one_shot = true
-		timer.autodstart = true
-		timer.wait_time = 1.0
+		timer.autostart = true
+		timer.wait_time = 4.0
 		timer.timeout.connect(func time_out():
 			level_select_screen())
 		timer.start()
@@ -34,7 +35,12 @@ func _ready():
 	player_postion = player.global_position
 
 func level_select_screen() -> void:
+	LevelTranstition.fade_to_black()
+	await LevelTranstition.fade_to_black()
+	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_file("res://GUI/level_select.tscn")
-
+	LevelTranstition.fade_from_black()
+	
+	
 
 

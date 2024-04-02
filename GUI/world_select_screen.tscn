@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://didvu6m7yellf"]
+[gd_scene load_steps=7 format=3 uid="uid://didvu6m7yellf"]
 
 [ext_resource type="Theme" uid="uid://ceqslen8rfbmx" path="res://GUI/Themes/UITheme.tres" id="1_5cfwm"]
+[ext_resource type="Script" path="res://GUI/world_select_screen.gd" id="1_eospc"]
 [ext_resource type="PackedScene" uid="uid://7ikh4ur7cwpt" path="res://GUI/Menu_Particle_Effect.tscn" id="1_pgodf"]
 [ext_resource type="PackedScene" uid="uid://cuhwq72s200rd" path="res://GUI/level_selecet_icon.tscn" id="2_1vg30"]
 [ext_resource type="PackedScene" uid="uid://dreoe35d3xj4n" path="res://GUI/level_select.tscn" id="4_55res"]
+[ext_resource type="AudioStream" uid="uid://cwe0iynqxp8vn" path="res://Sounds/BackUI.wav" id="6_s3ek7"]
 
 [node name="WorldSelectScreen" type="Control"]
 layout_mode = 3
@@ -12,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_eospc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -39,6 +42,23 @@ theme_override_font_sizes/font_size = 35
 text = "World Select"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -36.0
+offset_right = -63.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_5cfwm")
+theme_override_colors/font_color = Color(0.878431, 0.643137, 0.431373, 1)
+text = "Back"
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("1_pgodf")]
 
@@ -86,6 +106,9 @@ offset_bottom = 142.82
 
 [node name="Label" parent="LevelSelectIcon3/LevelIcon" index="3"]
 text = "World 3"
+
+[node name="Back" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_s3ek7")
 
 [editable path="LevelSelectIcon"]
 [editable path="LevelSelectIcon2"]

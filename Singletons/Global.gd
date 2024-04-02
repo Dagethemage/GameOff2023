@@ -8,6 +8,9 @@ var key_found = []
 var log_found = []
 var opened_door = []
 
+var levels = []
+var unlocked_levels = 1
+
 var full_health_sprite = load("res://Characters/Player/player_full_health.tres")
 var half_health_sprite = load("res://Characters/Player/player_half_health.tres")
 var low_health_sprite = load("res://Characters/Player/player_low_health.tres")

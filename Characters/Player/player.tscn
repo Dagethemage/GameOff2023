@@ -28,6 +28,21 @@ size = Vector2(6, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpla7"]
 size = Vector2(8, 26.25)
 
+[sub_resource type="Animation" id="Animation_dpxxb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_a7chf"]
 resource_name = "hit_flash"
 length = 0.3
@@ -43,21 +58,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(2, 2, 2),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(0.956863, 0.0862745, 0, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_dpxxb"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_y34xq"]
